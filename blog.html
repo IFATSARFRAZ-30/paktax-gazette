@@ -1,0 +1,2562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tax Blog & Explainers — Pakistan Tax Guides | PakTax Gazette</title>
+<meta name="description" content="SRO summaries, Finance Bill analysis, tax calculators and plain-language tax guidance for Pakistan — by Ifat Associates.">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;700&display=swap" rel="stylesheet">
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+/* ═══════════════════════════════════════════════════════════════
+   DESIGN TOKENS — PakTax Gazette
+   
+   Palette rationale:
+   - Ink / Midnight: authority, FBR-grade seriousness
+   - Emerald: Pakistan's national identity, woven in quietly
+   - Cobalt: action, links, live data
+   - Amber: urgency, deadlines — the colour of caution signs
+   The one aesthetic risk: the masthead uses a broadsheet-style
+   horizontal rule and a mono-spaced issue number, treating the
+   website like a daily newspaper edition. This is specific to
+   this brief and would not appear on a generic news template.
+═══════════════════════════════════════════════════════════════ */
+:root {
+  /* Core palette */
+  --ink:          #0B1120;
+  --midnight:     #0E2044;
+  --midnight-mid: #162D5C;
+  --cobalt:       #1451CC;
+  --cobalt-hover: #0F3FA3;
+  --cobalt-light: #EEF4FF;
+  --cobalt-mid:   #C7D9F7;
+  --emerald:      #0A6B4A;
+  --emerald-light:#E6F4EE;
+  --amber:        #B25000;
+  --amber-light:  #FEF0E0;
+  --red:          #C0171A;
+  --red-light:    #FEE8E8;
+  --slate:        #44556A;
+  --mist:         #7C8FA6;
+  --rule:         #DDE4EF;
+  --canvas:       #F6F8FB;
+  --white:        #FFFFFF;
+
+  /* Typography */
+  --serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --sans:  'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --mono:  'IBM Plex Mono', 'Courier New', monospace;
+
+  /* Spacing & shape */
+  --r:   8px;
+  --r2:  14px;
+  --r3:  20px;
+
+  /* Shadows */
+  --sh-sm: 0 1px 4px rgba(11,17,32,.08);
+  --sh:    0 4px 20px rgba(11,17,32,.10);
+  --sh-lg: 0 8px 40px rgba(11,17,32,.14);
+}
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: var(--sans);
+  background: var(--canvas);
+  color: var(--slate);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+a { text-decoration: none; color: inherit; }
+button { font-family: var(--sans); cursor: pointer; }
+
+/* ── Layout ── */
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   TOP UTILITY BAR
+═══════════════════════════════════════════════════════════════ */
+.top-bar {
+  background: var(--midnight);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  padding: 0;
+  overflow: hidden;
+}
+.top-bar-inner {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 0;
+  min-height: 36px;
+}
+.top-bar-left {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  overflow: hidden;
+}
+.top-bar-date {
+  background: rgba(255,255,255,.05);
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: rgba(255,255,255,.4);
+  letter-spacing: .03em;
+  border-right: 1px solid rgba(255,255,255,.06);
+  white-space: nowrap;
+  min-height: 36px;
+}
+.top-bar-date i { font-size: 10px; color: rgba(255,255,255,.25); }
+.top-bar-links {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+.top-bar-links a {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0 14px;
+  min-height: 36px;
+  font-size: 11.5px;
+  font-weight: 500;
+  color: rgba(255,255,255,.5);
+  border-right: 1px solid rgba(255,255,255,.05);
+  transition: color .2s, background .2s;
+  white-space: nowrap;
+}
+.top-bar-links a:hover {
+  color: rgba(255,255,255,.9);
+  background: rgba(255,255,255,.04);
+}
+.top-bar-links a i { font-size: 10px; color: rgba(255,255,255,.25); }
+
+.top-bar-right {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+.top-bar-social {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  border-left: 1px solid rgba(255,255,255,.06);
+}
+.top-bar-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  min-height: 36px;
+  font-size: 13px;
+  color: rgba(255,255,255,.35);
+  transition: color .2s, background .2s;
+}
+.top-bar-social a:hover { color: rgba(255,255,255,.85); background: rgba(255,255,255,.05); }
+
+.top-bar-cta {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 18px;
+  background: var(--cobalt);
+  color: #fff !important;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+  border-left: none;
+  transition: background .2s;
+  white-space: nowrap;
+  min-height: 36px;
+}
+.top-bar-cta:hover { background: var(--cobalt-hover) !important; }
+.top-bar-cta i { font-size: 10px; }
+
+/* ═══════════════════════════════════════════════════════════════
+   MASTHEAD — the "newspaper edition" signature element
+═══════════════════════════════════════════════════════════════ */
+.masthead {
+  background: var(--white);
+  border-bottom: 1px solid var(--rule);
+  padding: 18px 0 14px;
+}
+.masthead-inner {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Left: wordmark */
+.brand-wordmark {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.brand-pre {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--cobalt);
+  margin-bottom: 3px;
+}
+.brand-name-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0;
+  line-height: 1;
+}
+.brand-pak {
+  font-family: var(--serif);
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 900;
+  color: var(--midnight);
+  letter-spacing: -.02em;
+}
+.brand-tax {
+  font-family: var(--serif);
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 900;
+  color: var(--cobalt);
+  letter-spacing: -.02em;
+}
+.brand-gazette {
+  font-family: var(--serif);
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 700;
+  font-style: italic;
+  color: var(--midnight);
+  letter-spacing: -.01em;
+  margin-left: 10px;
+  opacity: .7;
+}
+.brand-sub {
+  font-size: 11px;
+  color: var(--mist);
+  font-weight: 500;
+  letter-spacing: .04em;
+  margin-top: 5px;
+  text-transform: uppercase;
+}
+
+/* Centre: edition metadata strip */
+.masthead-meta {
+  flex: 1;
+  max-width: 360px;
+  border-left: 1px solid var(--rule);
+  border-right: 1px solid var(--rule);
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+}
+.masthead-meta-row {
+  display: flex;
+  gap: 16px;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  color: var(--mist);
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.masthead-meta-row span { display: flex; align-items: center; gap: 5px; }
+.masthead-meta-rule {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--rule), transparent);
+}
+.masthead-tag {
+  font-family: var(--mono);
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--emerald);
+  background: var(--emerald-light);
+  padding: 2px 10px;
+  border-radius: 3px;
+}
+
+/* Right: search + subscribe */
+.masthead-actions { display: flex; flex-direction: column; gap: 8px; align-items: flex-end; }
+.masthead-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--canvas);
+  border: 1.5px solid var(--rule);
+  border-radius: var(--r);
+  padding: 8px 14px;
+  font-size: 13px;
+  color: var(--mist);
+  cursor: pointer;
+  transition: all .2s;
+  min-width: 220px;
+}
+.masthead-search:hover { border-color: var(--cobalt); color: var(--cobalt); }
+.masthead-search span { flex: 1; }
+.masthead-search kbd {
+  font-family: var(--mono); font-size: 10px;
+  background: var(--white); border: 1px solid var(--rule);
+  border-radius: 4px; padding: 1px 6px; color: var(--mist);
+}
+.masthead-subscribe {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--emerald);
+  transition: color .2s;
+}
+.masthead-subscribe:hover { color: var(--cobalt); }
+.masthead-subscribe i { font-size: 11px; }
+
+/* ═══════════════════════════════════════════════════════════════
+   MAIN NAVIGATION
+═══════════════════════════════════════════════════════════════ */
+.main-nav-bar {
+  background: var(--midnight);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: var(--sh);
+}
+.main-nav-inner {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 0;
+}
+.main-nav-links {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+}
+.main-nav-links a {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 18px;
+  min-height: 48px;
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,.65);
+  letter-spacing: .01em;
+  border-bottom: 3px solid transparent;
+  transition: all .2s;
+  white-space: nowrap;
+  position: relative;
+}
+.main-nav-links a:hover {
+  color: #fff;
+  background: rgba(255,255,255,.04);
+  border-bottom-color: rgba(255,255,255,.2);
+}
+.main-nav-links a.active {
+  color: #fff;
+  background: rgba(255,255,255,.06);
+  border-bottom-color: var(--cobalt);
+}
+.main-nav-links a.active i { color: var(--cobalt); }
+.main-nav-links a i { font-size: 12px; color: rgba(255,255,255,.3); transition: color .2s; }
+.main-nav-links a:hover i { color: rgba(255,255,255,.6); }
+
+/* Hot badge on nav item */
+.nav-dot {
+  position: absolute;
+  top: 10px;
+  right: 8px;
+  width: 7px;
+  height: 7px;
+  background: var(--red);
+  border-radius: 50%;
+  border: 1.5px solid var(--midnight);
+  animation: navdot 2s ease-in-out infinite;
+}
+@keyframes navdot { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: .7; transform: scale(.8); } }
+
+.nav-new-tag {
+  font-size: 9px; font-weight: 800; letter-spacing: .06em;
+  background: var(--amber); color: #fff;
+  padding: 2px 6px; border-radius: 4px;
+  text-transform: uppercase;
+}
+
+/* Right side of nav: live indicator */
+.main-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  border-left: 1px solid rgba(255,255,255,.07);
+}
+.nav-live {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 18px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: rgba(255,255,255,.5);
+}
+.nav-live-dot {
+  width: 7px; height: 7px;
+  background: #22C55E;
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+@keyframes pulse { 0%,100% { opacity: 1; box-shadow: 0 0 0 0 rgba(34,197,94,.4); } 50% { opacity: .8; box-shadow: 0 0 0 4px rgba(34,197,94,0); } }
+
+.nav-mobile-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  min-height: 48px;
+  background: none;
+  border: none;
+  color: rgba(255,255,255,.7);
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   BREAKING NEWS TICKER
+═══════════════════════════════════════════════════════════════ */
+.ticker-bar {
+  background: var(--cobalt);
+  display: flex;
+  align-items: stretch;
+  overflow: hidden;
+  border-bottom: 2px solid var(--cobalt-hover);
+}
+.ticker-label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 18px;
+  background: var(--midnight);
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: #fff;
+  white-space: nowrap;
+  flex-shrink: 0;
+  min-height: 38px;
+  border-right: 3px solid var(--cobalt);
+}
+.ticker-label-dot {
+  width: 7px; height: 7px;
+  background: var(--red);
+  border-radius: 50%;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+.ticker-track {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.ticker-inner {
+  display: flex;
+  gap: 0;
+  animation: ticker 32s linear infinite;
+  white-space: nowrap;
+  will-change: transform;
+}
+.ticker-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  padding: 0 36px 0 0;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255,255,255,.92);
+  min-height: 38px;
+}
+.ticker-item::after {
+  content: '◆';
+  font-size: 7px;
+  color: rgba(255,255,255,.3);
+  margin-left: 36px;
+}
+.ticker-item:last-child::after { display: none; }
+.ticker-item a { color: rgba(255,255,255,.92); transition: color .2s; }
+.ticker-item a:hover { color: #fff; }
+.ticker-item .ticker-tag {
+  font-size: 10px; font-weight: 800; letter-spacing: .06em;
+  text-transform: uppercase;
+  background: rgba(255,255,255,.15);
+  padding: 2px 8px; border-radius: 3px; margin-right: 9px;
+}
+@keyframes ticker {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.ticker-bar:hover .ticker-inner { animation-play-state: paused; }
+
+/* ═══════════════════════════════════════════════════════════════
+   DEMO CONTENT AREA (placeholder for pages to come)
+═══════════════════════════════════════════════════════════════ */
+.demo-content {
+  padding: 60px 0 80px;
+}
+.demo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
+}
+.demo-card {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  border-radius: var(--r2);
+  padding: 28px;
+  border-top: 3px solid var(--cobalt);
+  transition: box-shadow .25s, transform .25s;
+}
+.demo-card:nth-child(2) { border-top-color: var(--emerald); }
+.demo-card:nth-child(3) { border-top-color: var(--amber); }
+.demo-card:hover { box-shadow: var(--sh); transform: translateY(-3px); }
+.demo-card-icon { font-size: 28px; margin-bottom: 14px; }
+.demo-card h3 { font-family: var(--serif); font-size: 18px; color: var(--ink); margin-bottom: 8px; font-weight: 700; }
+.demo-card p { font-size: 13.5px; line-height: 1.65; }
+.demo-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 14px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--cobalt);
+}
+.demo-card-link:hover { text-decoration: underline; }
+
+/* Tag pills (reusable across all pages) */
+.tag {
+  display: inline-block;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 5px;
+  line-height: 1.4;
+}
+.tag-blue    { background: var(--cobalt-light); color: var(--cobalt); }
+.tag-green   { background: var(--emerald-light); color: var(--emerald); }
+.tag-amber   { background: var(--amber-light); color: var(--amber); }
+.tag-red     { background: var(--red-light); color: var(--red); animation: blink 2s ease-in-out infinite; }
+.tag-mono    { background: #EEF1F6; color: var(--slate); font-family: var(--mono); font-size: 10px; letter-spacing: .04em; }
+.tag-midnight { background: var(--midnight); color: rgba(255,255,255,.8); }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:.65} }
+
+/* Buttons (reusable) */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 20px;
+  border-radius: var(--r);
+  font-size: 13.5px;
+  font-weight: 700;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all .2s;
+  text-align: center;
+  white-space: nowrap;
+}
+.btn-primary { background: var(--cobalt); color: #fff; border-color: var(--cobalt); }
+.btn-primary:hover { background: var(--cobalt-hover); border-color: var(--cobalt-hover); transform: translateY(-1px); box-shadow: var(--sh-sm); }
+.btn-outline { background: transparent; color: var(--cobalt); border-color: var(--cobalt); }
+.btn-outline:hover { background: var(--cobalt); color: #fff; }
+.btn-dark { background: var(--midnight); color: #fff; border-color: var(--midnight); }
+.btn-dark:hover { background: var(--midnight-mid); }
+.btn-sm { padding: 6px 14px; font-size: 12px; border-radius: var(--r); }
+
+/* ═══════════════════════════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════════════════════════ */
+.site-footer {
+  background: var(--midnight);
+  color: rgba(255,255,255,.5);
+}
+
+/* Footer top: newsletter full-width band */
+.footer-newsletter {
+  background: linear-gradient(135deg, var(--midnight-mid) 0%, #0A1E40 100%);
+  border-top: 1px solid rgba(255,255,255,.07);
+  border-bottom: 1px solid rgba(255,255,255,.07);
+  padding: 36px 0;
+}
+.footer-newsletter-inner {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.footer-newsletter-text h3 {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 5px;
+}
+.footer-newsletter-text p {
+  font-size: 13px;
+  color: rgba(255,255,255,.55);
+  max-width: 380px;
+}
+.footer-newsletter-form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.footer-newsletter-form input {
+  background: rgba(255,255,255,.08);
+  border: 1.5px solid rgba(255,255,255,.15);
+  border-radius: var(--r);
+  padding: 10px 16px;
+  font-size: 13.5px;
+  color: #fff;
+  font-family: var(--sans);
+  outline: none;
+  width: 260px;
+  transition: border-color .2s;
+}
+.footer-newsletter-form input::placeholder { color: rgba(255,255,255,.35); }
+.footer-newsletter-form input:focus { border-color: var(--cobalt); }
+.footer-newsletter-form button {
+  background: var(--cobalt);
+  color: #fff;
+  border: 2px solid var(--cobalt);
+  border-radius: var(--r);
+  padding: 10px 22px;
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all .2s;
+  white-space: nowrap;
+}
+.footer-newsletter-form button:hover { background: #fff; color: var(--cobalt); }
+.footer-newsletter-privacy {
+  font-size: 11px;
+  color: rgba(255,255,255,.3);
+  margin-top: 8px;
+}
+
+/* Footer main grid */
+.footer-main { padding: 52px 0 36px; }
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2.2fr 1fr 1fr 1.3fr;
+  gap: 48px;
+}
+
+.footer-brand-col {}
+.footer-brand-name {
+  display: flex;
+  align-items: baseline;
+  gap: 0;
+  margin-bottom: 12px;
+}
+.footer-brand-name .pak  { font-family: var(--serif); font-size: 22px; font-weight: 900; color: #fff; }
+.footer-brand-name .tax  { font-family: var(--serif); font-size: 22px; font-weight: 900; color: var(--cobalt); }
+.footer-brand-name .gaz  { font-family: var(--serif); font-size: 22px; font-weight: 700; font-style: italic; color: rgba(255,255,255,.6); margin-left: 8px; }
+.footer-brand-desc {
+  font-size: 13px;
+  line-height: 1.7;
+  color: rgba(255,255,255,.45);
+  max-width: 280px;
+  margin-bottom: 20px;
+}
+
+/* Ifat Associates credit — visible but not pushy */
+.footer-credit {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.08);
+  border-left: 3px solid var(--emerald);
+  border-radius: var(--r);
+  margin-bottom: 20px;
+}
+.footer-credit-icon { font-size: 18px; flex-shrink: 0; }
+.footer-credit-text {}
+.footer-credit-text p {
+  font-size: 11.5px;
+  color: rgba(255,255,255,.4);
+  line-height: 1.5;
+}
+.footer-credit-text a {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: rgba(255,255,255,.7);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 4px;
+  transition: color .2s;
+}
+.footer-credit-text a:hover { color: #fff; }
+.footer-credit-text a i { font-size: 10px; }
+
+.footer-social {
+  display: flex;
+  gap: 10px;
+}
+.footer-social a {
+  width: 34px;
+  height: 34px;
+  border-radius: var(--r);
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: rgba(255,255,255,.4);
+  transition: all .2s;
+}
+.footer-social a:hover { background: var(--cobalt); border-color: var(--cobalt); color: #fff; }
+
+.footer-col h4 {
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.25);
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.footer-col li a {
+  font-size: 13px;
+  color: rgba(255,255,255,.45);
+  transition: color .2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.footer-col li a:hover { color: rgba(255,255,255,.9); }
+.footer-col li a i { font-size: 10px; color: rgba(255,255,255,.2); width: 14px; }
+
+/* Contact column */
+.footer-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.footer-contact-item i {
+  font-size: 13px;
+  color: var(--cobalt);
+  margin-top: 2px;
+  width: 16px;
+  flex-shrink: 0;
+}
+.footer-contact-item span {
+  font-size: 12.5px;
+  color: rgba(255,255,255,.45);
+  line-height: 1.5;
+}
+.footer-contact-item a { color: rgba(255,255,255,.6); transition: color .2s; }
+.footer-contact-item a:hover { color: #fff; }
+
+/* Footer bottom bar */
+.footer-bottom {
+  padding: 18px 0;
+  border-top: 1px solid rgba(255,255,255,.06);
+}
+.footer-bottom-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.footer-bottom-left { font-size: 12px; color: rgba(255,255,255,.3); line-height: 1.6; }
+.footer-bottom-left a { color: rgba(255,255,255,.4); transition: color .2s; }
+.footer-bottom-left a:hover { color: rgba(255,255,255,.8); }
+.footer-bottom-right {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.footer-bottom-right a { font-size: 12px; color: rgba(255,255,255,.3); transition: color .2s; }
+.footer-bottom-right a:hover { color: rgba(255,255,255,.7); }
+.footer-disclaimer {
+  font-size: 11px;
+  color: rgba(255,255,255,.2);
+  margin-top: 6px;
+  line-height: 1.5;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SEARCH OVERLAY
+═══════════════════════════════════════════════════════════════ */
+.search-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(11,17,32,.92);
+  backdrop-filter: blur(4px);
+  z-index: 9999;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 80px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s;
+}
+.search-overlay.open { opacity: 1; pointer-events: all; }
+.search-box {
+  background: var(--white);
+  border-radius: var(--r2);
+  width: 100%;
+  max-width: 680px;
+  padding: 28px;
+  box-shadow: var(--sh-lg);
+  transform: translateY(-20px);
+  transition: transform .25s;
+}
+.search-overlay.open .search-box { transform: translateY(0); }
+.search-box-inner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 2px solid var(--cobalt);
+  padding-bottom: 14px;
+  margin-bottom: 20px;
+}
+.search-box-inner i { font-size: 20px; color: var(--cobalt); flex-shrink: 0; }
+.search-box-inner input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  font-family: var(--sans);
+  color: var(--ink);
+  background: transparent;
+}
+.search-box-inner input::placeholder { color: var(--mist); }
+.search-close {
+  background: var(--canvas); border: 1px solid var(--rule);
+  border-radius: var(--r); padding: 5px 10px;
+  font-size: 12px; font-weight: 600; color: var(--slate); cursor: pointer;
+  flex-shrink: 0;
+}
+.search-hints { display: flex; gap: 8px; flex-wrap: wrap; }
+.search-hint-label { font-size: 12px; color: var(--mist); margin-right: 4px; }
+.search-hint-tag {
+  background: var(--canvas); border: 1px solid var(--rule);
+  border-radius: 999px; padding: 4px 12px;
+  font-size: 12px; font-weight: 600; color: var(--slate); cursor: pointer;
+  transition: all .2s;
+}
+.search-hint-tag:hover { background: var(--cobalt-light); color: var(--cobalt); border-color: var(--cobalt-mid); }
+
+/* ═══════════════════════════════════════════════════════════════
+   MOBILE NAV DRAWER
+═══════════════════════════════════════════════════════════════ */
+.mobile-nav {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: var(--midnight);
+  z-index: 9998;
+  flex-direction: column;
+  overflow-y: auto;
+}
+.mobile-nav.open { display: flex; }
+.mobile-nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.mobile-nav-header .brand-small {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 900;
+  color: #fff;
+}
+.mobile-nav-header .brand-small span { color: var(--cobalt); }
+.mobile-nav-close {
+  background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12);
+  border-radius: var(--r); padding: 7px 12px;
+  font-size: 14px; color: rgba(255,255,255,.7); cursor: pointer;
+}
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+}
+.mobile-nav-links a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(255,255,255,.7);
+  border-bottom: 1px solid rgba(255,255,255,.05);
+  transition: all .2s;
+}
+.mobile-nav-links a:hover, .mobile-nav-links a.active {
+  color: #fff;
+  background: rgba(255,255,255,.04);
+}
+.mobile-nav-links a i { width: 20px; font-size: 15px; color: rgba(255,255,255,.3); }
+.mobile-nav-cta {
+  padding: 20px 24px;
+  border-top: 1px solid rgba(255,255,255,.08);
+  margin-top: auto;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .masthead-meta { display: none; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
+}
+
+@media (max-width: 768px) {
+  .top-bar-links { display: none; }
+  .top-bar-date { display: none; }
+  .top-bar-cta { padding: 0 14px; font-size: 11px; }
+
+  .masthead-inner { flex-direction: column; align-items: flex-start; gap: 14px; }
+  .masthead-actions { align-items: flex-start; width: 100%; }
+  .masthead-search { min-width: unset; width: 100%; }
+  .brand-gazette { display: none; }
+  .brand-pak, .brand-tax { font-size: 32px; }
+
+  .main-nav-links { display: none; }
+  .nav-mobile-toggle { display: flex; }
+  .main-nav-right .nav-live { display: none; }
+
+  .demo-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+  .footer-newsletter-inner { flex-direction: column; gap: 20px; }
+  .footer-newsletter-form input { width: 100%; }
+  .footer-bottom-inner { flex-direction: column; align-items: flex-start; gap: 10px; }
+}
+
+@media (max-width: 480px) {
+  .container { padding: 0 16px; }
+  .ticker-label span { display: none; }
+  .brand-pre { display: none; }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SCROLL PROGRESS BAR
+═══════════════════════════════════════════════════════════════ */
+.scroll-progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--cobalt), var(--emerald));
+  width: 0%;
+  z-index: 10000;
+  transition: width .1s linear;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   BACK TO TOP
+═══════════════════════════════════════════════════════════════ */
+.back-to-top {
+  position: fixed;
+  bottom: 28px; right: 28px;
+  width: 44px; height: 44px;
+  background: var(--midnight);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: var(--r);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,.7);
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: var(--sh);
+  opacity: 0;
+  pointer-events: none;
+  transition: all .3s;
+  z-index: 1000;
+}
+.back-to-top.visible { opacity: 1; pointer-events: all; }
+.back-to-top:hover { background: var(--cobalt); color: #fff; transform: translateY(-2px); }
+</style>
+<link rel="canonical" href="https://tax.ifatassociates.com/blog.html">
+<meta property="og:url" content="https://tax.ifatassociates.com/blog.html">
+<meta property="og:site_name" content="PakTax Gazette">
+<meta name="robots" content="index, follow">
+</head>
+<body>
+
+<!-- ── Scroll progress ── -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ── Search overlay ── -->
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-box">
+    <div class="search-box-inner">
+      <i class="fas fa-search"></i>
+      <input type="text" id="searchInput" placeholder="Search SROs, tax topics, budget…" autofocus>
+      <button class="search-close" onclick="closeSearch()">ESC</button>
+    </div>
+    <div class="search-hints">
+      <span class="search-hint-label">Try:</span>
+      <span class="search-hint-tag">Income Tax Slabs</span>
+      <span class="search-hint-tag">SRO 847</span>
+      <span class="search-hint-tag">Finance Bill 2026</span>
+      <span class="search-hint-tag">WHT rates</span>
+      <span class="search-hint-tag">Sales Tax return</span>
+      <span class="search-hint-tag">Super Tax</span>
+    </div>
+  </div>
+</div>
+
+<!-- ── Mobile nav drawer ── -->
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-header">
+    <div class="brand-small">Pak<span>Tax</span> Gazette</div>
+    <button class="mobile-nav-close" onclick="closeMobileNav()"><i class="fas fa-times"></i></button>
+  </div>
+    <nav class="mobile-nav-links">
+    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+    <a href="sro.html"><i class="fas fa-scroll"></i> SRO Tracker</a>
+    <a href="budget.html"><i class="fas fa-landmark"></i> Finance Bill</a>
+    <a href="blog.html" class="active"><i class="fas fa-pen-nib"></i> Tax Blog</a>
+    <a href="tools.html"><i class="fas fa-calculator"></i> Tax Tools</a>
+    <a href="tools.html"><i class="fas fa-calendar-check"></i> Tax Calendar</a>
+    <a href="#"><i class="fas fa-bell"></i> Alerts</a>
+  </nav>
+  <div class="mobile-nav-cta">
+    <a href="https://www.ifatassociates.com" target="_blank" class="btn btn-primary" style="width:100%;justify-content:center;">
+      <i class="fas fa-briefcase"></i> Book Tax Consultation
+    </a>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     TOP UTILITY BAR
+════════════════════════════════════════════ -->
+<div class="top-bar">
+  <div class="container">
+    <div class="top-bar-inner">
+      <div class="top-bar-left">
+        <div class="top-bar-date">
+          <i class="fas fa-calendar"></i>
+          <span id="currentDate">Friday, 27 June 2026</span>
+        </div>
+        <div class="top-bar-links">
+          <a href="https://iris.fbr.gov.pk" target="_blank"><i class="fas fa-external-link-alt"></i> FBR IRIS</a>
+          <a href="https://atl.fbr.gov.pk" target="_blank"><i class="fas fa-external-link-alt"></i> ATL Lookup</a>
+          <a href="https://www.fbr.gov.pk" target="_blank"><i class="fas fa-external-link-alt"></i> FBR.gov.pk</a>
+          <a href="https://www.secp.gov.pk" target="_blank"><i class="fas fa-external-link-alt"></i> SECP</a>
+        </div>
+      </div>
+      <div class="top-bar-right">
+        <div class="top-bar-social">
+          <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <a href="https://www.ifatassociates.com" target="_blank" class="top-bar-cta">
+          <i class="fas fa-phone-alt"></i> Get Tax Consultation
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     MASTHEAD
+════════════════════════════════════════════ -->
+<div class="masthead">
+  <div class="container">
+    <div class="masthead-inner">
+
+      <!-- Left: Wordmark -->
+      <div class="brand-wordmark">
+        <div class="brand-pre">Pakistan's Tax News Hub</div>
+        <div class="brand-name-row">
+          <span class="brand-pak">Pak</span><span class="brand-tax">Tax</span>
+          <span class="brand-gazette">Gazette</span>
+        </div>
+        <div class="brand-sub">SROs · Finance Bill · Tax Blog · Tools · Calculators</div>
+      </div>
+
+      <!-- Right: Search + subscribe -->
+      <div class="masthead-actions">
+        <div class="masthead-search" onclick="openSearch()" role="button">
+          <i class="fas fa-search" style="color:var(--cobalt)"></i>
+          <span>Search SROs, topics, guides…</span>
+          <kbd>Ctrl K</kbd>
+        </div>
+        <a href="#newsletter" class="masthead-subscribe">
+          <i class="fas fa-envelope"></i>
+          Subscribe to Pakistan Tax Digest
+        </a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     MAIN NAVIGATION
+════════════════════════════════════════════ -->
+<nav class="main-nav-bar" id="mainNav">
+  <div class="container">
+    <div class="main-nav-inner">
+            <div class="main-nav-links">
+        <a href="index.html"><i class="fas fa-home"></i> Home</a>
+        <a href="sro.html" style="position:relative"><i class="fas fa-scroll"></i> SRO Tracker<span class="nav-dot"></span></a>
+        <a href="budget.html"><i class="fas fa-landmark"></i> Finance Bill</a>
+        <a href="blog.html" class="active"><i class="fas fa-pen-nib"></i> Tax Blog</a>
+        <a href="tools.html"><i class="fas fa-calculator"></i> Tax Tools <span class="nav-new-tag">Free</span></a>
+        <a href="tools.html"><i class="fas fa-calendar-check"></i> Tax Calendar</a>
+        <a href="article.html"><i class="fas fa-book-open"></i> FBR Notices</a>
+      </div>
+      <div class="main-nav-right">
+        <div class="nav-live">
+          <div class="nav-live-dot"></div>
+          <span>Live Updates</span>
+        </div>
+      </div>
+      <button class="nav-mobile-toggle" onclick="openMobileNav()">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ════════════════════════════════════════════
+     BREAKING NEWS TICKER
+════════════════════════════════════════════ -->
+<div class="ticker-bar">
+  <div class="ticker-label">
+    <div class="ticker-label-dot"></div>
+    <span>Breaking</span>
+  </div>
+  <div class="ticker-track">
+    <div class="ticker-inner" id="tickerInner">
+      <!-- Items duplicated for seamless loop -->
+      <div class="ticker-item"><span class="ticker-tag">SRO</span><a href="#">FBR SRO 847(I)/2026 — Revised WHT rates for non-filers effective July 1, 2026</a></div>
+      <div class="ticker-item"><span class="ticker-tag">Deadline</span><a href="#">Income Tax Return TY 2025-26 — Filing deadline September 30, 2026</a></div>
+      <div class="ticker-item"><span class="ticker-tag">Budget</span><a href="budget.html">Finance Bill 2026-27 tabled in National Assembly on June 20 — full summary available</a></div>
+      <div class="ticker-item"><span class="ticker-tag">ATL</span><a href="#">Active Taxpayer List updated — check your status on FBR portal before July 1</a></div>
+      <div class="ticker-item"><span class="ticker-tag">Sales Tax</span><a href="#">POS integration mandatory for all Tier-1 retailers in all cities from July 2026</a></div>
+      <!-- Duplicate set for seamless loop -->
+      <div class="ticker-item"><span class="ticker-tag">SRO</span><a href="#">FBR SRO 847(I)/2026 — Revised WHT rates for non-filers effective July 1, 2026</a></div>
+      <div class="ticker-item"><span class="ticker-tag">Deadline</span><a href="#">Income Tax Return TY 2025-26 — Filing deadline September 30, 2026</a></div>
+      <div class="ticker-item"><span class="ticker-tag">Budget</span><a href="budget.html">Finance Bill 2026-27 tabled in National Assembly on June 20 — full summary available</a></div>
+      <div class="ticker-item"><span class="ticker-tag">ATL</span><a href="#">Active Taxpayer List updated — check your status on FBR portal before July 1</a></div>
+      <div class="ticker-item"><span class="ticker-tag">Sales Tax</span><a href="#">POS integration mandatory for all Tier-1 retailers in all cities from July 2026</a></div>
+    </div>
+  </div>
+</div>
+     FOOTER
+════════════════════════════════════════════ -->
+<!-- ════════════════════════════════════════════
+     BLOG LISTING — STYLES
+════════════════════════════════════════════ -->
+<style>
+
+/* ── Page hero ── */
+.blog-hero {
+  background: var(--midnight);
+  padding: 44px 0 36px;
+  border-bottom: 3px solid var(--cobalt);
+}
+.blog-hero-inner {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.blog-hero-eyebrow {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--cobalt-mid);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.blog-hero h1 {
+  font-family: var(--serif);
+  font-size: clamp(24px, 4vw, 36px);
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 10px;
+  line-height: 1.15;
+  letter-spacing: -.02em;
+}
+.blog-hero p {
+  font-size: 14px;
+  color: rgba(255,255,255,.55);
+  max-width: 500px;
+  line-height: 1.65;
+}
+.blog-hero-stats {
+  display: flex;
+  gap: 14px;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+.blog-stat {
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: var(--r2);
+  padding: 12px 18px;
+  text-align: center;
+  min-width: 80px;
+}
+.blog-stat .n {
+  font-family: var(--serif);
+  font-size: 24px;
+  font-weight: 900;
+  color: #fff;
+  line-height: 1;
+}
+.blog-stat .l {
+  font-size: 10px;
+  color: rgba(255,255,255,.4);
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  margin-top: 3px;
+}
+
+/* ── Filter bar ── */
+.blog-filter-bar {
+  background: var(--white);
+  border-bottom: 1px solid var(--rule);
+  padding: 0;
+  position: sticky;
+  top: 48px;
+  z-index: 200;
+  box-shadow: var(--sh-sm);
+}
+.blog-filter-inner {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.blog-filter-inner::-webkit-scrollbar { display: none; }
+.blog-filter-tab {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 13px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--mist);
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: all .2s;
+  white-space: nowrap;
+  background: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  font-family: var(--sans);
+}
+.blog-filter-tab:hover { color: var(--ink); border-bottom-color: var(--rule); }
+.blog-filter-tab.active { color: var(--cobalt); border-bottom-color: var(--cobalt); }
+.blog-filter-tab .tab-count {
+  font-size: 10px;
+  font-weight: 700;
+  background: var(--canvas);
+  color: var(--mist);
+  border-radius: 999px;
+  padding: 1px 7px;
+  border: 1px solid var(--rule);
+}
+.blog-filter-tab.active .tab-count {
+  background: var(--cobalt-light);
+  color: var(--cobalt);
+  border-color: var(--cobalt-mid);
+}
+.blog-search-wrap {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  padding: 0 0 0 16px;
+  border-left: 1px solid var(--rule);
+  flex-shrink: 0;
+}
+.blog-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--canvas);
+  border: 1.5px solid var(--rule);
+  border-radius: var(--r);
+  padding: 6px 14px;
+  font-size: 13px;
+  color: var(--mist);
+  transition: all .2s;
+  min-width: 200px;
+}
+.blog-search:focus-within { border-color: var(--cobalt); background: var(--white); }
+.blog-search i { color: var(--mist); font-size: 12px; flex-shrink: 0; }
+.blog-search input {
+  border: none; background: transparent; outline: none;
+  font-size: 13px; color: var(--ink); font-family: var(--sans); width: 100%;
+}
+.blog-search input::placeholder { color: var(--mist); }
+
+/* ── Main layout ── */
+.blog-main { padding: 40px 0 60px; }
+.blog-cols {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 52px;
+  align-items: start;
+}
+
+/* ── Featured post (lead card) ── */
+.featured-post {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  border-radius: var(--r2);
+  overflow: hidden;
+  margin-bottom: 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  transition: box-shadow .25s;
+}
+.featured-post:hover { box-shadow: var(--sh); }
+.featured-post-visual {
+  background: linear-gradient(135deg, var(--midnight) 0%, #1A3A8F 100%);
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 28px;
+  position: relative;
+  overflow: hidden;
+}
+.featured-post-visual::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M20 20h20v20H20zM0 0h20v20H0z'/%3E%3C/g%3E%3C/svg%3E");
+}
+.featured-label {
+  position: absolute;
+  top: 18px; left: 18px;
+  background: var(--cobalt);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 4px;
+}
+.featured-post-icon {
+  font-size: 56px;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 16px;
+}
+.featured-post-visual-meta {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  gap: 12px;
+  font-size: 12px;
+  color: rgba(255,255,255,.6);
+}
+.featured-post-body {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.featured-post-body .tags { display: flex; gap: 7px; margin-bottom: 14px; flex-wrap: wrap; }
+.featured-post-body h2 {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--ink);
+  line-height: 1.25;
+  margin-bottom: 12px;
+  letter-spacing: -.01em;
+}
+.featured-post-body h2 a:hover { color: var(--cobalt); }
+.featured-post-body p {
+  font-size: 14px;
+  line-height: 1.72;
+  color: var(--slate);
+  margin-bottom: 20px;
+}
+.featured-post-meta {
+  display: flex;
+  gap: 16px;
+  font-size: 12px;
+  color: var(--mist);
+  flex-wrap: wrap;
+}
+.featured-post-meta span { display: flex; align-items: center; gap: 5px; }
+
+/* ── Section head ── */
+.blog-section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--ink);
+  margin-bottom: 22px;
+}
+.blog-section-head h2 {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 900;
+  color: var(--ink);
+}
+.blog-section-head a {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--cobalt);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.blog-section-head a:hover { text-decoration: underline; }
+
+/* ── Blog post cards (list view) ── */
+.blog-post-list { display: flex; flex-direction: column; gap: 0; }
+.blog-post-item {
+  display: flex;
+  gap: 20px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--rule);
+  align-items: flex-start;
+  transition: background .15s;
+}
+.blog-post-item:last-child { border-bottom: none; }
+.blog-post-thumb {
+  width: 100px;
+  height: 76px;
+  border-radius: var(--r);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  position: relative;
+  overflow: hidden;
+}
+.blog-post-thumb.navy  { background: linear-gradient(135deg, var(--midnight), #1A3A8F); }
+.blog-post-thumb.jade  { background: linear-gradient(135deg, #063E2F, var(--emerald)); }
+.blog-post-thumb.amber { background: linear-gradient(135deg, #78350F, var(--amber)); }
+.blog-post-thumb.cobalt{ background: linear-gradient(135deg, #0F2D80, var(--cobalt)); }
+.blog-post-thumb.purple{ background: linear-gradient(135deg, #3B0764, #7C3AED); }
+.blog-post-thumb.red   { background: linear-gradient(135deg, #7F1D1D, var(--red)); }
+.blog-post-body { flex: 1; min-width: 0; }
+.blog-post-body .tags {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.blog-post-body h3 {
+  font-size: 15.5px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.35;
+  margin-bottom: 6px;
+  letter-spacing: -.01em;
+}
+.blog-post-body h3 a:hover { color: var(--cobalt); }
+.blog-post-body p {
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--slate);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.blog-post-meta {
+  display: flex;
+  gap: 16px;
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--mist);
+  flex-wrap: wrap;
+  align-items: center;
+}
+.blog-post-meta span { display: flex; align-items: center; gap: 5px; }
+.blog-post-meta .read-time {
+  background: var(--canvas);
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  padding: 2px 9px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--slate);
+}
+.blog-post-views {
+  margin-left: auto;
+  font-size: 11.5px;
+  color: var(--mist);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ── Grid view (2-col cards) ── */
+.blog-grid-view {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+.blog-grid-card {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  border-radius: var(--r2);
+  overflow: hidden;
+  transition: box-shadow .2s, transform .2s;
+}
+.blog-grid-card:hover { box-shadow: var(--sh); transform: translateY(-2px); }
+.blog-grid-card-top {
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 38px;
+  position: relative;
+}
+.blog-grid-card-top .read-badge {
+  position: absolute;
+  bottom: 10px; right: 10px;
+  background: rgba(0,0,0,.45);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+.blog-grid-card-body { padding: 16px; }
+.blog-grid-card-body .tags { margin-bottom: 8px; }
+.blog-grid-card-body h3 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.35;
+  margin-bottom: 6px;
+}
+.blog-grid-card-body h3 a:hover { color: var(--cobalt); }
+.blog-grid-card-body p {
+  font-size: 12px;
+  color: var(--slate);
+  line-height: 1.55;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.blog-grid-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  font-size: 11.5px;
+  color: var(--mist);
+}
+
+/* View toggle */
+.view-toggle {
+  display: flex;
+  gap: 4px;
+  background: var(--canvas);
+  border: 1px solid var(--rule);
+  border-radius: var(--r);
+  padding: 3px;
+}
+.view-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px; height: 28px;
+  border-radius: 5px;
+  border: none;
+  background: transparent;
+  color: var(--mist);
+  cursor: pointer;
+  font-size: 13px;
+  transition: all .2s;
+}
+.view-toggle-btn.active { background: var(--white); color: var(--cobalt); box-shadow: var(--sh-sm); }
+
+/* Results bar */
+.blog-results-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 22px;
+  flex-wrap: wrap;
+}
+.blog-results-count { font-size: 13.5px; color: var(--slate); }
+.blog-results-count strong { color: var(--ink); font-weight: 700; }
+.blog-results-right { display: flex; align-items: center; gap: 12px; }
+
+/* Load more */
+.load-more-wrap {
+  text-align: center;
+  padding-top: 32px;
+}
+.load-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--white);
+  border: 2px solid var(--rule);
+  border-radius: var(--r);
+  padding: 11px 28px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--slate);
+  cursor: pointer;
+  transition: all .2s;
+  font-family: var(--sans);
+}
+.load-more-btn:hover { border-color: var(--cobalt); color: var(--cobalt); background: var(--cobalt-light); }
+
+/* No results */
+.no-results {
+  text-align: center;
+  padding: 60px 20px;
+  display: none;
+}
+.no-results i { font-size: 40px; color: var(--rule); margin-bottom: 14px; display: block; }
+.no-results h3 { font-family: var(--serif); font-size: 20px; color: var(--ink); margin-bottom: 8px; }
+.no-results p { font-size: 14px; color: var(--mist); }
+
+/* ── SIDEBAR ── */
+.blog-sidebar { display: flex; flex-direction: column; gap: 22px; }
+.widget {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  border-radius: var(--r2);
+  overflow: hidden;
+}
+.widget-head {
+  background: var(--midnight);
+  color: #fff;
+  padding: 11px 18px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.widget-head i { color: rgba(255,255,255,.4); font-size: 12px; }
+.widget-body { padding: 16px 18px; }
+
+/* Author widget */
+.author-widget {
+  text-align: center;
+  padding: 22px 18px;
+}
+.author-avatar-wrap {
+  width: 68px; height: 68px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--emerald), #052E1E);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 28px;
+  margin: 0 auto 12px;
+  border: 3px solid var(--emerald-light);
+}
+.author-widget h3 { font-size: 15px; font-weight: 700; color: var(--ink); margin-bottom: 3px; }
+.author-widget .role { font-size: 12px; color: var(--mist); margin-bottom: 10px; }
+.author-widget p { font-size: 12.5px; line-height: 1.65; color: var(--slate); margin-bottom: 14px; }
+.author-widget a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--cobalt);
+}
+.author-widget a:hover { text-decoration: underline; }
+
+/* Popular posts */
+.pop-item {
+  display: flex; gap: 12px; align-items: flex-start;
+  padding: 10px 0; border-bottom: 1px solid var(--rule);
+}
+.pop-item:last-child { border-bottom: none; }
+.pop-num {
+  font-family: var(--mono); font-size: 18px; font-weight: 700;
+  color: var(--rule); line-height: 1; min-width: 24px; flex-shrink: 0;
+}
+.pop-item:first-child .pop-num { color: var(--cobalt); }
+.pop-item:nth-child(2) .pop-num { color: var(--cobalt); opacity:.55; }
+.pop-item h4 { font-size: 12.5px; font-weight: 700; color: var(--ink); line-height: 1.35; }
+.pop-item h4 a:hover { color: var(--cobalt); }
+.pop-item p { font-size: 11.5px; color: var(--mist); margin-top: 2px; }
+
+/* Tags cloud */
+.tags-cloud { display: flex; gap: 7px; flex-wrap: wrap; }
+.tags-cloud a {
+  display: inline-block;
+  font-size: 11px; font-weight: 700; letter-spacing: .04em;
+  text-transform: uppercase;
+  padding: 4px 11px; border-radius: 5px;
+  background: var(--canvas); border: 1px solid var(--rule);
+  color: var(--slate); transition: all .2s; cursor: pointer;
+}
+.tags-cloud a:hover {
+  background: var(--cobalt-light);
+  border-color: var(--cobalt-mid);
+  color: var(--cobalt);
+}
+
+/* Newsletter mini */
+.nw-mini {
+  background: linear-gradient(145deg, var(--midnight), #0D2960);
+  border-radius: var(--r2); padding: 20px; color: #fff;
+}
+.nw-mini h4 { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.nw-mini p { font-size: 12.5px; color: rgba(255,255,255,.6); margin-bottom: 14px; line-height: 1.6; }
+.nw-mini input {
+  width: 100%;
+  background: rgba(255,255,255,.1); border: 1.5px solid rgba(255,255,255,.15);
+  border-radius: var(--r); padding: 9px 14px;
+  font-size: 13px; color: #fff; font-family: var(--sans);
+  outline: none; margin-bottom: 8px;
+}
+.nw-mini input::placeholder { color: rgba(255,255,255,.3); }
+.nw-mini button {
+  width: 100%; background: var(--cobalt); color: #fff;
+  border: none; border-radius: var(--r); padding: 10px;
+  font-size: 13px; font-weight: 700; cursor: pointer;
+  font-family: var(--sans); transition: background .2s;
+}
+.nw-mini button:hover { background: #fff; color: var(--cobalt); }
+
+/* Archive widget */
+.archive-list { display: flex; flex-direction: column; gap: 0; }
+.archive-item {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 10px 0; border-bottom: 1px solid var(--rule);
+  font-size: 13px; cursor: pointer; transition: color .15s;
+}
+.archive-item:last-child { border-bottom: none; }
+.archive-item:hover .archive-month { color: var(--cobalt); }
+.archive-month { font-weight: 600; color: var(--ink); display: flex; align-items: center; gap: 6px; }
+.archive-month i { font-size: 10px; color: var(--mist); }
+.archive-count {
+  font-family: var(--mono); font-size: 12px; font-weight: 700;
+  color: var(--mist); background: var(--canvas);
+  border: 1px solid var(--rule); border-radius: 999px; padding: 1px 8px;
+}
+
+/* Consult CTA */
+.sidebar-consult {
+  background: linear-gradient(145deg, var(--emerald), #052E1E);
+  border-radius: var(--r2); padding: 20px; color: #fff; text-align: center;
+}
+.sidebar-consult .icon { font-size: 26px; margin-bottom: 8px; }
+.sidebar-consult h3 { font-family: var(--serif); font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 5px; }
+.sidebar-consult p { font-size: 12px; color: rgba(255,255,255,.65); margin-bottom: 14px; line-height: 1.6; }
+.sidebar-consult a.cta {
+  display: block; background: #fff; color: var(--emerald);
+  border-radius: var(--r); padding: 9px; font-size: 13px; font-weight: 700;
+  transition: all .2s; text-align: center;
+}
+.sidebar-consult a.cta:hover { background: var(--emerald-light); }
+.sidebar-consult .credit { font-size: 11px; color: rgba(255,255,255,.35); margin-top: 8px; }
+.sidebar-consult .credit a { color: rgba(255,255,255,.55); text-decoration: underline; }
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .blog-cols { grid-template-columns: 1fr 260px; gap: 36px; }
+}
+@media (max-width: 768px) {
+  .blog-cols { grid-template-columns: 1fr; }
+  .blog-sidebar { display: none; }
+  .featured-post { grid-template-columns: 1fr; }
+  .blog-hero-inner { flex-direction: column; align-items: flex-start; }
+  .blog-hero-stats { width: 100%; }
+  .blog-grid-view { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .blog-post-thumb { width: 72px; height: 56px; font-size: 22px; }
+}
+</style>
+
+<!-- ════════════════════════════════════════════
+     BLOG LISTING — HTML CONTENT
+════════════════════════════════════════════ -->
+
+<!-- Breadcrumb -->
+<div style="background:var(--white);border-bottom:1px solid var(--rule);padding:10px 0;">
+  <div class="container">
+    <div style="display:flex;align-items:center;gap:6px;font-size:12.5px;color:var(--mist);">
+      <a href="index.html" style="color:var(--cobalt);font-weight:500;"><i class="fas fa-home"></i> Home</a>
+      <i class="fas fa-chevron-right" style="font-size:10px;color:var(--rule);"></i>
+      <span style="color:var(--slate);">Tax Blog</span>
+    </div>
+  </div>
+</div>
+
+<!-- Hero -->
+<div class="blog-hero">
+  <div class="container">
+    <div class="blog-hero-inner">
+      <div>
+        <div class="blog-hero-eyebrow">Written by practicing tax professionals</div>
+        <h1>Tax Blog &amp; Explainers</h1>
+        <p>Plain-language guides on Pakistan's tax law — income tax, sales tax, FBR compliance, Finance Bill analysis, and step-by-step how-to guides for individuals and businesses.</p>
+      </div>
+      <div class="blog-hero-stats">
+        <div class="blog-stat">
+          <div class="n">48</div>
+          <div class="l">Articles</div>
+        </div>
+        <div class="blog-stat">
+          <div class="n">9</div>
+          <div class="l">This Month</div>
+        </div>
+        <div class="blog-stat">
+          <div class="n">12</div>
+          <div class="l">How-To Guides</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Filter tabs -->
+<div class="blog-filter-bar">
+  <div class="container">
+    <div class="blog-filter-inner">
+      <button class="blog-filter-tab active" onclick="filterBlog('all', this)">
+        All <span class="tab-count" id="countAll">12</span>
+      </button>
+      <button class="blog-filter-tab" onclick="filterBlog('income-tax', this)">
+        <i class="fas fa-user-tie" style="font-size:11px;"></i> Income Tax <span class="tab-count">5</span>
+      </button>
+      <button class="blog-filter-tab" onclick="filterBlog('sales-tax', this)">
+        <i class="fas fa-receipt" style="font-size:11px;"></i> Sales Tax <span class="tab-count">2</span>
+      </button>
+      <button class="blog-filter-tab" onclick="filterBlog('how-to', this)">
+        <i class="fas fa-tools" style="font-size:11px;"></i> How-To Guides <span class="tab-count">3</span>
+      </button>
+      <button class="blog-filter-tab" onclick="filterBlog('fbr-notices', this)">
+        <i class="fas fa-envelope-open-text" style="font-size:11px;"></i> FBR Notices <span class="tab-count">1</span>
+      </button>
+      <button class="blog-filter-tab" onclick="filterBlog('business', this)">
+        <i class="fas fa-building" style="font-size:11px;"></i> For Business <span class="tab-count">1</span>
+      </button>
+      <div class="blog-search-wrap">
+        <div class="blog-search">
+          <i class="fas fa-search"></i>
+          <input type="text" placeholder="Search articles…" oninput="searchBlog(this.value)" id="blogSearchInput">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Main -->
+<div class="blog-main">
+  <div class="container">
+    <div class="blog-cols">
+
+      <!-- ── LEFT: Posts ── -->
+      <div>
+
+        <!-- Featured post -->
+        <div class="featured-post" id="featuredPost">
+          <div class="featured-post-visual navy">
+            <div class="featured-label">Featured</div>
+            <div class="featured-post-icon">📊</div>
+            <div class="featured-post-visual-meta">
+              <span><i class="far fa-clock"></i> 7 min read</span>
+              <span><i class="far fa-eye"></i> 4,218 views</span>
+            </div>
+          </div>
+          <div class="featured-post-body">
+            <div class="tags">
+              <span class="tag tag-blue">Income Tax</span>
+              <span class="tag tag-mono">TY 2025-26</span>
+            </div>
+            <h2><a href="article.html">Income Tax Slabs 2025-26: The Complete Guide for Salaried &amp; Business Owners</a></h2>
+            <p>New slab rates, the high-income surcharge explained, and worked examples showing exactly how much tax salaried employees and business owners owe this year — with verified rates from FBR.</p>
+            <div class="featured-post-meta">
+              <span><i class="fas fa-user-circle" style="color:var(--cobalt);"></i> Ifat Associates</span>
+              <span><i class="far fa-calendar-alt" style="color:var(--cobalt);"></i> June 15, 2026</span>
+              <span><i class="far fa-comment" style="color:var(--cobalt);"></i> 14 comments</span>
+            </div>
+            <div style="margin-top:18px;">
+              <a href="article.html" class="btn btn-primary btn-sm"><i class="fas fa-arrow-right"></i> Read Article</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Results bar -->
+        <div class="blog-results-bar">
+          <div class="blog-results-count">Showing <strong id="visibleCount">11</strong> articles</div>
+          <div class="blog-results-right">
+            <div class="view-toggle">
+              <button class="view-toggle-btn active" id="listViewBtn" onclick="setView('list', this)" title="List view"><i class="fas fa-list"></i></button>
+              <button class="view-toggle-btn" id="gridViewBtn" onclick="setView('grid', this)" title="Grid view"><i class="fas fa-th-large"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Post list (rendered by JS) -->
+        <div id="blogListView" class="blog-post-list"></div>
+        <div id="blogGridView" class="blog-grid-view" style="display:none;"></div>
+        <div class="no-results" id="noResults">
+          <i class="fas fa-search"></i>
+          <h3>No articles found</h3>
+          <p>Try a different search term or clear the filter.</p>
+        </div>
+
+        <div class="load-more-wrap" id="loadMoreWrap">
+          <button class="load-more-btn" onclick="loadMore()">
+            <i class="fas fa-plus"></i> Load More Articles
+          </button>
+        </div>
+
+      </div><!-- end left col -->
+
+      <!-- ── RIGHT: Sidebar ── -->
+      <aside class="blog-sidebar">
+
+        <!-- Author -->
+        <div class="widget">
+          <div class="widget-head"><i class="fas fa-user-tie"></i> Your Tax Consultant</div>
+          <div class="widget-body author-widget">
+            <div class="author-avatar-wrap">🏢</div>
+            <h3>Ifat Associates</h3>
+            <div class="role">Tax &amp; Business Consultants · Faisalabad</div>
+            <p>A professional tax and business consulting practice. Our guides are written by practicing CMAs with hands-on FBR compliance experience — not AI-generated content or copied text.</p>
+            <a href="https://www.ifatassociates.com" target="_blank">
+              <i class="fas fa-external-link-alt"></i> ifatassociates.com
+            </a>
+          </div>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="nw-mini">
+          <h4>📬 Pakistan Tax Digest</h4>
+          <p>New articles + weekly SRO roundup every Friday. Free, no spam.</p>
+          <input type="email" placeholder="your@email.com">
+          <button>Subscribe →</button>
+        </div>
+
+        <!-- Most read -->
+        <div class="widget">
+          <div class="widget-head"><i class="fas fa-fire"></i> Most Read</div>
+          <div class="widget-body">
+            <div class="pop-item">
+              <span class="pop-num">01</span>
+              <div><h4><a href="#">Income Tax Slabs 2025-26</a></h4><p>4,218 views</p></div>
+            </div>
+            <div class="pop-item">
+              <span class="pop-num">02</span>
+              <div><h4><a href="#">How to File on IRIS 2.0</a></h4><p>3,891 views</p></div>
+            </div>
+            <div class="pop-item">
+              <span class="pop-num">03</span>
+              <div><h4><a href="#">Non-Filer WHT Rates 2026</a></h4><p>3,140 views</p></div>
+            </div>
+            <div class="pop-item">
+              <span class="pop-num">04</span>
+              <div><h4><a href="#">Received a 114(4) Notice?</a></h4><p>2,344 views</p></div>
+            </div>
+            <div class="pop-item">
+              <span class="pop-num">05</span>
+              <div><h4><a href="#">What is the ATL?</a></h4><p>2,109 views</p></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tags cloud -->
+        <div class="widget">
+          <div class="widget-head"><i class="fas fa-tags"></i> Browse Topics</div>
+          <div class="widget-body">
+            <div class="tags-cloud">
+              <a href="#" onclick="filterBlog('income-tax', null); return false;">Income Tax</a>
+              <a href="#" onclick="filterBlog('sales-tax', null); return false;">Sales Tax</a>
+              <a href="#" onclick="filterBlog('how-to', null); return false;">How-To</a>
+              <a href="#" onclick="filterBlog('fbr-notices', null); return false;">FBR Notices</a>
+              <a href="#" onclick="filterBlog('business', null); return false;">Business</a>
+              <a href="#">WHT</a>
+              <a href="tools.html">Super Tax</a>
+              <a href="#">ATL</a>
+              <a href="#">NTN</a>
+              <a href="#">Property Tax</a>
+              <a href="#">STRN</a>
+              <a href="#">Customs</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Archive -->
+        <div class="widget">
+          <div class="widget-head"><i class="fas fa-archive"></i> Archive</div>
+          <div class="widget-body">
+            <div class="archive-list">
+              <div class="archive-item">
+                <div class="archive-month"><i class="fas fa-circle" style="color:var(--cobalt);font-size:7px;"></i> June 2026</div>
+                <span class="archive-count">9</span>
+              </div>
+              <div class="archive-item">
+                <div class="archive-month"><i class="far fa-circle" style="font-size:7px;"></i> May 2026</div>
+                <span class="archive-count">12</span>
+              </div>
+              <div class="archive-item">
+                <div class="archive-month"><i class="far fa-circle" style="font-size:7px;"></i> April 2026</div>
+                <span class="archive-count">8</span>
+              </div>
+              <div class="archive-item">
+                <div class="archive-month"><i class="far fa-circle" style="font-size:7px;"></i> March 2026</div>
+                <span class="archive-count">7</span>
+              </div>
+              <div class="archive-item">
+                <div class="archive-month"><i class="far fa-circle" style="font-size:7px;"></i> February 2026</div>
+                <span class="archive-count">6</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Consult CTA -->
+        <div class="sidebar-consult">
+          <div class="icon">📞</div>
+          <h3>Need Professional Help?</h3>
+          <p>FBR compliance, tax return filing &amp; business advisory for SMEs across Pakistan.</p>
+          <a href="https://www.ifatassociates.com" target="_blank" class="cta">Visit Ifat Associates →</a>
+          <div class="credit">by <a href="https://www.ifatassociates.com" target="_blank">ifatassociates.com</a></div>
+        </div>
+
+      </aside>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     BLOG JAVASCRIPT — Data + Filtering
+════════════════════════════════════════════ -->
+<script>
+/* ════════════════════
+   BLOG POST DATA
+   Add new posts here via CMS.
+   Each post = one object.
+════════════════════ */
+const BLOG_POSTS = [
+  {
+    id: 'income-tax-slabs-2025-26',
+    category: 'income-tax',
+    catLabel: 'Income Tax',
+    catClass: 'tag-blue',
+    thumb: 'navy', icon: '📊',
+    title: 'Income Tax Slabs 2025-26: Complete Guide for Salaried & Business Owners',
+    excerpt: 'New slab rates, the high-income surcharge, and worked examples for TY 2025-26 — with verified FBR rates.',
+    date: '2026-06-15', dateDisplay: 'Jun 15, 2026',
+    readTime: '7 min', views: 4218, comments: 14,
+    url: 'article.html', featured: true
+  },
+  {
+    id: 'new-income-tax-slabs-2026-27',
+    category: 'income-tax',
+    catLabel: 'Income Tax',
+    catClass: 'tag-blue',
+    thumb: 'cobalt', icon: '📋',
+    title: 'Finance Act 2026: New Salaried Tax Slabs — What Changed From July 1',
+    excerpt: 'Four brackets reduced, surcharge abolished. We compare FY25-26 vs FY26-27 rates with worked examples and effective rate calculations.',
+    date: '2026-06-24', dateDisplay: 'Jun 24, 2026',
+    readTime: '8 min', views: 2910, comments: 8,
+    url: 'article.html', featured: false
+  },
+  {
+    id: 'iris-filing-guide-2026',
+    category: 'how-to',
+    catLabel: 'How-To Guide',
+    catClass: 'tag-green',
+    thumb: 'jade', icon: '🖥️',
+    title: 'How to File Your Income Tax Return on IRIS 2.0 — Step by Step (2026)',
+    excerpt: 'Complete walkthrough of filing on FBR IRIS — from login to submission. Updated for Tax Year 2025-26 with screenshots described.',
+    date: '2026-06-09', dateDisplay: 'Jun 9, 2026',
+    readTime: '10 min', views: 3891, comments: 22,
+    url: 'article.html', featured: false
+  },
+  {
+    id: 'section-7e-guide',
+    category: 'income-tax',
+    catLabel: 'Income Tax',
+    catClass: 'tag-blue',
+    thumb: 'amber', icon: '🏠',
+    title: 'Section 7E Deemed Rental Income: Which Properties Are Exempt?',
+    excerpt: 'Updated after SRO 761(I)/2026 — AJK, Gilgit-Baltistan, FATA/PATA, and one self-occupied property are now explicitly excluded.',
+    date: '2026-06-12', dateDisplay: 'Jun 12, 2026',
+    readTime: '5 min', views: 1203, comments: 6,
+    url: 'article.html', featured: false
+  },
+  {
+    id: 'fbr-notice-114-guide',
+    category: 'fbr-notices',
+    catLabel: 'FBR Notices',
+    catClass: 'tag-amber',
+    thumb: 'amber', icon: '⚠️',
+    title: 'Received a 114(4) Notice from FBR? Here\'s Exactly What to Do',
+    excerpt: 'Step-by-step guide to responding to income tax return notices — timelines, required documents, and when to get professional help.',
+    date: '2026-05-24', dateDisplay: 'May 24, 2026',
+    readTime: '5 min', views: 2344, comments: 19,
+    url: 'article.html', featured: false
+  },
+  {
+    id: 'advance-tax-business',
+    category: 'income-tax',
+    catLabel: 'Income Tax',
+    catClass: 'tag-blue',
+    thumb: 'navy', icon: '📈',
+    title: 'Advance Tax for Business Owners: What, When & How Much to Pay',
+    excerpt: 'Quarterly advance tax obligations under Section 147 — who must pay, how to calculate each instalment, and penalties for missing deadlines.',
+    date: '2026-06-01', dateDisplay: 'Jun 1, 2026',
+    readTime: '6 min', views: 1102, comments: 7,
+    url: 'article.html', featured: false
+  },
+  {
+    id: 'input-tax-adjustments',
+    category: 'sales-tax',
+    catLabel: 'Sales Tax',
+    catClass: 'tag-green',
+    thumb: 'jade', icon: '🧾',
+    title: 'Input Tax Adjustments: A Practical Guide for Registered Persons',
+    excerpt: 'How to claim input tax credits, which credits are ineligible, and how to avoid mismatches in your monthly sales tax return.',
+    date: '2026-05-28', dateDisplay: 'May 28, 2026',
+    readTime: '7 min', views: 867, comments: 4,
+    url: 'article.html', featured: false
+  },
+  {
+    id: 'atl-guide',
+    category: 'how-to',
+    catLabel: 'How-To Guide',
+    catClass: 'tag-green',
+    thumb: 'cobalt', icon: '✅',
+    title: 'What is the Active Taxpayer List (ATL)? How to Check & Get On It',
+    excerpt: 'The ATL determines your WHT rates on every transaction. This guide explains how to check your status and what to do if you\'re not on it.',
+    date: '2026-05-18', dateDisplay: 'May 18, 2026',
+    readTime: '4 min', views: 2109, comments: 11,
+    url: 'article.html', featured: false
+  },
+  {
+    id: 'super-tax-guide',
+    category: 'business',
+    catLabel: 'For Business',
+    catClass: 'tag-blue',
+    thumb: 'purple', icon: '🏭',
+    title: 'Super Tax 2025-26: Which Companies Pay What & How to Calculate',
+    excerpt: 'Sector-by-sector super tax rates, what counts as "prescribed income", and the impact of the Finance Bill 2026-27 reduction from 10% to 8%.',
+    date: '2026-06-06', dateDisplay: 'Jun 6, 2026',
+    readTime: '6 min', views: 988, comments: 5,
+    url: 'article.html', featured: false
+  },
+  {
+    id: 'bank-wht-guide',
+    category: 'income-tax',
+    catLabel: 'Income Tax',
+    catClass: 'tag-blue',
+    thumb: 'cobalt', icon: '🏦',
+    title: 'Bank WHT 2026: What Filers & Non-Filers Pay on Withdrawals & Profit',
+    excerpt: 'How banks deduct withholding tax on cash withdrawals and profit payments — and how you get it adjusted against your annual return.',
+    date: '2026-05-20', dateDisplay: 'May 20, 2026',
+    readTime: '5 min', views: 3021, comments: 16,
+    url: 'article.html', featured: false
+  },
+  {
+    id: 'ntn-registration-guide',
+    category: 'how-to',
+    catLabel: 'How-To Guide',
+    catClass: 'tag-green',
+    thumb: 'jade', icon: '📝',
+    title: 'How to Get Your NTN: Complete Registration Guide (IRIS 2026)',
+    excerpt: 'Step-by-step NTN registration for individuals, sole proprietors, and companies — documents required, common errors to avoid.',
+    date: '2026-05-10', dateDisplay: 'May 10, 2026',
+    readTime: '8 min', views: 1567, comments: 13,
+    url: 'article.html', featured: false
+  },
+  {
+    id: 'sales-tax-return-guide',
+    category: 'sales-tax',
+    catLabel: 'Sales Tax',
+    catClass: 'tag-green',
+    thumb: 'jade', icon: '🧮',
+    title: 'Monthly Sales Tax Return: How to File Without Errors (IRIS)',
+    excerpt: 'Complete guide to filing the monthly sales tax return — purchase register, sales register, annexures, and how to handle adjustments.',
+    date: '2026-04-28', dateDisplay: 'Apr 28, 2026',
+    readTime: '9 min', views: 743, comments: 3,
+    url: 'article.html', featured: false
+  }
+];
+
+/* ═══════════════════════
+   RENDER FUNCTIONS
+═══════════════════════ */
+function renderListItem(p) {
+  return `
+  <div class="blog-post-item" data-category="${p.category}" data-id="${p.id}">
+    <div class="blog-post-thumb ${p.thumb}">${p.icon}</div>
+    <div class="blog-post-body">
+      <div class="tags">
+        <span class="tag ${p.catClass}">${p.catLabel}</span>
+      </div>
+      <h3><a href="${p.url}">${p.title}</a></h3>
+      <p>${p.excerpt}</p>
+      <div class="blog-post-meta">
+        <span><i class="far fa-calendar-alt"></i> ${p.dateDisplay}</span>
+        <span class="read-time"><i class="far fa-clock"></i> ${p.readTime}</span>
+        <span><i class="far fa-comment"></i> ${p.comments}</span>
+        <span class="blog-post-views"><i class="far fa-eye"></i> ${p.views.toLocaleString()}</span>
+      </div>
+    </div>
+  </div>`;
+}
+
+function renderGridCard(p) {
+  return `
+  <div class="blog-grid-card" data-category="${p.category}" data-id="${p.id}">
+    <div class="blog-grid-card-top ${p.thumb}">
+      ${p.icon}
+      <span class="read-badge"><i class="far fa-clock"></i> ${p.readTime}</span>
+    </div>
+    <div class="blog-grid-card-body">
+      <div class="tags"><span class="tag ${p.catClass}">${p.catLabel}</span></div>
+      <h3><a href="${p.url}">${p.title}</a></h3>
+      <p>${p.excerpt}</p>
+      <div class="blog-grid-meta">
+        <span style="font-size:11.5px;color:var(--mist);">${p.dateDisplay}</span>
+        <span style="font-size:11.5px;color:var(--mist);"><i class="far fa-eye"></i> ${p.views.toLocaleString()}</span>
+      </div>
+    </div>
+  </div>`;
+}
+
+/* ═══════════════════════
+   FILTER + SEARCH
+═══════════════════════ */
+let currentFilter = 'all';
+let currentSearch = '';
+let currentView   = 'list';
+const PAGE_SIZE   = 8;
+let visibleCount  = PAGE_SIZE;
+
+function getFiltered() {
+  let data = BLOG_POSTS.filter(p => !p.featured); // featured shown separately
+  if (currentFilter !== 'all') data = data.filter(p => p.category === currentFilter);
+  if (currentSearch) {
+    const s = currentSearch.toLowerCase();
+    data = data.filter(p =>
+      p.title.toLowerCase().includes(s) ||
+      p.excerpt.toLowerCase().includes(s) ||
+      p.catLabel.toLowerCase().includes(s)
+    );
+  }
+  return data;
+}
+
+function renderPosts() {
+  const data = getFiltered();
+  const shown = data.slice(0, visibleCount);
+
+  document.getElementById('visibleCount').textContent = data.length;
+  document.getElementById('noResults').style.display = data.length === 0 ? 'block' : 'none';
+  document.getElementById('loadMoreWrap').style.display = data.length > visibleCount ? 'block' : 'none';
+
+  const featured = document.getElementById('featuredPost');
+  featured.style.display = (currentFilter === 'all' && !currentSearch) ? 'grid' : 'none';
+
+  if (currentView === 'list') {
+    document.getElementById('blogListView').innerHTML = shown.map(renderListItem).join('');
+    document.getElementById('blogGridView').style.display = 'none';
+    document.getElementById('blogListView').style.display = '';
+  } else {
+    document.getElementById('blogGridView').innerHTML = shown.map(renderGridCard).join('');
+    document.getElementById('blogListView').style.display = 'none';
+    document.getElementById('blogGridView').style.display = 'grid';
+  }
+}
+
+function filterBlog(filter, btn) {
+  currentFilter = filter;
+  visibleCount  = PAGE_SIZE;
+  if (btn) {
+    document.querySelectorAll('.blog-filter-tab').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  } else {
+    document.querySelectorAll('.blog-filter-tab').forEach(b => {
+      if (b.getAttribute('onclick') && b.getAttribute('onclick').includes("'" + filter + "'")) {
+        b.classList.add('active');
+      }
+    });
+  }
+  renderPosts();
+}
+
+function searchBlog(term) {
+  currentSearch = term;
+  visibleCount  = PAGE_SIZE;
+  renderPosts();
+}
+
+function setView(view, btn) {
+  currentView = view;
+  document.querySelectorAll('.view-toggle-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderPosts();
+}
+
+function loadMore() {
+  visibleCount += PAGE_SIZE;
+  renderPosts();
+}
+
+/* ── Init ── */
+document.addEventListener('DOMContentLoaded', renderPosts);
+</script>
+
+<footer class="site-footer">
+
+  <!-- Newsletter band -->
+  <div class="footer-newsletter" id="newsletter">
+    <div class="container">
+      <div class="footer-newsletter-inner">
+        <div class="footer-newsletter-text">
+          <h3>📬 Pakistan Tax Digest</h3>
+          <p>Weekly SRO roundup, budget alerts, deadline reminders &amp; plain-language tax updates — every Friday, free.</p>
+          <div class="footer-newsletter-privacy">No spam. Unsubscribe anytime. Your email is never shared.</div>
+        </div>
+        <div>
+          <div class="footer-newsletter-form">
+            <input type="email" placeholder="your@email.com" id="newsletterEmail">
+            <button onclick="subscribeNewsletter()">Subscribe Free →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main footer -->
+  <div class="footer-main">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Brand + credit -->
+        <div class="footer-brand-col">
+          <div class="footer-brand-name">
+            <span class="pak">Pak</span><span class="tax">Tax</span>
+            <span class="gaz">Gazette</span>
+          </div>
+          <p class="footer-brand-desc">
+            Pakistan's dedicated tax news hub — SRO summaries, Finance Bill analysis, tax calculators, and plain-language guides for individuals and businesses.
+          </p>
+
+          <!-- Ifat Associates credit: always present, never intrusive -->
+          <div class="footer-credit">
+            <div class="footer-credit-icon">🏢</div>
+            <div class="footer-credit-text">
+              <p>Tax advisory &amp; professional services by</p>
+              <a href="https://www.ifatassociates.com" target="_blank" rel="noopener">
+                Ifat Associates — Tax &amp; Business Consultants
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer-social">
+            <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" title="Email"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+
+        <!-- Site sections -->
+        <div class="footer-col">
+          <h4>Content</h4>
+          <ul>
+<li><a href="index.html"><i class="fas fa-chevron-right"></i> Latest Tax News</a></li>
+<li><a href="sro.html"><i class="fas fa-chevron-right"></i> SRO Tracker 2026</a></li>
+<li><a href="budget.html"><i class="fas fa-chevron-right"></i> Finance Bill 2026-27</a></li>
+<li><a href="blog.html"><i class="fas fa-chevron-right"></i> Tax Blog &amp; Guides</a></li>
+<li><a href="article.html"><i class="fas fa-chevron-right"></i> FBR Notice Library</a></li>
+<li><a href="blog.html"><i class="fas fa-chevron-right"></i> Budget Archive</a></li>
+</ul>
+        </div>
+
+        <!-- Tools -->
+        <div class="footer-col">
+          <h4>Free Tools</h4>
+          <ul>
+<li><a href="tools.html"><i class="fas fa-chevron-right"></i> Income Tax Calculator</a></li>
+<li><a href="tools.html"><i class="fas fa-chevron-right"></i> WHT Rate Finder</a></li>
+<li><a href="tools.html"><i class="fas fa-chevron-right"></i> Property CGT Calculator</a></li>
+<li><a href="tools.html"><i class="fas fa-chevron-right"></i> Sales Tax Calculator</a></li>
+<li><a href="tools.html"><i class="fas fa-chevron-right"></i> Deadline Tracker</a></li>
+<li><a href="tools.html"><i class="fas fa-chevron-right"></i> Super Tax Estimator</a></li>
+</ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-col">
+          <h4>Professional Help</h4>
+          <div class="footer-contact-item">
+            <i class="fas fa-globe"></i>
+            <span><a href="https://www.ifatassociates.com" target="_blank">www.ifatassociates.com</a></span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Faisalabad, Pakistan</span>
+          </div>
+          <div style="margin-top:18px;">
+            <a href="https://www.ifatassociates.com" target="_blank" class="btn btn-outline btn-sm" style="font-size:12px;">
+              <i class="fas fa-briefcase"></i> Book Consultation
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="footer-bottom">
+    <div class="container">
+      <div class="footer-bottom-inner">
+        <div class="footer-bottom-left">
+          <div>© 2026 PakTax Gazette. Content by <a href="https://www.ifatassociates.com" target="_blank">Ifat Associates</a>, Faisalabad.</div>
+          <div class="footer-disclaimer">For informational purposes only. Not legal or tax advice. Always consult a qualified tax professional for your specific situation.</div>
+        </div>
+        <div class="footer-bottom-right">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Disclaimer</a>
+          <a href="#">Sitemap</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+<!-- Back to top -->
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<!-- ════════════════════════════════════════════
+     JAVASCRIPT
+════════════════════════════════════════════ -->
+<script>
+/* ── Live date in top bar ── */
+(function() {
+  const days   = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  const now = new Date();
+  const el  = document.getElementById('currentDate');
+  if (el) el.textContent = `${days[now.getDay()]}, ${now.getDate()} ${months[now.getMonth()]} ${now.getFullYear()}`;
+})();
+
+/* ── Scroll progress bar ── */
+window.addEventListener('scroll', function() {
+  const scrollTop = window.scrollY;
+  const docH = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = docH > 0 ? (scrollTop / docH) * 100 : 0;
+  document.getElementById('scrollProgress').style.width = progress + '%';
+
+  // Back to top
+  const btn = document.getElementById('backToTop');
+  if (scrollTop > 400) btn.classList.add('visible');
+  else btn.classList.remove('visible');
+});
+
+/* ── Search overlay ── */
+function openSearch() {
+  document.getElementById('searchOverlay').classList.add('open');
+  setTimeout(() => document.getElementById('searchInput').focus(), 100);
+}
+function closeSearch() {
+  document.getElementById('searchOverlay').classList.remove('open');
+}
+document.getElementById('searchOverlay').addEventListener('click', function(e) {
+  if (e.target === this) closeSearch();
+});
+document.addEventListener('keydown', function(e) {
+  if ((e.ctrlKey || e.metaKey) && e.key === 'k') { e.preventDefault(); openSearch(); }
+  if (e.key === 'Escape') closeSearch();
+});
+
+/* ── Mobile nav ── */
+function openMobileNav()  { document.getElementById('mobileNav').classList.add('open'); document.body.style.overflow = 'hidden'; }
+function closeMobileNav() { document.getElementById('mobileNav').classList.remove('open'); document.body.style.overflow = ''; }
+
+/* ── Newsletter ── */
+function subscribeNewsletter() {
+  const email = document.getElementById('newsletterEmail').value;
+  if (!email || !email.includes('@')) {
+    alert('Please enter a valid email address.');
+    return;
+  }
+  alert('Thank you! You\'re subscribed to Pakistan Tax Digest. Watch your inbox every Friday.');
+}
+
+/* ── Ticker auto-width (ensures seamless loop) ── */
+(function() {
+  const inner = document.getElementById('tickerInner');
+  if (!inner) return;
+  // The CSS animation is set to -50% which works because we duplicated the items
+})();
+</script>
+</body>
+</html>

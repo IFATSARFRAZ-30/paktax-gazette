@@ -1,0 +1,2744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SRO Tracker 2025-26 — All FBR Statutory Regulatory Orders | PakTax Gazette</title>
+<meta name="description" content="SRO summaries, Finance Bill analysis, tax calculators and plain-language tax guidance for Pakistan — by Ifat Associates.">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;700&display=swap" rel="stylesheet">
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+/* ═══════════════════════════════════════════════════════════════
+   DESIGN TOKENS — PakTax Gazette
+   
+   Palette rationale:
+   - Ink / Midnight: authority, FBR-grade seriousness
+   - Emerald: Pakistan's national identity, woven in quietly
+   - Cobalt: action, links, live data
+   - Amber: urgency, deadlines — the colour of caution signs
+   The one aesthetic risk: the masthead uses a broadsheet-style
+   horizontal rule and a mono-spaced issue number, treating the
+   website like a daily newspaper edition. This is specific to
+   this brief and would not appear on a generic news template.
+═══════════════════════════════════════════════════════════════ */
+:root {
+  /* Core palette */
+  --ink:          #0B1120;
+  --midnight:     #0E2044;
+  --midnight-mid: #162D5C;
+  --cobalt:       #1451CC;
+  --cobalt-hover: #0F3FA3;
+  --cobalt-light: #EEF4FF;
+  --cobalt-mid:   #C7D9F7;
+  --emerald:      #0A6B4A;
+  --emerald-light:#E6F4EE;
+  --amber:        #B25000;
+  --amber-light:  #FEF0E0;
+  --red:          #C0171A;
+  --red-light:    #FEE8E8;
+  --slate:        #44556A;
+  --mist:         #7C8FA6;
+  --rule:         #DDE4EF;
+  --canvas:       #F6F8FB;
+  --white:        #FFFFFF;
+
+  /* Typography */
+  --serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --sans:  'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --mono:  'IBM Plex Mono', 'Courier New', monospace;
+
+  /* Spacing & shape */
+  --r:   8px;
+  --r2:  14px;
+  --r3:  20px;
+
+  /* Shadows */
+  --sh-sm: 0 1px 4px rgba(11,17,32,.08);
+  --sh:    0 4px 20px rgba(11,17,32,.10);
+  --sh-lg: 0 8px 40px rgba(11,17,32,.14);
+}
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: var(--sans);
+  background: var(--canvas);
+  color: var(--slate);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+a { text-decoration: none; color: inherit; }
+button { font-family: var(--sans); cursor: pointer; }
+
+/* ── Layout ── */
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   TOP UTILITY BAR
+═══════════════════════════════════════════════════════════════ */
+.top-bar {
+  background: var(--midnight);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  padding: 0;
+  overflow: hidden;
+}
+.top-bar-inner {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 0;
+  min-height: 36px;
+}
+.top-bar-left {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  overflow: hidden;
+}
+.top-bar-date {
+  background: rgba(255,255,255,.05);
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: rgba(255,255,255,.4);
+  letter-spacing: .03em;
+  border-right: 1px solid rgba(255,255,255,.06);
+  white-space: nowrap;
+  min-height: 36px;
+}
+.top-bar-date i { font-size: 10px; color: rgba(255,255,255,.25); }
+.top-bar-links {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+.top-bar-links a {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0 14px;
+  min-height: 36px;
+  font-size: 11.5px;
+  font-weight: 500;
+  color: rgba(255,255,255,.5);
+  border-right: 1px solid rgba(255,255,255,.05);
+  transition: color .2s, background .2s;
+  white-space: nowrap;
+}
+.top-bar-links a:hover {
+  color: rgba(255,255,255,.9);
+  background: rgba(255,255,255,.04);
+}
+.top-bar-links a i { font-size: 10px; color: rgba(255,255,255,.25); }
+
+.top-bar-right {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+.top-bar-social {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  border-left: 1px solid rgba(255,255,255,.06);
+}
+.top-bar-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  min-height: 36px;
+  font-size: 13px;
+  color: rgba(255,255,255,.35);
+  transition: color .2s, background .2s;
+}
+.top-bar-social a:hover { color: rgba(255,255,255,.85); background: rgba(255,255,255,.05); }
+
+.top-bar-cta {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 18px;
+  background: var(--cobalt);
+  color: #fff !important;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+  border-left: none;
+  transition: background .2s;
+  white-space: nowrap;
+  min-height: 36px;
+}
+.top-bar-cta:hover { background: var(--cobalt-hover) !important; }
+.top-bar-cta i { font-size: 10px; }
+
+/* ═══════════════════════════════════════════════════════════════
+   MASTHEAD — the "newspaper edition" signature element
+═══════════════════════════════════════════════════════════════ */
+.masthead {
+  background: var(--white);
+  border-bottom: 1px solid var(--rule);
+  padding: 18px 0 14px;
+}
+.masthead-inner {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Left: wordmark */
+.brand-wordmark {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.brand-pre {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--cobalt);
+  margin-bottom: 3px;
+}
+.brand-name-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0;
+  line-height: 1;
+}
+.brand-pak {
+  font-family: var(--serif);
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 900;
+  color: var(--midnight);
+  letter-spacing: -.02em;
+}
+.brand-tax {
+  font-family: var(--serif);
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 900;
+  color: var(--cobalt);
+  letter-spacing: -.02em;
+}
+.brand-gazette {
+  font-family: var(--serif);
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 700;
+  font-style: italic;
+  color: var(--midnight);
+  letter-spacing: -.01em;
+  margin-left: 10px;
+  opacity: .7;
+}
+.brand-sub {
+  font-size: 11px;
+  color: var(--mist);
+  font-weight: 500;
+  letter-spacing: .04em;
+  margin-top: 5px;
+  text-transform: uppercase;
+}
+
+/* Centre: edition metadata strip */
+.masthead-meta {
+  flex: 1;
+  max-width: 360px;
+  border-left: 1px solid var(--rule);
+  border-right: 1px solid var(--rule);
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+}
+.masthead-meta-row {
+  display: flex;
+  gap: 16px;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  color: var(--mist);
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.masthead-meta-row span { display: flex; align-items: center; gap: 5px; }
+.masthead-meta-rule {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--rule), transparent);
+}
+.masthead-tag {
+  font-family: var(--mono);
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--emerald);
+  background: var(--emerald-light);
+  padding: 2px 10px;
+  border-radius: 3px;
+}
+
+/* Right: search + subscribe */
+.masthead-actions { display: flex; flex-direction: column; gap: 8px; align-items: flex-end; }
+.masthead-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--canvas);
+  border: 1.5px solid var(--rule);
+  border-radius: var(--r);
+  padding: 8px 14px;
+  font-size: 13px;
+  color: var(--mist);
+  cursor: pointer;
+  transition: all .2s;
+  min-width: 220px;
+}
+.masthead-search:hover { border-color: var(--cobalt); color: var(--cobalt); }
+.masthead-search span { flex: 1; }
+.masthead-search kbd {
+  font-family: var(--mono); font-size: 10px;
+  background: var(--white); border: 1px solid var(--rule);
+  border-radius: 4px; padding: 1px 6px; color: var(--mist);
+}
+.masthead-subscribe {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--emerald);
+  transition: color .2s;
+}
+.masthead-subscribe:hover { color: var(--cobalt); }
+.masthead-subscribe i { font-size: 11px; }
+
+/* ═══════════════════════════════════════════════════════════════
+   MAIN NAVIGATION
+═══════════════════════════════════════════════════════════════ */
+.main-nav-bar {
+  background: var(--midnight);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: var(--sh);
+}
+.main-nav-inner {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 0;
+}
+.main-nav-links {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+}
+.main-nav-links a {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 18px;
+  min-height: 48px;
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,.65);
+  letter-spacing: .01em;
+  border-bottom: 3px solid transparent;
+  transition: all .2s;
+  white-space: nowrap;
+  position: relative;
+}
+.main-nav-links a:hover {
+  color: #fff;
+  background: rgba(255,255,255,.04);
+  border-bottom-color: rgba(255,255,255,.2);
+}
+.main-nav-links a.active {
+  color: #fff;
+  background: rgba(255,255,255,.06);
+  border-bottom-color: var(--cobalt);
+}
+.main-nav-links a.active i { color: var(--cobalt); }
+.main-nav-links a i { font-size: 12px; color: rgba(255,255,255,.3); transition: color .2s; }
+.main-nav-links a:hover i { color: rgba(255,255,255,.6); }
+
+/* Hot badge on nav item */
+.nav-dot {
+  position: absolute;
+  top: 10px;
+  right: 8px;
+  width: 7px;
+  height: 7px;
+  background: var(--red);
+  border-radius: 50%;
+  border: 1.5px solid var(--midnight);
+  animation: navdot 2s ease-in-out infinite;
+}
+@keyframes navdot { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: .7; transform: scale(.8); } }
+
+.nav-new-tag {
+  font-size: 9px; font-weight: 800; letter-spacing: .06em;
+  background: var(--amber); color: #fff;
+  padding: 2px 6px; border-radius: 4px;
+  text-transform: uppercase;
+}
+
+/* Right side of nav: live indicator */
+.main-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  border-left: 1px solid rgba(255,255,255,.07);
+}
+.nav-live {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 18px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: rgba(255,255,255,.5);
+}
+.nav-live-dot {
+  width: 7px; height: 7px;
+  background: #22C55E;
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+@keyframes pulse { 0%,100% { opacity: 1; box-shadow: 0 0 0 0 rgba(34,197,94,.4); } 50% { opacity: .8; box-shadow: 0 0 0 4px rgba(34,197,94,0); } }
+
+.nav-mobile-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  min-height: 48px;
+  background: none;
+  border: none;
+  color: rgba(255,255,255,.7);
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   BREAKING NEWS TICKER
+═══════════════════════════════════════════════════════════════ */
+.ticker-bar {
+  background: var(--cobalt);
+  display: flex;
+  align-items: stretch;
+  overflow: hidden;
+  border-bottom: 2px solid var(--cobalt-hover);
+}
+.ticker-label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 18px;
+  background: var(--midnight);
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: #fff;
+  white-space: nowrap;
+  flex-shrink: 0;
+  min-height: 38px;
+  border-right: 3px solid var(--cobalt);
+}
+.ticker-label-dot {
+  width: 7px; height: 7px;
+  background: var(--red);
+  border-radius: 50%;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+.ticker-track {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.ticker-inner {
+  display: flex;
+  gap: 0;
+  animation: ticker 32s linear infinite;
+  white-space: nowrap;
+  will-change: transform;
+}
+.ticker-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  padding: 0 36px 0 0;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255,255,255,.92);
+  min-height: 38px;
+}
+.ticker-item::after {
+  content: '◆';
+  font-size: 7px;
+  color: rgba(255,255,255,.3);
+  margin-left: 36px;
+}
+.ticker-item:last-child::after { display: none; }
+.ticker-item a { color: rgba(255,255,255,.92); transition: color .2s; }
+.ticker-item a:hover { color: #fff; }
+.ticker-item .ticker-tag {
+  font-size: 10px; font-weight: 800; letter-spacing: .06em;
+  text-transform: uppercase;
+  background: rgba(255,255,255,.15);
+  padding: 2px 8px; border-radius: 3px; margin-right: 9px;
+}
+@keyframes ticker {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.ticker-bar:hover .ticker-inner { animation-play-state: paused; }
+
+/* ═══════════════════════════════════════════════════════════════
+   DEMO CONTENT AREA (placeholder for pages to come)
+═══════════════════════════════════════════════════════════════ */
+.demo-content {
+  padding: 60px 0 80px;
+}
+.demo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
+}
+.demo-card {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  border-radius: var(--r2);
+  padding: 28px;
+  border-top: 3px solid var(--cobalt);
+  transition: box-shadow .25s, transform .25s;
+}
+.demo-card:nth-child(2) { border-top-color: var(--emerald); }
+.demo-card:nth-child(3) { border-top-color: var(--amber); }
+.demo-card:hover { box-shadow: var(--sh); transform: translateY(-3px); }
+.demo-card-icon { font-size: 28px; margin-bottom: 14px; }
+.demo-card h3 { font-family: var(--serif); font-size: 18px; color: var(--ink); margin-bottom: 8px; font-weight: 700; }
+.demo-card p { font-size: 13.5px; line-height: 1.65; }
+.demo-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 14px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--cobalt);
+}
+.demo-card-link:hover { text-decoration: underline; }
+
+/* Tag pills (reusable across all pages) */
+.tag {
+  display: inline-block;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 5px;
+  line-height: 1.4;
+}
+.tag-blue    { background: var(--cobalt-light); color: var(--cobalt); }
+.tag-green   { background: var(--emerald-light); color: var(--emerald); }
+.tag-amber   { background: var(--amber-light); color: var(--amber); }
+.tag-red     { background: var(--red-light); color: var(--red); animation: blink 2s ease-in-out infinite; }
+.tag-mono    { background: #EEF1F6; color: var(--slate); font-family: var(--mono); font-size: 10px; letter-spacing: .04em; }
+.tag-midnight { background: var(--midnight); color: rgba(255,255,255,.8); }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:.65} }
+
+/* Buttons (reusable) */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 20px;
+  border-radius: var(--r);
+  font-size: 13.5px;
+  font-weight: 700;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all .2s;
+  text-align: center;
+  white-space: nowrap;
+}
+.btn-primary { background: var(--cobalt); color: #fff; border-color: var(--cobalt); }
+.btn-primary:hover { background: var(--cobalt-hover); border-color: var(--cobalt-hover); transform: translateY(-1px); box-shadow: var(--sh-sm); }
+.btn-outline { background: transparent; color: var(--cobalt); border-color: var(--cobalt); }
+.btn-outline:hover { background: var(--cobalt); color: #fff; }
+.btn-dark { background: var(--midnight); color: #fff; border-color: var(--midnight); }
+.btn-dark:hover { background: var(--midnight-mid); }
+.btn-sm { padding: 6px 14px; font-size: 12px; border-radius: var(--r); }
+
+/* ═══════════════════════════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════════════════════════ */
+.site-footer {
+  background: var(--midnight);
+  color: rgba(255,255,255,.5);
+}
+
+/* Footer top: newsletter full-width band */
+.footer-newsletter {
+  background: linear-gradient(135deg, var(--midnight-mid) 0%, #0A1E40 100%);
+  border-top: 1px solid rgba(255,255,255,.07);
+  border-bottom: 1px solid rgba(255,255,255,.07);
+  padding: 36px 0;
+}
+.footer-newsletter-inner {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.footer-newsletter-text h3 {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 5px;
+}
+.footer-newsletter-text p {
+  font-size: 13px;
+  color: rgba(255,255,255,.55);
+  max-width: 380px;
+}
+.footer-newsletter-form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.footer-newsletter-form input {
+  background: rgba(255,255,255,.08);
+  border: 1.5px solid rgba(255,255,255,.15);
+  border-radius: var(--r);
+  padding: 10px 16px;
+  font-size: 13.5px;
+  color: #fff;
+  font-family: var(--sans);
+  outline: none;
+  width: 260px;
+  transition: border-color .2s;
+}
+.footer-newsletter-form input::placeholder { color: rgba(255,255,255,.35); }
+.footer-newsletter-form input:focus { border-color: var(--cobalt); }
+.footer-newsletter-form button {
+  background: var(--cobalt);
+  color: #fff;
+  border: 2px solid var(--cobalt);
+  border-radius: var(--r);
+  padding: 10px 22px;
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all .2s;
+  white-space: nowrap;
+}
+.footer-newsletter-form button:hover { background: #fff; color: var(--cobalt); }
+.footer-newsletter-privacy {
+  font-size: 11px;
+  color: rgba(255,255,255,.3);
+  margin-top: 8px;
+}
+
+/* Footer main grid */
+.footer-main { padding: 52px 0 36px; }
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2.2fr 1fr 1fr 1.3fr;
+  gap: 48px;
+}
+
+.footer-brand-col {}
+.footer-brand-name {
+  display: flex;
+  align-items: baseline;
+  gap: 0;
+  margin-bottom: 12px;
+}
+.footer-brand-name .pak  { font-family: var(--serif); font-size: 22px; font-weight: 900; color: #fff; }
+.footer-brand-name .tax  { font-family: var(--serif); font-size: 22px; font-weight: 900; color: var(--cobalt); }
+.footer-brand-name .gaz  { font-family: var(--serif); font-size: 22px; font-weight: 700; font-style: italic; color: rgba(255,255,255,.6); margin-left: 8px; }
+.footer-brand-desc {
+  font-size: 13px;
+  line-height: 1.7;
+  color: rgba(255,255,255,.45);
+  max-width: 280px;
+  margin-bottom: 20px;
+}
+
+/* Ifat Associates credit — visible but not pushy */
+.footer-credit {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.08);
+  border-left: 3px solid var(--emerald);
+  border-radius: var(--r);
+  margin-bottom: 20px;
+}
+.footer-credit-icon { font-size: 18px; flex-shrink: 0; }
+.footer-credit-text {}
+.footer-credit-text p {
+  font-size: 11.5px;
+  color: rgba(255,255,255,.4);
+  line-height: 1.5;
+}
+.footer-credit-text a {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: rgba(255,255,255,.7);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 4px;
+  transition: color .2s;
+}
+.footer-credit-text a:hover { color: #fff; }
+.footer-credit-text a i { font-size: 10px; }
+
+.footer-social {
+  display: flex;
+  gap: 10px;
+}
+.footer-social a {
+  width: 34px;
+  height: 34px;
+  border-radius: var(--r);
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: rgba(255,255,255,.4);
+  transition: all .2s;
+}
+.footer-social a:hover { background: var(--cobalt); border-color: var(--cobalt); color: #fff; }
+
+.footer-col h4 {
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.25);
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.footer-col li a {
+  font-size: 13px;
+  color: rgba(255,255,255,.45);
+  transition: color .2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.footer-col li a:hover { color: rgba(255,255,255,.9); }
+.footer-col li a i { font-size: 10px; color: rgba(255,255,255,.2); width: 14px; }
+
+/* Contact column */
+.footer-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.footer-contact-item i {
+  font-size: 13px;
+  color: var(--cobalt);
+  margin-top: 2px;
+  width: 16px;
+  flex-shrink: 0;
+}
+.footer-contact-item span {
+  font-size: 12.5px;
+  color: rgba(255,255,255,.45);
+  line-height: 1.5;
+}
+.footer-contact-item a { color: rgba(255,255,255,.6); transition: color .2s; }
+.footer-contact-item a:hover { color: #fff; }
+
+/* Footer bottom bar */
+.footer-bottom {
+  padding: 18px 0;
+  border-top: 1px solid rgba(255,255,255,.06);
+}
+.footer-bottom-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.footer-bottom-left { font-size: 12px; color: rgba(255,255,255,.3); line-height: 1.6; }
+.footer-bottom-left a { color: rgba(255,255,255,.4); transition: color .2s; }
+.footer-bottom-left a:hover { color: rgba(255,255,255,.8); }
+.footer-bottom-right {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.footer-bottom-right a { font-size: 12px; color: rgba(255,255,255,.3); transition: color .2s; }
+.footer-bottom-right a:hover { color: rgba(255,255,255,.7); }
+.footer-disclaimer {
+  font-size: 11px;
+  color: rgba(255,255,255,.2);
+  margin-top: 6px;
+  line-height: 1.5;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SEARCH OVERLAY
+═══════════════════════════════════════════════════════════════ */
+.search-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(11,17,32,.92);
+  backdrop-filter: blur(4px);
+  z-index: 9999;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 80px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s;
+}
+.search-overlay.open { opacity: 1; pointer-events: all; }
+.search-box {
+  background: var(--white);
+  border-radius: var(--r2);
+  width: 100%;
+  max-width: 680px;
+  padding: 28px;
+  box-shadow: var(--sh-lg);
+  transform: translateY(-20px);
+  transition: transform .25s;
+}
+.search-overlay.open .search-box { transform: translateY(0); }
+.search-box-inner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 2px solid var(--cobalt);
+  padding-bottom: 14px;
+  margin-bottom: 20px;
+}
+.search-box-inner i { font-size: 20px; color: var(--cobalt); flex-shrink: 0; }
+.search-box-inner input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  font-family: var(--sans);
+  color: var(--ink);
+  background: transparent;
+}
+.search-box-inner input::placeholder { color: var(--mist); }
+.search-close {
+  background: var(--canvas); border: 1px solid var(--rule);
+  border-radius: var(--r); padding: 5px 10px;
+  font-size: 12px; font-weight: 600; color: var(--slate); cursor: pointer;
+  flex-shrink: 0;
+}
+.search-hints { display: flex; gap: 8px; flex-wrap: wrap; }
+.search-hint-label { font-size: 12px; color: var(--mist); margin-right: 4px; }
+.search-hint-tag {
+  background: var(--canvas); border: 1px solid var(--rule);
+  border-radius: 999px; padding: 4px 12px;
+  font-size: 12px; font-weight: 600; color: var(--slate); cursor: pointer;
+  transition: all .2s;
+}
+.search-hint-tag:hover { background: var(--cobalt-light); color: var(--cobalt); border-color: var(--cobalt-mid); }
+
+/* ═══════════════════════════════════════════════════════════════
+   MOBILE NAV DRAWER
+═══════════════════════════════════════════════════════════════ */
+.mobile-nav {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: var(--midnight);
+  z-index: 9998;
+  flex-direction: column;
+  overflow-y: auto;
+}
+.mobile-nav.open { display: flex; }
+.mobile-nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.mobile-nav-header .brand-small {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 900;
+  color: #fff;
+}
+.mobile-nav-header .brand-small span { color: var(--cobalt); }
+.mobile-nav-close {
+  background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12);
+  border-radius: var(--r); padding: 7px 12px;
+  font-size: 14px; color: rgba(255,255,255,.7); cursor: pointer;
+}
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+}
+.mobile-nav-links a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(255,255,255,.7);
+  border-bottom: 1px solid rgba(255,255,255,.05);
+  transition: all .2s;
+}
+.mobile-nav-links a:hover, .mobile-nav-links a.active {
+  color: #fff;
+  background: rgba(255,255,255,.04);
+}
+.mobile-nav-links a i { width: 20px; font-size: 15px; color: rgba(255,255,255,.3); }
+.mobile-nav-cta {
+  padding: 20px 24px;
+  border-top: 1px solid rgba(255,255,255,.08);
+  margin-top: auto;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .masthead-meta { display: none; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
+}
+
+@media (max-width: 768px) {
+  .top-bar-links { display: none; }
+  .top-bar-date { display: none; }
+  .top-bar-cta { padding: 0 14px; font-size: 11px; }
+
+  .masthead-inner { flex-direction: column; align-items: flex-start; gap: 14px; }
+  .masthead-actions { align-items: flex-start; width: 100%; }
+  .masthead-search { min-width: unset; width: 100%; }
+  .brand-gazette { display: none; }
+  .brand-pak, .brand-tax { font-size: 32px; }
+
+  .main-nav-links { display: none; }
+  .nav-mobile-toggle { display: flex; }
+  .main-nav-right .nav-live { display: none; }
+
+  .demo-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+  .footer-newsletter-inner { flex-direction: column; gap: 20px; }
+  .footer-newsletter-form input { width: 100%; }
+  .footer-bottom-inner { flex-direction: column; align-items: flex-start; gap: 10px; }
+}
+
+@media (max-width: 480px) {
+  .container { padding: 0 16px; }
+  .ticker-label span { display: none; }
+  .brand-pre { display: none; }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SCROLL PROGRESS BAR
+═══════════════════════════════════════════════════════════════ */
+.scroll-progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--cobalt), var(--emerald));
+  width: 0%;
+  z-index: 10000;
+  transition: width .1s linear;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   BACK TO TOP
+═══════════════════════════════════════════════════════════════ */
+.back-to-top {
+  position: fixed;
+  bottom: 28px; right: 28px;
+  width: 44px; height: 44px;
+  background: var(--midnight);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: var(--r);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,.7);
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: var(--sh);
+  opacity: 0;
+  pointer-events: none;
+  transition: all .3s;
+  z-index: 1000;
+}
+.back-to-top.visible { opacity: 1; pointer-events: all; }
+.back-to-top:hover { background: var(--cobalt); color: #fff; transform: translateY(-2px); }
+</style>
+<link rel="canonical" href="https://tax.ifatassociates.com/sro.html">
+<meta property="og:url" content="https://tax.ifatassociates.com/sro.html">
+<meta property="og:site_name" content="PakTax Gazette">
+<meta name="robots" content="index, follow">
+</head>
+<body>
+
+<!-- ── Scroll progress ── -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ── Search overlay ── -->
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-box">
+    <div class="search-box-inner">
+      <i class="fas fa-search"></i>
+      <input type="text" id="searchInput" placeholder="Search SROs, tax topics, budget…" autofocus>
+      <button class="search-close" onclick="closeSearch()">ESC</button>
+    </div>
+    <div class="search-hints">
+      <span class="search-hint-label">Try:</span>
+      <span class="search-hint-tag">Income Tax Slabs</span>
+      <span class="search-hint-tag">SRO 847</span>
+      <span class="search-hint-tag">Finance Bill 2026</span>
+      <span class="search-hint-tag">WHT rates</span>
+      <span class="search-hint-tag">Sales Tax return</span>
+      <span class="search-hint-tag">Super Tax</span>
+    </div>
+  </div>
+</div>
+
+<!-- ── Mobile nav drawer ── -->
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-header">
+    <div class="brand-small">Pak<span>Tax</span> Gazette</div>
+    <button class="mobile-nav-close" onclick="closeMobileNav()"><i class="fas fa-times"></i></button>
+  </div>
+    <nav class="mobile-nav-links">
+    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+    <a href="sro.html" class="active"><i class="fas fa-scroll"></i> SRO Tracker</a>
+    <a href="budget.html"><i class="fas fa-landmark"></i> Finance Bill</a>
+    <a href="blog.html"><i class="fas fa-pen-nib"></i> Tax Blog</a>
+    <a href="tools.html"><i class="fas fa-calculator"></i> Tax Tools</a>
+    <a href="tools.html"><i class="fas fa-calendar-check"></i> Tax Calendar</a>
+    <a href="#"><i class="fas fa-bell"></i> Alerts</a>
+  </nav>
+  <div class="mobile-nav-cta">
+    <a href="https://www.ifatassociates.com" target="_blank" class="btn btn-primary" style="width:100%;justify-content:center;">
+      <i class="fas fa-briefcase"></i> Book Tax Consultation
+    </a>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     TOP UTILITY BAR
+════════════════════════════════════════════ -->
+<div class="top-bar">
+  <div class="container">
+    <div class="top-bar-inner">
+      <div class="top-bar-left">
+        <div class="top-bar-date">
+          <i class="fas fa-calendar"></i>
+          <span id="currentDate">Friday, 27 June 2026</span>
+        </div>
+        <div class="top-bar-links">
+          <a href="https://iris.fbr.gov.pk" target="_blank"><i class="fas fa-external-link-alt"></i> FBR IRIS</a>
+          <a href="https://atl.fbr.gov.pk" target="_blank"><i class="fas fa-external-link-alt"></i> ATL Lookup</a>
+          <a href="https://www.fbr.gov.pk" target="_blank"><i class="fas fa-external-link-alt"></i> FBR.gov.pk</a>
+          <a href="https://www.secp.gov.pk" target="_blank"><i class="fas fa-external-link-alt"></i> SECP</a>
+        </div>
+      </div>
+      <div class="top-bar-right">
+        <div class="top-bar-social">
+          <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <a href="https://www.ifatassociates.com" target="_blank" class="top-bar-cta">
+          <i class="fas fa-phone-alt"></i> Get Tax Consultation
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     MASTHEAD
+════════════════════════════════════════════ -->
+<div class="masthead">
+  <div class="container">
+    <div class="masthead-inner">
+
+      <!-- Left: Wordmark -->
+      <div class="brand-wordmark">
+        <div class="brand-pre">Pakistan's Tax News Hub</div>
+        <div class="brand-name-row">
+          <span class="brand-pak">Pak</span><span class="brand-tax">Tax</span>
+          <span class="brand-gazette">Gazette</span>
+        </div>
+        <div class="brand-sub">SROs · Finance Bill · Tax Blog · Tools · Calculators</div>
+      </div>
+
+      <!-- Right: Search + subscribe -->
+      <div class="masthead-actions">
+        <div class="masthead-search" onclick="openSearch()" role="button">
+          <i class="fas fa-search" style="color:var(--cobalt)"></i>
+          <span>Search SROs, topics, guides…</span>
+          <kbd>Ctrl K</kbd>
+        </div>
+        <a href="#newsletter" class="masthead-subscribe">
+          <i class="fas fa-envelope"></i>
+          Subscribe to Pakistan Tax Digest
+        </a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     MAIN NAVIGATION
+════════════════════════════════════════════ -->
+<nav class="main-nav-bar" id="mainNav">
+  <div class="container">
+    <div class="main-nav-inner">
+            <div class="main-nav-links">
+        <a href="index.html"><i class="fas fa-home"></i> Home</a>
+        <a href="sro.html" class="active" style="position:relative"><i class="fas fa-scroll"></i> SRO Tracker<span class="nav-dot"></span></a>
+        <a href="budget.html"><i class="fas fa-landmark"></i> Finance Bill</a>
+        <a href="blog.html"><i class="fas fa-pen-nib"></i> Tax Blog</a>
+        <a href="tools.html"><i class="fas fa-calculator"></i> Tax Tools <span class="nav-new-tag">Free</span></a>
+        <a href="tools.html"><i class="fas fa-calendar-check"></i> Tax Calendar</a>
+        <a href="article.html"><i class="fas fa-book-open"></i> FBR Notices</a>
+      </div>
+      <div class="main-nav-right">
+        <div class="nav-live">
+          <div class="nav-live-dot"></div>
+          <span>Live Updates</span>
+        </div>
+      </div>
+      <button class="nav-mobile-toggle" onclick="openMobileNav()">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ════════════════════════════════════════════
+     BREAKING NEWS TICKER
+════════════════════════════════════════════ -->
+<div class="ticker-bar">
+  <div class="ticker-label">
+    <div class="ticker-label-dot"></div>
+    <span>Breaking</span>
+  </div>
+  <div class="ticker-track">
+    <div class="ticker-inner" id="tickerInner">
+      <!-- Items duplicated for seamless loop -->
+      <div class="ticker-item"><span class="ticker-tag">SRO</span><a href="#">FBR SRO 847(I)/2026 — Revised WHT rates for non-filers effective July 1, 2026</a></div>
+      <div class="ticker-item"><span class="ticker-tag">Deadline</span><a href="#">Income Tax Return TY 2025-26 — Filing deadline September 30, 2026</a></div>
+      <div class="ticker-item"><span class="ticker-tag">Budget</span><a href="budget.html">Finance Bill 2026-27 tabled in National Assembly on June 20 — full summary available</a></div>
+      <div class="ticker-item"><span class="ticker-tag">ATL</span><a href="#">Active Taxpayer List updated — check your status on FBR portal before July 1</a></div>
+      <div class="ticker-item"><span class="ticker-tag">Sales Tax</span><a href="#">POS integration mandatory for all Tier-1 retailers in all cities from July 2026</a></div>
+      <!-- Duplicate set for seamless loop -->
+      <div class="ticker-item"><span class="ticker-tag">SRO</span><a href="#">FBR SRO 847(I)/2026 — Revised WHT rates for non-filers effective July 1, 2026</a></div>
+      <div class="ticker-item"><span class="ticker-tag">Deadline</span><a href="#">Income Tax Return TY 2025-26 — Filing deadline September 30, 2026</a></div>
+      <div class="ticker-item"><span class="ticker-tag">Budget</span><a href="budget.html">Finance Bill 2026-27 tabled in National Assembly on June 20 — full summary available</a></div>
+      <div class="ticker-item"><span class="ticker-tag">ATL</span><a href="#">Active Taxpayer List updated — check your status on FBR portal before July 1</a></div>
+      <div class="ticker-item"><span class="ticker-tag">Sales Tax</span><a href="#">POS integration mandatory for all Tier-1 retailers in all cities from July 2026</a></div>
+    </div>
+  </div>
+</div>
+     FOOTER
+════════════════════════════════════════════ -->
+<!-- ════════════════════════════════════════════
+     SRO TRACKER — STYLES
+════════════════════════════════════════════ -->
+<style>
+
+/* ── Page hero ── */
+.sro-hero {
+  background: var(--midnight);
+  padding: 44px 0 36px;
+  border-bottom: 3px solid var(--cobalt);
+  position: relative;
+  overflow: hidden;
+}
+.sro-hero::before {
+  content: 'SRO';
+  position: absolute;
+  right: -20px; top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--serif);
+  font-size: 200px;
+  font-weight: 900;
+  color: rgba(255,255,255,.03);
+  line-height: 1;
+  pointer-events: none;
+  letter-spacing: -.05em;
+}
+.sro-hero-inner {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.sro-hero-text {}
+.sro-hero-eyebrow {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--cobalt-mid);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.sro-hero-eyebrow::before {
+  content: '';
+  width: 18px; height: 2px;
+  background: var(--cobalt);
+  display: block;
+}
+.sro-hero h1 {
+  font-family: var(--serif);
+  font-size: clamp(24px, 4vw, 38px);
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 10px;
+  line-height: 1.15;
+  letter-spacing: -.02em;
+}
+.sro-hero p {
+  font-size: 14px;
+  color: rgba(255,255,255,.55);
+  max-width: 520px;
+  line-height: 1.65;
+}
+.sro-hero-stats {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+}
+.stat-card {
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: var(--r2);
+  padding: 14px 20px;
+  text-align: center;
+  min-width: 90px;
+}
+.stat-card .n {
+  font-family: var(--serif);
+  font-size: 28px;
+  font-weight: 900;
+  color: #fff;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.stat-card .l {
+  font-size: 10.5px;
+  font-weight: 600;
+  color: rgba(255,255,255,.4);
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+.stat-card.highlight { border-color: var(--cobalt); background: rgba(20,81,204,.2); }
+.stat-card.highlight .n { color: var(--cobalt-mid); }
+
+/* ── Filter / search bar ── */
+.sro-filter-bar {
+  background: var(--white);
+  border-bottom: 1px solid var(--rule);
+  padding: 14px 0;
+  position: sticky;
+  top: 48px;
+  z-index: 200;
+  box-shadow: var(--sh-sm);
+}
+.sro-filter-inner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.filter-label {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--mist);
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  margin-right: 4px;
+}
+.filter-pills {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  flex: 1;
+}
+.fpill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--canvas);
+  border: 1.5px solid var(--rule);
+  border-radius: 999px;
+  padding: 5px 14px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--slate);
+  cursor: pointer;
+  transition: all .2s;
+  white-space: nowrap;
+  font-family: var(--sans);
+}
+.fpill:hover {
+  background: var(--cobalt-light);
+  border-color: var(--cobalt-mid);
+  color: var(--cobalt);
+}
+.fpill.active {
+  background: var(--cobalt);
+  border-color: var(--cobalt);
+  color: #fff;
+}
+.fpill .fpill-count {
+  background: rgba(255,255,255,.25);
+  border-radius: 999px;
+  padding: 1px 6px;
+  font-size: 10px;
+  font-weight: 700;
+}
+.fpill:not(.active) .fpill-count {
+  background: var(--rule);
+  color: var(--mist);
+}
+
+/* Search box in filter bar */
+.sro-search-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--canvas);
+  border: 1.5px solid var(--rule);
+  border-radius: var(--r);
+  padding: 7px 14px;
+  margin-left: auto;
+  min-width: 220px;
+  transition: border-color .2s;
+}
+.sro-search-box:focus-within {
+  border-color: var(--cobalt);
+  background: var(--white);
+}
+.sro-search-box i { color: var(--mist); font-size: 13px; flex-shrink: 0; }
+.sro-search-box input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 13px;
+  color: var(--ink);
+  font-family: var(--sans);
+  width: 100%;
+}
+.sro-search-box input::placeholder { color: var(--mist); }
+
+/* ── Main layout ── */
+.sro-main {
+  padding: 32px 0 60px;
+}
+.sro-cols {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 40px;
+  align-items: start;
+}
+
+/* ── Results header ── */
+.sro-results-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+.sro-results-count {
+  font-size: 13.5px;
+  color: var(--slate);
+}
+.sro-results-count strong { color: var(--ink); font-weight: 700; }
+.sro-sort {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  color: var(--mist);
+}
+.sro-sort select {
+  background: var(--canvas);
+  border: 1px solid var(--rule);
+  border-radius: var(--r);
+  padding: 5px 10px;
+  font-size: 12.5px;
+  color: var(--slate);
+  font-family: var(--sans);
+  outline: none;
+  cursor: pointer;
+}
+.export-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--canvas);
+  border: 1px solid var(--rule);
+  border-radius: var(--r);
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--slate);
+  cursor: pointer;
+  transition: all .2s;
+  font-family: var(--sans);
+}
+.export-btn:hover { border-color: var(--cobalt); color: var(--cobalt); background: var(--cobalt-light); }
+
+/* ── SRO Cards (list view) ── */
+.sro-list { display: flex; flex-direction: column; gap: 0; }
+
+.sro-card {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  border-left: 4px solid var(--cobalt);
+  border-radius: 0;
+  padding: 0;
+  transition: all .2s;
+  overflow: hidden;
+  margin-bottom: -1px; /* collapse borders */
+}
+.sro-card:first-child { border-radius: var(--r2) var(--r2) 0 0; }
+.sro-card:last-child { border-radius: 0 0 var(--r2) var(--r2); margin-bottom: 0; }
+.sro-card:only-child { border-radius: var(--r2); }
+.sro-card:hover { background: var(--cobalt-light); z-index: 1; position: relative; box-shadow: var(--sh-sm); }
+.sro-card.cat-sales   { border-left-color: var(--emerald); }
+.sro-card.cat-customs { border-left-color: var(--amber); }
+.sro-card.cat-deadline{ border-left-color: var(--red); }
+.sro-card.cat-fed     { border-left-color: #7C3AED; }
+.sro-card.cat-wht     { border-left-color: #0891B2; }
+
+.sro-card-inner {
+  display: grid;
+  grid-template-columns: 160px 1fr auto;
+  gap: 0;
+  align-items: stretch;
+}
+
+/* Left: SRO number + date */
+.sro-card-id {
+  padding: 18px 20px;
+  border-right: 1px solid var(--rule);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+.sro-num-text {
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--cobalt);
+  line-height: 1.2;
+}
+.sro-card.cat-sales   .sro-num-text { color: var(--emerald); }
+.sro-card.cat-customs .sro-num-text { color: var(--amber); }
+.sro-card.cat-deadline .sro-num-text { color: var(--red); }
+.sro-card.cat-fed     .sro-num-text { color: #7C3AED; }
+.sro-card.cat-wht     .sro-num-text { color: #0891B2; }
+.sro-card-date {
+  font-size: 11.5px;
+  color: var(--mist);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.sro-card-date i { font-size: 10px; }
+
+/* Centre: content */
+.sro-card-body {
+  padding: 18px 22px;
+  flex: 1;
+  min-width: 0;
+}
+.sro-card-tags {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.sro-card-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.35;
+  margin-bottom: 6px;
+}
+.sro-card-title a:hover { color: var(--cobalt); }
+.sro-card-summary {
+  font-size: 13px;
+  color: var(--slate);
+  line-height: 1.65;
+}
+.sro-card-impact {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--mist);
+  flex-wrap: wrap;
+}
+.sro-card-impact i { font-size: 10px; }
+.impact-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--canvas);
+  color: var(--slate);
+  border: 1px solid var(--rule);
+}
+
+/* Right: actions */
+.sro-card-actions {
+  padding: 18px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: center;
+  border-left: 1px solid var(--rule);
+  flex-shrink: 0;
+  min-width: 130px;
+}
+.sro-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: var(--r);
+  font-size: 12px;
+  font-weight: 600;
+  border: 1.5px solid;
+  cursor: pointer;
+  transition: all .2s;
+  white-space: nowrap;
+  font-family: var(--sans);
+  justify-content: center;
+}
+.sro-btn-summary {
+  background: var(--cobalt-light);
+  color: var(--cobalt);
+  border-color: var(--cobalt-mid);
+}
+.sro-btn-summary:hover { background: var(--cobalt); color: #fff; border-color: var(--cobalt); }
+.sro-btn-pdf {
+  background: transparent;
+  color: var(--slate);
+  border-color: var(--rule);
+}
+.sro-btn-pdf:hover { background: var(--canvas); border-color: var(--slate); }
+.sro-card.new-sro .sro-card-id::after {
+  content: 'NEW';
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .06em;
+  background: var(--cobalt);
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 4px;
+  width: fit-content;
+}
+
+/* ── No results ── */
+.no-results {
+  text-align: center;
+  padding: 60px 20px;
+  display: none;
+}
+.no-results i { font-size: 40px; color: var(--rule); margin-bottom: 14px; display: block; }
+.no-results h3 { font-family: var(--serif); font-size: 20px; color: var(--ink); margin-bottom: 8px; }
+.no-results p { font-size: 14px; color: var(--mist); }
+
+/* ── Pagination ── */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+.page-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px; height: 36px;
+  border-radius: var(--r);
+  border: 1.5px solid var(--rule);
+  background: var(--white);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--slate);
+  cursor: pointer;
+  transition: all .2s;
+  font-family: var(--sans);
+}
+.page-btn:hover { border-color: var(--cobalt); color: var(--cobalt); background: var(--cobalt-light); }
+.page-btn.active { background: var(--cobalt); border-color: var(--cobalt); color: #fff; }
+.page-btn.wide { width: auto; padding: 0 14px; gap: 5px; }
+
+/* ── SRO Detail Modal ── */
+.sro-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(11,17,32,.7);
+  backdrop-filter: blur(3px);
+  z-index: 9000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s;
+}
+.sro-modal-overlay.open { opacity: 1; pointer-events: all; }
+.sro-modal {
+  background: var(--white);
+  border-radius: var(--r2);
+  width: 100%;
+  max-width: 680px;
+  max-height: 88vh;
+  overflow-y: auto;
+  box-shadow: var(--sh-lg);
+  transform: translateY(20px);
+  transition: transform .25s;
+}
+.sro-modal-overlay.open .sro-modal { transform: translateY(0); }
+.sro-modal-header {
+  background: var(--midnight);
+  padding: 22px 26px;
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+.sro-modal-header h2 {
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.3;
+}
+.sro-modal-close {
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: var(--r);
+  width: 32px; height: 32px;
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(255,255,255,.7);
+  cursor: pointer;
+  font-size: 14px;
+  flex-shrink: 0;
+  transition: all .2s;
+}
+.sro-modal-close:hover { background: rgba(255,255,255,.2); color: #fff; }
+.sro-modal-body { padding: 26px; }
+.sro-modal-meta {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 22px;
+  background: var(--canvas);
+  border-radius: var(--r2);
+  padding: 16px;
+  border: 1px solid var(--rule);
+}
+.sro-meta-field label {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--mist);
+  display: block;
+  margin-bottom: 4px;
+}
+.sro-meta-field span {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--ink);
+  font-family: var(--mono);
+}
+.sro-meta-field span.plain { font-family: var(--sans); font-size: 13px; font-weight: 500; }
+.sro-modal-section { margin-bottom: 22px; }
+.sro-modal-section h3 {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--mist);
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--rule);
+}
+.sro-modal-section p {
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--slate);
+}
+.sro-modal-section ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.sro-modal-section li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--slate);
+}
+.sro-modal-section li::before {
+  content: '→';
+  color: var(--cobalt);
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.sro-modal-actions {
+  display: flex;
+  gap: 10px;
+  padding: 18px 26px;
+  border-top: 1px solid var(--rule);
+  background: var(--canvas);
+  flex-wrap: wrap;
+}
+
+/* ── Sidebar widgets ── */
+.sro-sidebar { display: flex; flex-direction: column; gap: 22px; }
+.widget {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  border-radius: var(--r2);
+  overflow: hidden;
+}
+.widget-head {
+  background: var(--midnight);
+  color: #fff;
+  padding: 11px 18px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.widget-head i { color: rgba(255,255,255,.4); }
+.widget-body { padding: 16px 18px; }
+
+/* Category legend */
+.cat-legend { display: flex; flex-direction: column; gap: 10px; }
+.cat-legend-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  cursor: pointer;
+  padding: 8px 10px;
+  border-radius: var(--r);
+  transition: background .15s;
+}
+.cat-legend-item:hover { background: var(--canvas); }
+.cat-legend-left { display: flex; align-items: center; gap: 10px; }
+.cat-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.cat-name { font-size: 13px; font-weight: 600; color: var(--ink); }
+.cat-count {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--mist);
+  background: var(--canvas);
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  padding: 2px 8px;
+}
+
+/* Recent activity timeline */
+.activity-list { display: flex; flex-direction: column; gap: 0; }
+.activity-item {
+  display: flex;
+  gap: 12px;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--rule);
+  align-items: flex-start;
+  position: relative;
+}
+.activity-item:last-child { border-bottom: none; }
+.activity-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--cobalt);
+  margin-top: 5px;
+  flex-shrink: 0;
+}
+.activity-dot.green { background: var(--emerald); }
+.activity-dot.amber { background: var(--amber); }
+.activity-dot.red { background: var(--red); }
+.activity-body h4 { font-size: 12.5px; font-weight: 700; color: var(--ink); line-height: 1.3; margin-bottom: 2px; }
+.activity-body h4 a:hover { color: var(--cobalt); }
+.activity-body p { font-size: 11.5px; color: var(--mist); }
+
+/* Subscribe widget */
+.sro-subscribe {
+  background: linear-gradient(145deg, var(--midnight), #0D2960);
+  border-radius: var(--r2);
+  padding: 20px;
+  color: #fff;
+}
+.sro-subscribe h3 { font-family: var(--serif); font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.sro-subscribe p { font-size: 12.5px; color: rgba(255,255,255,.6); margin-bottom: 14px; line-height: 1.6; }
+.sro-sub-form { display: flex; flex-direction: column; gap: 8px; }
+.sro-sub-form input {
+  background: rgba(255,255,255,.1);
+  border: 1.5px solid rgba(255,255,255,.15);
+  border-radius: var(--r);
+  padding: 9px 14px;
+  font-size: 13px;
+  color: #fff;
+  font-family: var(--sans);
+  outline: none;
+}
+.sro-sub-form input::placeholder { color: rgba(255,255,255,.35); }
+.sro-sub-form button {
+  background: var(--cobalt);
+  color: #fff;
+  border: none;
+  border-radius: var(--r);
+  padding: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: var(--sans);
+  transition: background .2s;
+}
+.sro-sub-form button:hover { background: #fff; color: var(--cobalt); }
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .sro-cols { grid-template-columns: 1fr 240px; gap: 28px; }
+  .sro-card-inner { grid-template-columns: 140px 1fr auto; }
+}
+@media (max-width: 768px) {
+  .sro-cols { grid-template-columns: 1fr; }
+  .sro-sidebar { display: none; }
+  .sro-card-inner { grid-template-columns: 1fr; }
+  .sro-card-id { border-right: none; border-bottom: 1px solid var(--rule); flex-direction: row; align-items: center; justify-content: space-between; padding: 12px 16px; }
+  .sro-card-actions { border-left: none; border-top: 1px solid var(--rule); flex-direction: row; min-width: unset; }
+  .sro-hero-inner { flex-direction: column; align-items: flex-start; }
+  .sro-hero-stats { width: 100%; }
+  .sro-modal-meta { grid-template-columns: 1fr 1fr; }
+  .stat-card { flex: 1; }
+}
+@media (max-width: 480px) {
+  .sro-filter-inner { gap: 6px; }
+  .sro-search-box { min-width: unset; width: 100%; margin-left: 0; margin-top: 8px; }
+  .sro-modal-meta { grid-template-columns: 1fr; }
+}
+</style>
+
+<!-- ════════════════════════════════════════════
+     SRO DETAIL MODAL
+════════════════════════════════════════════ -->
+<div class="sro-modal-overlay" id="sroModal">
+  <div class="sro-modal" id="sroModalContent">
+    <div class="sro-modal-header">
+      <div>
+        <div id="modalSroNum" style="font-family:var(--mono);font-size:12px;color:rgba(255,255,255,.5);margin-bottom:4px;letter-spacing:.05em;"></div>
+        <h2 id="modalTitle">Loading...</h2>
+      </div>
+      <button class="sro-modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="sro-modal-body">
+      <div class="sro-modal-meta" id="modalMeta"></div>
+      <div class="sro-modal-section">
+        <h3>Plain-Language Summary</h3>
+        <p id="modalSummary"></p>
+      </div>
+      <div class="sro-modal-section">
+        <h3>Key Points</h3>
+        <ul id="modalPoints"></ul>
+      </div>
+      <div class="sro-modal-section">
+        <h3>Who Is Affected</h3>
+        <p id="modalAffected"></p>
+      </div>
+      <div id="modalVerifiedBox" class="sro-modal-section" style="background:var(--emerald-light);border-radius:var(--r);padding:12px 16px;border-left:3px solid var(--emerald);">
+        <p style="font-size:12.5px;color:var(--emerald);font-weight:600;margin:0;">
+          <i class="fas fa-check-circle"></i> &nbsp;This summary is based on the official SRO text published in the Pakistan Gazette. Always refer to the official gazette for legal purposes.
+        </p>
+      </div>
+    </div>
+    <div class="sro-modal-actions">
+      <a id="modalPdfLink" href="#" target="_blank" class="btn btn-primary btn-sm"><i class="fas fa-file-pdf"></i> Official PDF (Gazette)</a>
+      <a id="modalFbrLink" href="https://www.fbr.gov.pk" target="_blank" class="btn btn-outline btn-sm"><i class="fas fa-external-link-alt"></i> FBR.gov.pk</a>
+      <button onclick="shareModal()" class="btn btn-sm" style="background:var(--canvas);border:1px solid var(--rule);color:var(--slate);margin-left:auto;"><i class="fas fa-share-alt"></i> Share</button>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     SRO TRACKER — PAGE CONTENT
+════════════════════════════════════════════ -->
+
+<!-- Breadcrumb -->
+<div class="breadcrumb" style="background:var(--white);border-bottom:1px solid var(--rule);padding:10px 0;">
+  <div class="container">
+    <div style="display:flex;align-items:center;gap:6px;font-size:12.5px;color:var(--mist);">
+      <a href="index.html" style="color:var(--cobalt);font-weight:500;"><i class="fas fa-home"></i> Home</a>
+      <i class="fas fa-chevron-right" style="font-size:10px;"></i>
+      <span style="color:var(--slate);">SRO Tracker</span>
+    </div>
+  </div>
+</div>
+
+<!-- Hero -->
+<div class="sro-hero">
+  <div class="container">
+    <div class="sro-hero-inner">
+      <div class="sro-hero-text">
+        <div class="sro-hero-eyebrow">FBR Statutory Regulatory Orders</div>
+        <h1>SRO Tracker 2025-26</h1>
+        <p>Every Statutory Regulatory Order issued by FBR — income tax, sales tax, customs, and FED — with plain-language summaries, key points, and direct links to official gazette PDFs.</p>
+      </div>
+      <div class="sro-hero-stats">
+        <div class="stat-card highlight">
+          <div class="n" id="totalCount">147</div>
+          <div class="l">Total 2026</div>
+        </div>
+        <div class="stat-card">
+          <div class="n">18</div>
+          <div class="l">This Month</div>
+        </div>
+        <div class="stat-card">
+          <div class="n">3</div>
+          <div class="l">This Week</div>
+        </div>
+        <div class="stat-card">
+          <div class="n" style="color:#22C55E;font-size:22px;">●</div>
+          <div class="l">Live</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Filter bar -->
+<div class="sro-filter-bar">
+  <div class="container">
+    <div class="sro-filter-inner">
+      <span class="filter-label">Filter:</span>
+      <div class="filter-pills">
+        <button class="fpill active" data-filter="all" onclick="filterSROs('all', this)">
+          All <span class="fpill-count" id="countAll">8</span>
+        </button>
+        <button class="fpill" data-filter="income-tax" onclick="filterSROs('income-tax', this)">
+          <span style="width:7px;height:7px;background:var(--cobalt);border-radius:50%;display:inline-block;"></span>
+          Income Tax <span class="fpill-count" id="countIT">3</span>
+        </button>
+        <button class="fpill" data-filter="sales-tax" onclick="filterSROs('sales-tax', this)">
+          <span style="width:7px;height:7px;background:var(--emerald);border-radius:50%;display:inline-block;"></span>
+          Sales Tax <span class="fpill-count" id="countST">2</span>
+        </button>
+        <button class="fpill" data-filter="customs" onclick="filterSROs('customs', this)">
+          <span style="width:7px;height:7px;background:var(--amber);border-radius:50%;display:inline-block;"></span>
+          Customs <span class="fpill-count" id="countCust">1</span>
+        </button>
+        <button class="fpill" data-filter="wht" onclick="filterSROs('wht', this)">
+          <span style="width:7px;height:7px;background:#0891B2;border-radius:50%;display:inline-block;"></span>
+          WHT <span class="fpill-count" id="countWHT">1</span>
+        </button>
+        <button class="fpill" data-filter="deadline" onclick="filterSROs('deadline', this)">
+          <span style="width:7px;height:7px;background:var(--red);border-radius:50%;display:inline-block;"></span>
+          Deadlines <span class="fpill-count" id="countDL">1</span>
+        </button>
+      </div>
+      <div class="sro-search-box">
+        <i class="fas fa-search"></i>
+        <input type="text" id="sroSearchInput" placeholder="Search SRO number, keyword…" oninput="searchSROs(this.value)">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Main -->
+<div class="sro-main">
+  <div class="container">
+    <div class="sro-cols">
+
+      <!-- ── LEFT: SRO list ── -->
+      <div>
+        <div class="sro-results-head">
+          <div class="sro-results-count"><strong id="visibleCount">8</strong> SROs shown</div>
+          <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+            <div class="sro-sort">
+              Sort by:
+              <select onchange="sortSROs(this.value)">
+                <option value="date-desc">Newest first</option>
+                <option value="date-asc">Oldest first</option>
+                <option value="num-desc">SRO No. ↓</option>
+                <option value="num-asc">SRO No. ↑</option>
+              </select>
+            </div>
+            <button class="export-btn" onclick="exportCSV()"><i class="fas fa-download"></i> Export CSV</button>
+          </div>
+        </div>
+
+        <!-- SRO list — rendered by JS from data array -->
+        <div class="sro-list" id="sroList"></div>
+
+        <div class="no-results" id="noResults">
+          <i class="fas fa-search"></i>
+          <h3>No SROs found</h3>
+          <p>Try a different keyword or clear the filter.</p>
+        </div>
+
+        <div class="pagination" id="pagination">
+          <button class="page-btn wide active"><i class="fas fa-chevron-left"></i></button>
+          <button class="page-btn active">1</button>
+          <button class="page-btn">2</button>
+          <button class="page-btn">3</button>
+          <span style="font-size:13px;color:var(--mist);padding:0 4px;">…</span>
+          <button class="page-btn">18</button>
+          <button class="page-btn wide"><i class="fas fa-chevron-right"></i></button>
+        </div>
+      </div>
+
+      <!-- ── RIGHT: Sidebar ── -->
+      <aside class="sro-sidebar">
+
+        <!-- Category legend -->
+        <div class="widget">
+          <div class="widget-head"><i class="fas fa-layer-group"></i> By Category</div>
+          <div class="widget-body">
+            <div class="cat-legend">
+              <div class="cat-legend-item" onclick="filterSROs('income-tax', null)">
+                <div class="cat-legend-left">
+                  <div class="cat-dot" style="background:var(--cobalt);"></div>
+                  <span class="cat-name">Income Tax</span>
+                </div>
+                <span class="cat-count">58</span>
+              </div>
+              <div class="cat-legend-item" onclick="filterSROs('sales-tax', null)">
+                <div class="cat-legend-left">
+                  <div class="cat-dot" style="background:var(--emerald);"></div>
+                  <span class="cat-name">Sales Tax</span>
+                </div>
+                <span class="cat-count">34</span>
+              </div>
+              <div class="cat-legend-item" onclick="filterSROs('customs', null)">
+                <div class="cat-legend-left">
+                  <div class="cat-dot" style="background:var(--amber);"></div>
+                  <span class="cat-name">Customs</span>
+                </div>
+                <span class="cat-count">29</span>
+              </div>
+              <div class="cat-legend-item" onclick="filterSROs('wht', null)">
+                <div class="cat-legend-left">
+                  <div class="cat-dot" style="background:#0891B2;"></div>
+                  <span class="cat-name">Withholding Tax</span>
+                </div>
+                <span class="cat-count">16</span>
+              </div>
+              <div class="cat-legend-item" onclick="filterSROs('deadline', null)">
+                <div class="cat-legend-left">
+                  <div class="cat-dot" style="background:var(--red);"></div>
+                  <span class="cat-name">Deadline Extensions</span>
+                </div>
+                <span class="cat-count">10</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent activity -->
+        <div class="widget">
+          <div class="widget-head"><i class="fas fa-clock"></i> Recent Activity</div>
+          <div class="widget-body">
+            <div class="activity-list">
+              <div class="activity-item">
+                <div class="activity-dot"></div>
+                <div class="activity-body">
+                  <h4><a href="#">SRO 847(I)/2026 added</a></h4>
+                  <p>Income Tax · Jun 24</p>
+                </div>
+              </div>
+              <div class="activity-item">
+                <div class="activity-dot green"></div>
+                <div class="activity-body">
+                  <h4><a href="#">SRO 831(I)/2026 added</a></h4>
+                  <p>Sales Tax · Jun 18</p>
+                </div>
+              </div>
+              <div class="activity-item">
+                <div class="activity-dot amber"></div>
+                <div class="activity-body">
+                  <h4><a href="#">SRO 815(I)/2026 added</a></h4>
+                  <p>Customs · Jun 12</p>
+                </div>
+              </div>
+              <div class="activity-item">
+                <div class="activity-dot red"></div>
+                <div class="activity-body">
+                  <h4><a href="#">SRO 799(I)/2026 added</a></h4>
+                  <p>Deadline · Jun 5</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SRO alert signup -->
+        <div class="sro-subscribe">
+          <h3>🔔 SRO Alerts</h3>
+          <p>Get notified within hours of every new SRO — straight to your inbox. Free.</p>
+          <div class="sro-sub-form">
+            <input type="email" placeholder="your@email.com">
+            <button>Get SRO Alerts →</button>
+          </div>
+        </div>
+
+        <!-- How to use -->
+        <div class="widget">
+          <div class="widget-head"><i class="fas fa-question-circle"></i> How to Use</div>
+          <div class="widget-body" style="font-size:13px;color:var(--slate);line-height:1.7;display:flex;flex-direction:column;gap:10px;">
+            <p><strong style="color:var(--ink);">Search</strong> by SRO number (e.g. "847") or keyword (e.g. "property", "WHT").</p>
+            <p><strong style="color:var(--ink);">Filter</strong> by category using the buttons above the list.</p>
+            <p><strong style="color:var(--ink);">Click "Summary"</strong> for a plain-language breakdown of any SRO.</p>
+            <p><strong style="color:var(--ink);">Download PDF</strong> for the official gazette text.</p>
+            <p style="font-size:12px;color:var(--mist);">SROs are updated within 24 hours of FBR publication.</p>
+          </div>
+        </div>
+
+      </aside>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     SRO JAVASCRIPT — Data + Functionality
+════════════════════════════════════════════ -->
+<script>
+/* ════════════════════════════════
+   SRO DATA ARRAY
+   In the real CMS-driven site, this
+   will be loaded from a JSON file.
+   You add a new SRO by adding one
+   object to this array via the CMS.
+════════════════════════════════ */
+const SRO_DATA = [
+  {
+    id: 'sro-847-2026',
+    num: 'SRO 847(I)/2026',
+    year: 2026,
+    date: '2026-06-24',
+    dateDisplay: 'Jun 24, 2026',
+    category: 'income-tax',
+    catLabel: 'Income Tax',
+    isNew: true,
+    title: 'Revised Withholding Tax Rates for Non-Filers — Banking, Property & Vehicles',
+    summary: 'This SRO revises the withholding tax rates applicable to persons not appearing on the Active Taxpayer List (ATL). Higher rates now apply across banking transactions, property purchases, and vehicle registrations effective July 1, 2026.',
+    points: [
+      'Bank cash withdrawal WHT for non-filers increased from 1% to 1.2% on amounts exceeding Rs. 50,000 per day',
+      'Property purchase WHT for non-filers increased from 4% to 6%',
+      'Vehicle registration WHT for non-filers (above 1600cc) increased from 3% to 6%',
+      'Rates for Active Taxpayer List (ATL) filers remain unchanged',
+      'Effective date: July 1, 2026 (Tax Year 2025-26)'
+    ],
+    affected: 'All persons not appearing on the FBR Active Taxpayer List. Withholding agents (banks, property registrars, motor vehicle authorities) must apply the new rates from July 1, 2026.',
+    pdfUrl: 'https://fbr.gov.pk',
+    impact: ['Individuals', 'Non-Filers', 'Banks', 'Property']
+  },
+  {
+    id: 'sro-831-2026',
+    num: 'SRO 831(I)/2026',
+    year: 2026,
+    date: '2026-06-18',
+    dateDisplay: 'Jun 18, 2026',
+    category: 'sales-tax',
+    catLabel: 'Sales Tax',
+    isNew: false,
+    title: 'Amendment in Fifth Schedule — Expanded Exemptions for Pharma & Agricultural Machinery',
+    summary: 'FBR has expanded the Fifth Schedule of the Sales Tax Act 1990, extending zero-rated or exempted status to additional pharmaceutical raw materials and specific agricultural machinery items.',
+    points: [
+      '17 new HS codes added to Fifth Schedule covering pharma active pharmaceutical ingredients (APIs)',
+      'Agricultural sprayers and drip irrigation components exempted from sales tax',
+      'Exemption is applicable from the date of gazette notification',
+      'Input tax reversal not required for manufacturers using exempted raw materials'
+    ],
+    affected: 'Pharmaceutical manufacturers and importers, agricultural machinery suppliers and importers, and their customers benefiting from reduced input costs.',
+    pdfUrl: 'https://fbr.gov.pk',
+    impact: ['Pharma', 'Agriculture', 'Manufacturers']
+  },
+  {
+    id: 'sro-822-2026',
+    num: 'SRO 822(I)/2026',
+    year: 2026,
+    date: '2026-06-15',
+    dateDisplay: 'Jun 15, 2026',
+    category: 'wht',
+    catLabel: 'Withholding Tax',
+    isNew: false,
+    title: 'WHT Rates on Payments to Non-Resident Service Providers — Section 152 Revised',
+    summary: 'Revised withholding tax rates under Section 152 for payments made to non-resident service providers. The amendment also clarifies the definition of "technical services" for WHT purposes.',
+    points: [
+      'WHT on technical service fees to non-residents increased from 12% to 15%',
+      'Definition of "technical services" broadened to include cloud computing and SaaS subscriptions',
+      'Royalty payments to non-residents now subject to 15% WHT (previously 12%)',
+      'Relief for companies with Advance Pricing Agreements (APAs) — existing APA rates protected'
+    ],
+    affected: 'Pakistani companies making payments to foreign service providers, software vendors, and consultants. Particularly impacts tech companies paying for cloud services and software licences.',
+    pdfUrl: 'https://fbr.gov.pk',
+    impact: ['Businesses', 'Tech Companies', 'Non-Residents']
+  },
+  {
+    id: 'sro-815-2026',
+    num: 'SRO 815(I)/2026',
+    year: 2026,
+    date: '2026-06-12',
+    dateDisplay: 'Jun 12, 2026',
+    category: 'customs',
+    catLabel: 'Customs',
+    isNew: false,
+    title: 'Revised Customs Duty on Textile Machinery — Selected HS Codes Reduced',
+    summary: 'Customs duty rates reduced on specific HS codes covering textile spinning and weaving machinery, in line with the government\'s policy to support the export-oriented textile sector.',
+    points: [
+      'Customs duty on 14 HS codes covering ring spinning frames reduced from 20% to 10%',
+      'Weaving and knitting machines (selected codes) reduced from 16% to 5%',
+      'Benefit conditional on manufacturer status — importers must hold MRS or EFS facility',
+      'Orders placed prior to notification date also eligible if goods not yet cleared'
+    ],
+    affected: 'Textile spinning and weaving manufacturers importing qualifying machinery. FBR Collectorate will verify MRS/EFS facility status before clearing at reduced rates.',
+    pdfUrl: 'https://fbr.gov.pk',
+    impact: ['Textile', 'Manufacturers', 'Importers']
+  },
+  {
+    id: 'sro-799-2026',
+    num: 'SRO 799(I)/2026',
+    year: 2026,
+    date: '2026-06-05',
+    dateDisplay: 'Jun 5, 2026',
+    category: 'deadline',
+    catLabel: 'Deadline Extension',
+    isNew: false,
+    title: 'Income Tax Return Deadline Extended — Tax Year 2024-25 (All Categories)',
+    summary: 'FBR has extended the income tax return filing deadline for Tax Year 2024-25 from September 30, 2025 to October 31, 2025, applicable to all categories of taxpayers.',
+    points: [
+      'New deadline: October 31, 2025 (extended from September 30, 2025)',
+      'Applicable to individuals, AOPs, and companies with standard June 30 year-end',
+      'No penalty for returns filed between October 1 and October 31, 2025',
+      'ATL status update will reflect returns filed up to October 31, 2025',
+      'Returns filed after October 31 will attract normal late-filing penalties'
+    ],
+    affected: 'All income taxpayers required to file Tax Year 2024-25 returns, including salaried individuals, business owners, AOPs, and companies.',
+    pdfUrl: 'https://fbr.gov.pk',
+    impact: ['All Taxpayers', 'Individuals', 'Companies', 'AOPs']
+  },
+  {
+    id: 'sro-778-2026',
+    num: 'SRO 778(I)/2026',
+    year: 2026,
+    date: '2026-05-29',
+    dateDisplay: 'May 29, 2026',
+    category: 'sales-tax',
+    catLabel: 'Sales Tax',
+    isNew: false,
+    title: 'POS Integration Mandatory for Tier-1 Retailers — All Cities from July 2026',
+    summary: 'FBR has made PRAL-integrated POS systems compulsory for all Tier-1 retailers operating in all cities across Pakistan, effective July 1, 2026. Retailers not complying face suspension of their STRN.',
+    points: [
+      'Tier-1 POS integration extended to all cities (previously limited to major urban centres)',
+      'Effective date: July 1, 2026',
+      'Non-compliance may result in STRN suspension and penalty of Rs. 500,000',
+      'Retailers must upload daily sales data to PRAL system in real-time',
+      'FBR will conduct compliance monitoring visits from August 2026'
+    ],
+    affected: 'All retailers classified as Tier-1 under Section 2(43A) of the Sales Tax Act, including large retail chains, departmental stores, and branded outlets.',
+    pdfUrl: 'https://fbr.gov.pk',
+    impact: ['Tier-1 Retailers', 'Sales Tax', 'POS']
+  },
+  {
+    id: 'sro-761-2026',
+    num: 'SRO 761(I)/2026',
+    year: 2026,
+    date: '2026-05-20',
+    dateDisplay: 'May 20, 2026',
+    category: 'income-tax',
+    catLabel: 'Income Tax',
+    isNew: false,
+    title: 'Section 7E Deemed Rental Income — Updated Exemption List (AJK, GB & Other Properties)',
+    summary: 'FBR has clarified the list of properties excluded from the deemed rental income tax under Section 7E, following court decisions. Properties in AJK, Gilgit-Baltistan, and FATA/PATA are now explicitly excluded.',
+    points: [
+      'Properties situated in Azad Jammu & Kashmir (AJK) explicitly excluded from Section 7E',
+      'Properties in Gilgit-Baltistan (GB) excluded from the deemed income tax',
+      'FATA/PATA properties (transferred to KPK) also excluded',
+      'One self-occupied residential property (declared as such in return) remains excluded',
+      'Properties of overseas Pakistanis with foreign-source income excluded per existing rules'
+    ],
+    affected: 'Property owners in AJK, Gilgit-Baltistan, FATA/PATA, and overseas Pakistanis who may have been incorrectly assessed under Section 7E. Those who paid incorrectly may apply for adjustment.',
+    pdfUrl: 'https://fbr.gov.pk',
+    impact: ['Property Owners', 'AJK', 'GB', 'Overseas Pakistanis']
+  },
+  {
+    id: 'sro-744-2026',
+    num: 'SRO 744(I)/2026',
+    year: 2026,
+    date: '2026-05-14',
+    dateDisplay: 'May 14, 2026',
+    category: 'income-tax',
+    catLabel: 'Income Tax',
+    isNew: false,
+    title: 'Advance Tax on Purchase of Air Tickets — Section 236B Rates Revised',
+    summary: 'Advance tax collected on purchase of air tickets under Section 236B has been revised. Rates differ based on ticket class (economy vs business/first) and filer status.',
+    points: [
+      'Economy class: advance tax for filers increased from Rs. 500 to Rs. 750 per ticket',
+      'Business/First class: advance tax for filers increased from Rs. 2,000 to Rs. 3,000 per ticket',
+      'Non-filer rates doubled: economy Rs. 1,500, business/first Rs. 6,000 per ticket',
+      'International tickets continue to be subject to existing Section 148 provisions',
+      'Airlines and travel agents are responsible for collecting and depositing WHT'
+    ],
+    affected: 'All domestic air travellers. Airlines (PIA, AirSial, AirBlue, Serene Air) and authorised travel agents must update their ticketing systems.',
+    pdfUrl: 'https://fbr.gov.pk',
+    impact: ['Air Travellers', 'Airlines', 'Travel Agents']
+  }
+];
+
+/* ════════════════════════
+   RENDER FUNCTIONS
+════════════════════════ */
+function getCatClass(cat) {
+  const map = { 'income-tax':'', 'sales-tax':'cat-sales', 'customs':'cat-customs', 'deadline':'cat-deadline', 'fed':'cat-fed', 'wht':'cat-wht' };
+  return map[cat] || '';
+}
+function getCatTagClass(cat) {
+  const map = { 'income-tax':'tag-blue', 'sales-tax':'tag-green', 'customs':'tag-amber', 'deadline':'tag-red', 'wht':'tag tag-mono', 'fed':'tag tag-mono' };
+  return 'tag ' + (map[cat] || 'tag-mono');
+}
+
+function renderSROCard(sro) {
+  const impactTags = sro.impact.slice(0,3).map(i => `<span class="impact-tag">${i}</span>`).join('');
+  return `
+  <div class="sro-card ${getCatClass(sro.category)} ${sro.isNew ? 'new-sro' : ''}" data-id="${sro.id}" data-category="${sro.category}">
+    <div class="sro-card-inner">
+      <div class="sro-card-id">
+        <div class="sro-num-text">${sro.num}</div>
+        <div class="sro-card-date"><i class="far fa-calendar-alt"></i> ${sro.dateDisplay}</div>
+        ${sro.isNew ? '<span class="tag tag-red" style="font-size:9px;padding:2px 7px;margin-top:4px;width:fit-content;">NEW</span>' : ''}
+      </div>
+      <div class="sro-card-body">
+        <div class="sro-card-tags">
+          <span class="${getCatTagClass(sro.category)}">${sro.catLabel}</span>
+        </div>
+        <div class="sro-card-title"><a href="#" onclick="openModal('${sro.id}'); return false;">${sro.title}</a></div>
+        <div class="sro-card-summary">${sro.summary.substring(0, 160)}…</div>
+        <div class="sro-card-impact">
+          <i class="fas fa-users"></i> Affects: ${impactTags}
+        </div>
+      </div>
+      <div class="sro-card-actions">
+        <button class="sro-action-btn sro-btn-summary" onclick="openModal('${sro.id}')"><i class="fas fa-eye"></i> Summary</button>
+        <a href="${sro.pdfUrl}" target="_blank" class="sro-action-btn sro-btn-pdf"><i class="fas fa-file-pdf"></i> Official PDF</a>
+      </div>
+    </div>
+  </div>`;
+}
+
+function renderList(data) {
+  const list = document.getElementById('sroList');
+  const noRes = document.getElementById('noResults');
+  const countEl = document.getElementById('visibleCount');
+  if (!data.length) {
+    list.innerHTML = '';
+    noRes.style.display = 'block';
+    countEl.textContent = '0';
+    return;
+  }
+  noRes.style.display = 'none';
+  list.innerHTML = data.map(renderSROCard).join('');
+  countEl.textContent = data.length;
+}
+
+/* ════════════════════════
+   FILTER + SEARCH
+════════════════════════ */
+let currentFilter = 'all';
+let currentSearch = '';
+
+function filterSROs(filter, btn) {
+  currentFilter = filter;
+  if (btn) {
+    document.querySelectorAll('.fpill').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  }
+  applyFilters();
+}
+
+function searchSROs(term) {
+  currentSearch = term.toLowerCase();
+  applyFilters();
+}
+
+function applyFilters() {
+  let data = [...SRO_DATA];
+  if (currentFilter !== 'all') data = data.filter(s => s.category === currentFilter);
+  if (currentSearch) {
+    data = data.filter(s =>
+      s.num.toLowerCase().includes(currentSearch) ||
+      s.title.toLowerCase().includes(currentSearch) ||
+      s.summary.toLowerCase().includes(currentSearch) ||
+      s.catLabel.toLowerCase().includes(currentSearch)
+    );
+  }
+  renderList(data);
+}
+
+/* ════════════════════════
+   SORT
+════════════════════════ */
+function sortSROs(order) {
+  const list = document.getElementById('sroList');
+  const cards = Array.from(list.querySelectorAll('.sro-card'));
+  cards.sort((a, b) => {
+    const idA = a.dataset.id, idB = b.dataset.id;
+    const sA = SRO_DATA.find(s => s.id === idA);
+    const sB = SRO_DATA.find(s => s.id === idB);
+    if (order === 'date-desc') return new Date(sB.date) - new Date(sA.date);
+    if (order === 'date-asc')  return new Date(sA.date) - new Date(sB.date);
+    if (order === 'num-desc')  return parseInt(sB.num.match(/\d+/)[0]) - parseInt(sA.num.match(/\d+/)[0]);
+    if (order === 'num-asc')   return parseInt(sA.num.match(/\d+/)[0]) - parseInt(sB.num.match(/\d+/)[0]);
+    return 0;
+  });
+  cards.forEach(c => list.appendChild(c));
+}
+
+/* ════════════════════════
+   MODAL
+════════════════════════ */
+function openModal(id) {
+  const sro = SRO_DATA.find(s => s.id === id);
+  if (!sro) return;
+
+  document.getElementById('modalSroNum').textContent = sro.num;
+  document.getElementById('modalTitle').textContent = sro.title;
+  document.getElementById('modalSummary').textContent = sro.summary;
+  document.getElementById('modalAffected').textContent = sro.affected;
+  document.getElementById('modalPdfLink').href = sro.pdfUrl;
+
+  // Meta fields
+  document.getElementById('modalMeta').innerHTML = `
+    <div class="sro-meta-field"><label>SRO Number</label><span>${sro.num}</span></div>
+    <div class="sro-meta-field"><label>Date Issued</label><span class="plain">${sro.dateDisplay}</span></div>
+    <div class="sro-meta-field"><label>Category</label><span class="plain">${sro.catLabel}</span></div>
+  `;
+
+  // Key points
+  document.getElementById('modalPoints').innerHTML = sro.points.map(p => `<li>${p}</li>`).join('');
+
+  document.getElementById('sroModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('sroModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.getElementById('sroModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+function shareModal() {
+  navigator.clipboard.writeText(window.location.href).then(() => alert('Link copied!'));
+}
+
+/* ════════════════════════
+   CSV EXPORT
+════════════════════════ */
+function exportCSV() {
+  const headers = ['SRO Number','Date','Category','Title','Summary'];
+  const rows = SRO_DATA.map(s => [
+    `"${s.num}"`,
+    `"${s.dateDisplay}"`,
+    `"${s.catLabel}"`,
+    `"${s.title.replace(/"/g, '""')}"`,
+    `"${s.summary.replace(/"/g, '""')}"`
+  ].join(','));
+  const csv = [headers.join(','), ...rows].join('\n');
+  const blob = new Blob([csv], { type: 'text/csv' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'PakTaxGazette_SROs_2026.csv';
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+/* ── Init ── */
+document.addEventListener('DOMContentLoaded', () => { renderList(SRO_DATA); });
+</script>
+
+<footer class="site-footer">
+
+  <!-- Newsletter band -->
+  <div class="footer-newsletter" id="newsletter">
+    <div class="container">
+      <div class="footer-newsletter-inner">
+        <div class="footer-newsletter-text">
+          <h3>📬 Pakistan Tax Digest</h3>
+          <p>Weekly SRO roundup, budget alerts, deadline reminders &amp; plain-language tax updates — every Friday, free.</p>
+          <div class="footer-newsletter-privacy">No spam. Unsubscribe anytime. Your email is never shared.</div>
+        </div>
+        <div>
+          <div class="footer-newsletter-form">
+            <input type="email" placeholder="your@email.com" id="newsletterEmail">
+            <button onclick="subscribeNewsletter()">Subscribe Free →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main footer -->
+  <div class="footer-main">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Brand + credit -->
+        <div class="footer-brand-col">
+          <div class="footer-brand-name">
+            <span class="pak">Pak</span><span class="tax">Tax</span>
+            <span class="gaz">Gazette</span>
+          </div>
+          <p class="footer-brand-desc">
+            Pakistan's dedicated tax news hub — SRO summaries, Finance Bill analysis, tax calculators, and plain-language guides for individuals and businesses.
+          </p>
+
+          <!-- Ifat Associates credit: always present, never intrusive -->
+          <div class="footer-credit">
+            <div class="footer-credit-icon">🏢</div>
+            <div class="footer-credit-text">
+              <p>Tax advisory &amp; professional services by</p>
+              <a href="https://www.ifatassociates.com" target="_blank" rel="noopener">
+                Ifat Associates — Tax &amp; Business Consultants
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer-social">
+            <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" title="Email"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+
+        <!-- Site sections -->
+        <div class="footer-col">
+          <h4>Content</h4>
+          <ul>
+<li><a href="index.html"><i class="fas fa-chevron-right"></i> Latest Tax News</a></li>
+<li><a href="sro.html"><i class="fas fa-chevron-right"></i> SRO Tracker 2026</a></li>
+<li><a href="budget.html"><i class="fas fa-chevron-right"></i> Finance Bill 2026-27</a></li>
+<li><a href="blog.html"><i class="fas fa-chevron-right"></i> Tax Blog &amp; Guides</a></li>
+<li><a href="article.html"><i class="fas fa-chevron-right"></i> FBR Notice Library</a></li>
+<li><a href="blog.html"><i class="fas fa-chevron-right"></i> Budget Archive</a></li>
+</ul>
+        </div>
+
+        <!-- Tools -->
+        <div class="footer-col">
+          <h4>Free Tools</h4>
+          <ul>
+<li><a href="tools.html"><i class="fas fa-chevron-right"></i> Income Tax Calculator</a></li>
+<li><a href="tools.html"><i class="fas fa-chevron-right"></i> WHT Rate Finder</a></li>
+<li><a href="tools.html"><i class="fas fa-chevron-right"></i> Property CGT Calculator</a></li>
+<li><a href="tools.html"><i class="fas fa-chevron-right"></i> Sales Tax Calculator</a></li>
+<li><a href="tools.html"><i class="fas fa-chevron-right"></i> Deadline Tracker</a></li>
+<li><a href="tools.html"><i class="fas fa-chevron-right"></i> Super Tax Estimator</a></li>
+</ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-col">
+          <h4>Professional Help</h4>
+          <div class="footer-contact-item">
+            <i class="fas fa-globe"></i>
+            <span><a href="https://www.ifatassociates.com" target="_blank">www.ifatassociates.com</a></span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Faisalabad, Pakistan</span>
+          </div>
+          <div style="margin-top:18px;">
+            <a href="https://www.ifatassociates.com" target="_blank" class="btn btn-outline btn-sm" style="font-size:12px;">
+              <i class="fas fa-briefcase"></i> Book Consultation
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="footer-bottom">
+    <div class="container">
+      <div class="footer-bottom-inner">
+        <div class="footer-bottom-left">
+          <div>© 2026 PakTax Gazette. Content by <a href="https://www.ifatassociates.com" target="_blank">Ifat Associates</a>, Faisalabad.</div>
+          <div class="footer-disclaimer">For informational purposes only. Not legal or tax advice. Always consult a qualified tax professional for your specific situation.</div>
+        </div>
+        <div class="footer-bottom-right">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Disclaimer</a>
+          <a href="#">Sitemap</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+<!-- Back to top -->
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<!-- ════════════════════════════════════════════
+     JAVASCRIPT
+════════════════════════════════════════════ -->
+<script>
+/* ── Live date in top bar ── */
+(function() {
+  const days   = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  const now = new Date();
+  const el  = document.getElementById('currentDate');
+  if (el) el.textContent = `${days[now.getDay()]}, ${now.getDate()} ${months[now.getMonth()]} ${now.getFullYear()}`;
+})();
+
+/* ── Scroll progress bar ── */
+window.addEventListener('scroll', function() {
+  const scrollTop = window.scrollY;
+  const docH = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = docH > 0 ? (scrollTop / docH) * 100 : 0;
+  document.getElementById('scrollProgress').style.width = progress + '%';
+
+  // Back to top
+  const btn = document.getElementById('backToTop');
+  if (scrollTop > 400) btn.classList.add('visible');
+  else btn.classList.remove('visible');
+});
+
+/* ── Search overlay ── */
+function openSearch() {
+  document.getElementById('searchOverlay').classList.add('open');
+  setTimeout(() => document.getElementById('searchInput').focus(), 100);
+}
+function closeSearch() {
+  document.getElementById('searchOverlay').classList.remove('open');
+}
+document.getElementById('searchOverlay').addEventListener('click', function(e) {
+  if (e.target === this) closeSearch();
+});
+document.addEventListener('keydown', function(e) {
+  if ((e.ctrlKey || e.metaKey) && e.key === 'k') { e.preventDefault(); openSearch(); }
+  if (e.key === 'Escape') closeSearch();
+});
+
+/* ── Mobile nav ── */
+function openMobileNav()  { document.getElementById('mobileNav').classList.add('open'); document.body.style.overflow = 'hidden'; }
+function closeMobileNav() { document.getElementById('mobileNav').classList.remove('open'); document.body.style.overflow = ''; }
+
+/* ── Newsletter ── */
+function subscribeNewsletter() {
+  const email = document.getElementById('newsletterEmail').value;
+  if (!email || !email.includes('@')) {
+    alert('Please enter a valid email address.');
+    return;
+  }
+  alert('Thank you! You\'re subscribed to Pakistan Tax Digest. Watch your inbox every Friday.');
+}
+
+/* ── Ticker auto-width (ensures seamless loop) ── */
+(function() {
+  const inner = document.getElementById('tickerInner');
+  if (!inner) return;
+  // The CSS animation is set to -50% which works because we duplicated the items
+})();
+</script>
+</body>
+</html>

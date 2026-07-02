@@ -1,0 +1,2567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Income Tax Slabs 2025-26: Complete Guide — PakTax Gazette</title>
+<meta name="description" content="SRO summaries, Finance Bill analysis, tax calculators and plain-language tax guidance for Pakistan — by Ifat Associates.">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;700&display=swap" rel="stylesheet">
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+/* ═══════════════════════════════════════════════════════════════
+   DESIGN TOKENS — PakTax Gazette
+   
+   Palette rationale:
+   - Ink / Midnight: authority, FBR-grade seriousness
+   - Emerald: Pakistan's national identity, woven in quietly
+   - Cobalt: action, links, live data
+   - Amber: urgency, deadlines — the colour of caution signs
+   The one aesthetic risk: the masthead uses a broadsheet-style
+   horizontal rule and a mono-spaced issue number, treating the
+   website like a daily newspaper edition. This is specific to
+   this brief and would not appear on a generic news template.
+═══════════════════════════════════════════════════════════════ */
+:root {
+  /* Core palette */
+  --ink:          #0B1120;
+  --midnight:     #0E2044;
+  --midnight-mid: #162D5C;
+  --cobalt:       #1451CC;
+  --cobalt-hover: #0F3FA3;
+  --cobalt-light: #EEF4FF;
+  --cobalt-mid:   #C7D9F7;
+  --emerald:      #0A6B4A;
+  --emerald-light:#E6F4EE;
+  --amber:        #B25000;
+  --amber-light:  #FEF0E0;
+  --red:          #C0171A;
+  --red-light:    #FEE8E8;
+  --slate:        #44556A;
+  --mist:         #7C8FA6;
+  --rule:         #DDE4EF;
+  --canvas:       #F6F8FB;
+  --white:        #FFFFFF;
+
+  /* Typography */
+  --serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --sans:  'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --mono:  'IBM Plex Mono', 'Courier New', monospace;
+
+  /* Spacing & shape */
+  --r:   8px;
+  --r2:  14px;
+  --r3:  20px;
+
+  /* Shadows */
+  --sh-sm: 0 1px 4px rgba(11,17,32,.08);
+  --sh:    0 4px 20px rgba(11,17,32,.10);
+  --sh-lg: 0 8px 40px rgba(11,17,32,.14);
+}
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: var(--sans);
+  background: var(--canvas);
+  color: var(--slate);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+a { text-decoration: none; color: inherit; }
+button { font-family: var(--sans); cursor: pointer; }
+
+/* ── Layout ── */
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   TOP UTILITY BAR
+═══════════════════════════════════════════════════════════════ */
+.top-bar {
+  background: var(--midnight);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  padding: 0;
+  overflow: hidden;
+}
+.top-bar-inner {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 0;
+  min-height: 36px;
+}
+.top-bar-left {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  overflow: hidden;
+}
+.top-bar-date {
+  background: rgba(255,255,255,.05);
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: rgba(255,255,255,.4);
+  letter-spacing: .03em;
+  border-right: 1px solid rgba(255,255,255,.06);
+  white-space: nowrap;
+  min-height: 36px;
+}
+.top-bar-date i { font-size: 10px; color: rgba(255,255,255,.25); }
+.top-bar-links {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+.top-bar-links a {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0 14px;
+  min-height: 36px;
+  font-size: 11.5px;
+  font-weight: 500;
+  color: rgba(255,255,255,.5);
+  border-right: 1px solid rgba(255,255,255,.05);
+  transition: color .2s, background .2s;
+  white-space: nowrap;
+}
+.top-bar-links a:hover {
+  color: rgba(255,255,255,.9);
+  background: rgba(255,255,255,.04);
+}
+.top-bar-links a i { font-size: 10px; color: rgba(255,255,255,.25); }
+
+.top-bar-right {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+.top-bar-social {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  border-left: 1px solid rgba(255,255,255,.06);
+}
+.top-bar-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  min-height: 36px;
+  font-size: 13px;
+  color: rgba(255,255,255,.35);
+  transition: color .2s, background .2s;
+}
+.top-bar-social a:hover { color: rgba(255,255,255,.85); background: rgba(255,255,255,.05); }
+
+.top-bar-cta {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 18px;
+  background: var(--cobalt);
+  color: #fff !important;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+  border-left: none;
+  transition: background .2s;
+  white-space: nowrap;
+  min-height: 36px;
+}
+.top-bar-cta:hover { background: var(--cobalt-hover) !important; }
+.top-bar-cta i { font-size: 10px; }
+
+/* ═══════════════════════════════════════════════════════════════
+   MASTHEAD — the "newspaper edition" signature element
+═══════════════════════════════════════════════════════════════ */
+.masthead {
+  background: var(--white);
+  border-bottom: 1px solid var(--rule);
+  padding: 18px 0 14px;
+}
+.masthead-inner {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Left: wordmark */
+.brand-wordmark {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.brand-pre {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--cobalt);
+  margin-bottom: 3px;
+}
+.brand-name-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0;
+  line-height: 1;
+}
+.brand-pak {
+  font-family: var(--serif);
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 900;
+  color: var(--midnight);
+  letter-spacing: -.02em;
+}
+.brand-tax {
+  font-family: var(--serif);
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 900;
+  color: var(--cobalt);
+  letter-spacing: -.02em;
+}
+.brand-gazette {
+  font-family: var(--serif);
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 700;
+  font-style: italic;
+  color: var(--midnight);
+  letter-spacing: -.01em;
+  margin-left: 10px;
+  opacity: .7;
+}
+.brand-sub {
+  font-size: 11px;
+  color: var(--mist);
+  font-weight: 500;
+  letter-spacing: .04em;
+  margin-top: 5px;
+  text-transform: uppercase;
+}
+
+/* Centre: edition metadata strip */
+.masthead-meta {
+  flex: 1;
+  max-width: 360px;
+  border-left: 1px solid var(--rule);
+  border-right: 1px solid var(--rule);
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+}
+.masthead-meta-row {
+  display: flex;
+  gap: 16px;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  color: var(--mist);
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.masthead-meta-row span { display: flex; align-items: center; gap: 5px; }
+.masthead-meta-rule {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--rule), transparent);
+}
+.masthead-tag {
+  font-family: var(--mono);
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--emerald);
+  background: var(--emerald-light);
+  padding: 2px 10px;
+  border-radius: 3px;
+}
+
+/* Right: search + subscribe */
+.masthead-actions { display: flex; flex-direction: column; gap: 8px; align-items: flex-end; }
+.masthead-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--canvas);
+  border: 1.5px solid var(--rule);
+  border-radius: var(--r);
+  padding: 8px 14px;
+  font-size: 13px;
+  color: var(--mist);
+  cursor: pointer;
+  transition: all .2s;
+  min-width: 220px;
+}
+.masthead-search:hover { border-color: var(--cobalt); color: var(--cobalt); }
+.masthead-search span { flex: 1; }
+.masthead-search kbd {
+  font-family: var(--mono); font-size: 10px;
+  background: var(--white); border: 1px solid var(--rule);
+  border-radius: 4px; padding: 1px 6px; color: var(--mist);
+}
+.masthead-subscribe {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--emerald);
+  transition: color .2s;
+}
+.masthead-subscribe:hover { color: var(--cobalt); }
+.masthead-subscribe i { font-size: 11px; }
+
+/* ═══════════════════════════════════════════════════════════════
+   MAIN NAVIGATION
+═══════════════════════════════════════════════════════════════ */
+.main-nav-bar {
+  background: var(--midnight);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: var(--sh);
+}
+.main-nav-inner {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 0;
+}
+.main-nav-links {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+}
+.main-nav-links a {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 18px;
+  min-height: 48px;
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,.65);
+  letter-spacing: .01em;
+  border-bottom: 3px solid transparent;
+  transition: all .2s;
+  white-space: nowrap;
+  position: relative;
+}
+.main-nav-links a:hover {
+  color: #fff;
+  background: rgba(255,255,255,.04);
+  border-bottom-color: rgba(255,255,255,.2);
+}
+.main-nav-links a.active {
+  color: #fff;
+  background: rgba(255,255,255,.06);
+  border-bottom-color: var(--cobalt);
+}
+.main-nav-links a.active i { color: var(--cobalt); }
+.main-nav-links a i { font-size: 12px; color: rgba(255,255,255,.3); transition: color .2s; }
+.main-nav-links a:hover i { color: rgba(255,255,255,.6); }
+
+/* Hot badge on nav item */
+.nav-dot {
+  position: absolute;
+  top: 10px;
+  right: 8px;
+  width: 7px;
+  height: 7px;
+  background: var(--red);
+  border-radius: 50%;
+  border: 1.5px solid var(--midnight);
+  animation: navdot 2s ease-in-out infinite;
+}
+@keyframes navdot { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: .7; transform: scale(.8); } }
+
+.nav-new-tag {
+  font-size: 9px; font-weight: 800; letter-spacing: .06em;
+  background: var(--amber); color: #fff;
+  padding: 2px 6px; border-radius: 4px;
+  text-transform: uppercase;
+}
+
+/* Right side of nav: live indicator */
+.main-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  border-left: 1px solid rgba(255,255,255,.07);
+}
+.nav-live {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 18px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: rgba(255,255,255,.5);
+}
+.nav-live-dot {
+  width: 7px; height: 7px;
+  background: #22C55E;
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+@keyframes pulse { 0%,100% { opacity: 1; box-shadow: 0 0 0 0 rgba(34,197,94,.4); } 50% { opacity: .8; box-shadow: 0 0 0 4px rgba(34,197,94,0); } }
+
+.nav-mobile-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  min-height: 48px;
+  background: none;
+  border: none;
+  color: rgba(255,255,255,.7);
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   BREAKING NEWS TICKER
+═══════════════════════════════════════════════════════════════ */
+.ticker-bar {
+  background: var(--cobalt);
+  display: flex;
+  align-items: stretch;
+  overflow: hidden;
+  border-bottom: 2px solid var(--cobalt-hover);
+}
+.ticker-label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 18px;
+  background: var(--midnight);
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: #fff;
+  white-space: nowrap;
+  flex-shrink: 0;
+  min-height: 38px;
+  border-right: 3px solid var(--cobalt);
+}
+.ticker-label-dot {
+  width: 7px; height: 7px;
+  background: var(--red);
+  border-radius: 50%;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+.ticker-track {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.ticker-inner {
+  display: flex;
+  gap: 0;
+  animation: ticker 32s linear infinite;
+  white-space: nowrap;
+  will-change: transform;
+}
+.ticker-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  padding: 0 36px 0 0;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255,255,255,.92);
+  min-height: 38px;
+}
+.ticker-item::after {
+  content: '◆';
+  font-size: 7px;
+  color: rgba(255,255,255,.3);
+  margin-left: 36px;
+}
+.ticker-item:last-child::after { display: none; }
+.ticker-item a { color: rgba(255,255,255,.92); transition: color .2s; }
+.ticker-item a:hover { color: #fff; }
+.ticker-item .ticker-tag {
+  font-size: 10px; font-weight: 800; letter-spacing: .06em;
+  text-transform: uppercase;
+  background: rgba(255,255,255,.15);
+  padding: 2px 8px; border-radius: 3px; margin-right: 9px;
+}
+@keyframes ticker {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.ticker-bar:hover .ticker-inner { animation-play-state: paused; }
+
+/* ═══════════════════════════════════════════════════════════════
+   DEMO CONTENT AREA (placeholder for pages to come)
+═══════════════════════════════════════════════════════════════ */
+.demo-content {
+  padding: 60px 0 80px;
+}
+.demo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
+}
+.demo-card {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  border-radius: var(--r2);
+  padding: 28px;
+  border-top: 3px solid var(--cobalt);
+  transition: box-shadow .25s, transform .25s;
+}
+.demo-card:nth-child(2) { border-top-color: var(--emerald); }
+.demo-card:nth-child(3) { border-top-color: var(--amber); }
+.demo-card:hover { box-shadow: var(--sh); transform: translateY(-3px); }
+.demo-card-icon { font-size: 28px; margin-bottom: 14px; }
+.demo-card h3 { font-family: var(--serif); font-size: 18px; color: var(--ink); margin-bottom: 8px; font-weight: 700; }
+.demo-card p { font-size: 13.5px; line-height: 1.65; }
+.demo-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 14px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--cobalt);
+}
+.demo-card-link:hover { text-decoration: underline; }
+
+/* Tag pills (reusable across all pages) */
+.tag {
+  display: inline-block;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 5px;
+  line-height: 1.4;
+}
+.tag-blue    { background: var(--cobalt-light); color: var(--cobalt); }
+.tag-green   { background: var(--emerald-light); color: var(--emerald); }
+.tag-amber   { background: var(--amber-light); color: var(--amber); }
+.tag-red     { background: var(--red-light); color: var(--red); animation: blink 2s ease-in-out infinite; }
+.tag-mono    { background: #EEF1F6; color: var(--slate); font-family: var(--mono); font-size: 10px; letter-spacing: .04em; }
+.tag-midnight { background: var(--midnight); color: rgba(255,255,255,.8); }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:.65} }
+
+/* Buttons (reusable) */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 20px;
+  border-radius: var(--r);
+  font-size: 13.5px;
+  font-weight: 700;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all .2s;
+  text-align: center;
+  white-space: nowrap;
+}
+.btn-primary { background: var(--cobalt); color: #fff; border-color: var(--cobalt); }
+.btn-primary:hover { background: var(--cobalt-hover); border-color: var(--cobalt-hover); transform: translateY(-1px); box-shadow: var(--sh-sm); }
+.btn-outline { background: transparent; color: var(--cobalt); border-color: var(--cobalt); }
+.btn-outline:hover { background: var(--cobalt); color: #fff; }
+.btn-dark { background: var(--midnight); color: #fff; border-color: var(--midnight); }
+.btn-dark:hover { background: var(--midnight-mid); }
+.btn-sm { padding: 6px 14px; font-size: 12px; border-radius: var(--r); }
+
+/* ═══════════════════════════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════════════════════════ */
+.site-footer {
+  background: var(--midnight);
+  color: rgba(255,255,255,.5);
+}
+
+/* Footer top: newsletter full-width band */
+.footer-newsletter {
+  background: linear-gradient(135deg, var(--midnight-mid) 0%, #0A1E40 100%);
+  border-top: 1px solid rgba(255,255,255,.07);
+  border-bottom: 1px solid rgba(255,255,255,.07);
+  padding: 36px 0;
+}
+.footer-newsletter-inner {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.footer-newsletter-text h3 {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 5px;
+}
+.footer-newsletter-text p {
+  font-size: 13px;
+  color: rgba(255,255,255,.55);
+  max-width: 380px;
+}
+.footer-newsletter-form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.footer-newsletter-form input {
+  background: rgba(255,255,255,.08);
+  border: 1.5px solid rgba(255,255,255,.15);
+  border-radius: var(--r);
+  padding: 10px 16px;
+  font-size: 13.5px;
+  color: #fff;
+  font-family: var(--sans);
+  outline: none;
+  width: 260px;
+  transition: border-color .2s;
+}
+.footer-newsletter-form input::placeholder { color: rgba(255,255,255,.35); }
+.footer-newsletter-form input:focus { border-color: var(--cobalt); }
+.footer-newsletter-form button {
+  background: var(--cobalt);
+  color: #fff;
+  border: 2px solid var(--cobalt);
+  border-radius: var(--r);
+  padding: 10px 22px;
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all .2s;
+  white-space: nowrap;
+}
+.footer-newsletter-form button:hover { background: #fff; color: var(--cobalt); }
+.footer-newsletter-privacy {
+  font-size: 11px;
+  color: rgba(255,255,255,.3);
+  margin-top: 8px;
+}
+
+/* Footer main grid */
+.footer-main { padding: 52px 0 36px; }
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2.2fr 1fr 1fr 1.3fr;
+  gap: 48px;
+}
+
+.footer-brand-col {}
+.footer-brand-name {
+  display: flex;
+  align-items: baseline;
+  gap: 0;
+  margin-bottom: 12px;
+}
+.footer-brand-name .pak  { font-family: var(--serif); font-size: 22px; font-weight: 900; color: #fff; }
+.footer-brand-name .tax  { font-family: var(--serif); font-size: 22px; font-weight: 900; color: var(--cobalt); }
+.footer-brand-name .gaz  { font-family: var(--serif); font-size: 22px; font-weight: 700; font-style: italic; color: rgba(255,255,255,.6); margin-left: 8px; }
+.footer-brand-desc {
+  font-size: 13px;
+  line-height: 1.7;
+  color: rgba(255,255,255,.45);
+  max-width: 280px;
+  margin-bottom: 20px;
+}
+
+/* Ifat Associates credit — visible but not pushy */
+.footer-credit {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.08);
+  border-left: 3px solid var(--emerald);
+  border-radius: var(--r);
+  margin-bottom: 20px;
+}
+.footer-credit-icon { font-size: 18px; flex-shrink: 0; }
+.footer-credit-text {}
+.footer-credit-text p {
+  font-size: 11.5px;
+  color: rgba(255,255,255,.4);
+  line-height: 1.5;
+}
+.footer-credit-text a {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: rgba(255,255,255,.7);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 4px;
+  transition: color .2s;
+}
+.footer-credit-text a:hover { color: #fff; }
+.footer-credit-text a i { font-size: 10px; }
+
+.footer-social {
+  display: flex;
+  gap: 10px;
+}
+.footer-social a {
+  width: 34px;
+  height: 34px;
+  border-radius: var(--r);
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: rgba(255,255,255,.4);
+  transition: all .2s;
+}
+.footer-social a:hover { background: var(--cobalt); border-color: var(--cobalt); color: #fff; }
+
+.footer-col h4 {
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.25);
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.footer-col li a {
+  font-size: 13px;
+  color: rgba(255,255,255,.45);
+  transition: color .2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.footer-col li a:hover { color: rgba(255,255,255,.9); }
+.footer-col li a i { font-size: 10px; color: rgba(255,255,255,.2); width: 14px; }
+
+/* Contact column */
+.footer-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.footer-contact-item i {
+  font-size: 13px;
+  color: var(--cobalt);
+  margin-top: 2px;
+  width: 16px;
+  flex-shrink: 0;
+}
+.footer-contact-item span {
+  font-size: 12.5px;
+  color: rgba(255,255,255,.45);
+  line-height: 1.5;
+}
+.footer-contact-item a { color: rgba(255,255,255,.6); transition: color .2s; }
+.footer-contact-item a:hover { color: #fff; }
+
+/* Footer bottom bar */
+.footer-bottom {
+  padding: 18px 0;
+  border-top: 1px solid rgba(255,255,255,.06);
+}
+.footer-bottom-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.footer-bottom-left { font-size: 12px; color: rgba(255,255,255,.3); line-height: 1.6; }
+.footer-bottom-left a { color: rgba(255,255,255,.4); transition: color .2s; }
+.footer-bottom-left a:hover { color: rgba(255,255,255,.8); }
+.footer-bottom-right {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.footer-bottom-right a { font-size: 12px; color: rgba(255,255,255,.3); transition: color .2s; }
+.footer-bottom-right a:hover { color: rgba(255,255,255,.7); }
+.footer-disclaimer {
+  font-size: 11px;
+  color: rgba(255,255,255,.2);
+  margin-top: 6px;
+  line-height: 1.5;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SEARCH OVERLAY
+═══════════════════════════════════════════════════════════════ */
+.search-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(11,17,32,.92);
+  backdrop-filter: blur(4px);
+  z-index: 9999;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 80px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s;
+}
+.search-overlay.open { opacity: 1; pointer-events: all; }
+.search-box {
+  background: var(--white);
+  border-radius: var(--r2);
+  width: 100%;
+  max-width: 680px;
+  padding: 28px;
+  box-shadow: var(--sh-lg);
+  transform: translateY(-20px);
+  transition: transform .25s;
+}
+.search-overlay.open .search-box { transform: translateY(0); }
+.search-box-inner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 2px solid var(--cobalt);
+  padding-bottom: 14px;
+  margin-bottom: 20px;
+}
+.search-box-inner i { font-size: 20px; color: var(--cobalt); flex-shrink: 0; }
+.search-box-inner input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  font-family: var(--sans);
+  color: var(--ink);
+  background: transparent;
+}
+.search-box-inner input::placeholder { color: var(--mist); }
+.search-close {
+  background: var(--canvas); border: 1px solid var(--rule);
+  border-radius: var(--r); padding: 5px 10px;
+  font-size: 12px; font-weight: 600; color: var(--slate); cursor: pointer;
+  flex-shrink: 0;
+}
+.search-hints { display: flex; gap: 8px; flex-wrap: wrap; }
+.search-hint-label { font-size: 12px; color: var(--mist); margin-right: 4px; }
+.search-hint-tag {
+  background: var(--canvas); border: 1px solid var(--rule);
+  border-radius: 999px; padding: 4px 12px;
+  font-size: 12px; font-weight: 600; color: var(--slate); cursor: pointer;
+  transition: all .2s;
+}
+.search-hint-tag:hover { background: var(--cobalt-light); color: var(--cobalt); border-color: var(--cobalt-mid); }
+
+/* ═══════════════════════════════════════════════════════════════
+   MOBILE NAV DRAWER
+═══════════════════════════════════════════════════════════════ */
+.mobile-nav {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: var(--midnight);
+  z-index: 9998;
+  flex-direction: column;
+  overflow-y: auto;
+}
+.mobile-nav.open { display: flex; }
+.mobile-nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.mobile-nav-header .brand-small {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 900;
+  color: #fff;
+}
+.mobile-nav-header .brand-small span { color: var(--cobalt); }
+.mobile-nav-close {
+  background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12);
+  border-radius: var(--r); padding: 7px 12px;
+  font-size: 14px; color: rgba(255,255,255,.7); cursor: pointer;
+}
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+}
+.mobile-nav-links a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(255,255,255,.7);
+  border-bottom: 1px solid rgba(255,255,255,.05);
+  transition: all .2s;
+}
+.mobile-nav-links a:hover, .mobile-nav-links a.active {
+  color: #fff;
+  background: rgba(255,255,255,.04);
+}
+.mobile-nav-links a i { width: 20px; font-size: 15px; color: rgba(255,255,255,.3); }
+.mobile-nav-cta {
+  padding: 20px 24px;
+  border-top: 1px solid rgba(255,255,255,.08);
+  margin-top: auto;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .masthead-meta { display: none; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
+}
+
+@media (max-width: 768px) {
+  .top-bar-links { display: none; }
+  .top-bar-date { display: none; }
+  .top-bar-cta { padding: 0 14px; font-size: 11px; }
+
+  .masthead-inner { flex-direction: column; align-items: flex-start; gap: 14px; }
+  .masthead-actions { align-items: flex-start; width: 100%; }
+  .masthead-search { min-width: unset; width: 100%; }
+  .brand-gazette { display: none; }
+  .brand-pak, .brand-tax { font-size: 32px; }
+
+  .main-nav-links { display: none; }
+  .nav-mobile-toggle { display: flex; }
+  .main-nav-right .nav-live { display: none; }
+
+  .demo-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+  .footer-newsletter-inner { flex-direction: column; gap: 20px; }
+  .footer-newsletter-form input { width: 100%; }
+  .footer-bottom-inner { flex-direction: column; align-items: flex-start; gap: 10px; }
+}
+
+@media (max-width: 480px) {
+  .container { padding: 0 16px; }
+  .ticker-label span { display: none; }
+  .brand-pre { display: none; }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SCROLL PROGRESS BAR
+═══════════════════════════════════════════════════════════════ */
+.scroll-progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--cobalt), var(--emerald));
+  width: 0%;
+  z-index: 10000;
+  transition: width .1s linear;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   BACK TO TOP
+═══════════════════════════════════════════════════════════════ */
+.back-to-top {
+  position: fixed;
+  bottom: 28px; right: 28px;
+  width: 44px; height: 44px;
+  background: var(--midnight);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: var(--r);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,.7);
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: var(--sh);
+  opacity: 0;
+  pointer-events: none;
+  transition: all .3s;
+  z-index: 1000;
+}
+.back-to-top.visible { opacity: 1; pointer-events: all; }
+.back-to-top:hover { background: var(--cobalt); color: #fff; transform: translateY(-2px); }
+</style>
+<link rel="canonical" href="https://tax.ifatassociates.com/article.html">
+<meta property="og:url" content="https://tax.ifatassociates.com/article.html">
+<meta property="og:site_name" content="PakTax Gazette">
+<meta name="robots" content="index, follow">
+</head>
+<body>
+
+<!-- ── Scroll progress ── -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ── Search overlay ── -->
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-box">
+    <div class="search-box-inner">
+      <i class="fas fa-search"></i>
+      <input type="text" id="searchInput" placeholder="Search SROs, tax topics, budget…" autofocus>
+      <button class="search-close" onclick="closeSearch()">ESC</button>
+    </div>
+    <div class="search-hints">
+      <span class="search-hint-label">Try:</span>
+      <span class="search-hint-tag">Income Tax Slabs</span>
+      <span class="search-hint-tag">SRO 847</span>
+      <span class="search-hint-tag">Finance Bill 2026</span>
+      <span class="search-hint-tag">WHT rates</span>
+      <span class="search-hint-tag">Sales Tax return</span>
+      <span class="search-hint-tag">Super Tax</span>
+    </div>
+  </div>
+</div>
+
+<!-- ── Mobile nav drawer ── -->
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-header">
+    <div class="brand-small">Pak<span>Tax</span> Gazette</div>
+    <button class="mobile-nav-close" onclick="closeMobileNav()"><i class="fas fa-times"></i></button>
+  </div>
+    <nav class="mobile-nav-links">
+    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+    <a href="sro.html"><i class="fas fa-scroll"></i> SRO Tracker</a>
+    <a href="budget.html"><i class="fas fa-landmark"></i> Finance Bill</a>
+    <a href="blog.html" class="active"><i class="fas fa-pen-nib"></i> Tax Blog</a>
+    <a href="tools.html"><i class="fas fa-calculator"></i> Tax Tools</a>
+    <a href="tools.html"><i class="fas fa-calendar-check"></i> Tax Calendar</a>
+    <a href="#"><i class="fas fa-bell"></i> Alerts</a>
+  </nav>
+  <div class="mobile-nav-cta">
+    <a href="https://www.ifatassociates.com" target="_blank" class="btn btn-primary" style="width:100%;justify-content:center;">
+      <i class="fas fa-briefcase"></i> Book Tax Consultation
+    </a>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     TOP UTILITY BAR
+════════════════════════════════════════════ -->
+<div class="top-bar">
+  <div class="container">
+    <div class="top-bar-inner">
+      <div class="top-bar-left">
+        <div class="top-bar-date">
+          <i class="fas fa-calendar"></i>
+          <span id="currentDate">Friday, 27 June 2026</span>
+        </div>
+        <div class="top-bar-links">
+          <a href="https://iris.fbr.gov.pk" target="_blank"><i class="fas fa-external-link-alt"></i> FBR IRIS</a>
+          <a href="https://atl.fbr.gov.pk" target="_blank"><i class="fas fa-external-link-alt"></i> ATL Lookup</a>
+          <a href="https://www.fbr.gov.pk" target="_blank"><i class="fas fa-external-link-alt"></i> FBR.gov.pk</a>
+          <a href="https://www.secp.gov.pk" target="_blank"><i class="fas fa-external-link-alt"></i> SECP</a>
+        </div>
+      </div>
+      <div class="top-bar-right">
+        <div class="top-bar-social">
+          <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <a href="https://www.ifatassociates.com" target="_blank" class="top-bar-cta">
+          <i class="fas fa-phone-alt"></i> Get Tax Consultation
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     MASTHEAD
+════════════════════════════════════════════ -->
+<div class="masthead">
+  <div class="container">
+    <div class="masthead-inner">
+
+      <!-- Left: Wordmark -->
+      <div class="brand-wordmark">
+        <div class="brand-pre">Pakistan's Tax News Hub</div>
+        <div class="brand-name-row">
+          <span class="brand-pak">Pak</span><span class="brand-tax">Tax</span>
+          <span class="brand-gazette">Gazette</span>
+        </div>
+        <div class="brand-sub">SROs · Finance Bill · Tax Blog · Tools · Calculators</div>
+      </div>
+
+      <!-- Right: Search + subscribe -->
+      <div class="masthead-actions">
+        <div class="masthead-search" onclick="openSearch()" role="button">
+          <i class="fas fa-search" style="color:var(--cobalt)"></i>
+          <span>Search SROs, topics, guides…</span>
+          <kbd>Ctrl K</kbd>
+        </div>
+        <a href="#newsletter" class="masthead-subscribe">
+          <i class="fas fa-envelope"></i>
+          Subscribe to Pakistan Tax Digest
+        </a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     MAIN NAVIGATION
+════════════════════════════════════════════ -->
+<nav class="main-nav-bar" id="mainNav">
+  <div class="container">
+    <div class="main-nav-inner">
+            <div class="main-nav-links">
+        <a href="index.html"><i class="fas fa-home"></i> Home</a>
+        <a href="sro.html" style="position:relative"><i class="fas fa-scroll"></i> SRO Tracker<span class="nav-dot"></span></a>
+        <a href="budget.html"><i class="fas fa-landmark"></i> Finance Bill</a>
+        <a href="blog.html" class="active"><i class="fas fa-pen-nib"></i> Tax Blog</a>
+        <a href="tools.html"><i class="fas fa-calculator"></i> Tax Tools <span class="nav-new-tag">Free</span></a>
+        <a href="tools.html"><i class="fas fa-calendar-check"></i> Tax Calendar</a>
+        <a href="article.html"><i class="fas fa-book-open"></i> FBR Notices</a>
+      </div>
+      <div class="main-nav-right">
+        <div class="nav-live">
+          <div class="nav-live-dot"></div>
+          <span>Live Updates</span>
+        </div>
+      </div>
+      <button class="nav-mobile-toggle" onclick="openMobileNav()">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ════════════════════════════════════════════
+     BREAKING NEWS TICKER
+════════════════════════════════════════════ -->
+<div class="ticker-bar">
+  <div class="ticker-label">
+    <div class="ticker-label-dot"></div>
+    <span>Breaking</span>
+  </div>
+  <div class="ticker-track">
+    <div class="ticker-inner" id="tickerInner">
+      <!-- Items duplicated for seamless loop -->
+      <div class="ticker-item"><span class="ticker-tag">SRO</span><a href="#">FBR SRO 847(I)/2026 — Revised WHT rates for non-filers effective July 1, 2026</a></div>
+      <div class="ticker-item"><span class="ticker-tag">Deadline</span><a href="#">Income Tax Return TY 2025-26 — Filing deadline September 30, 2026</a></div>
+      <div class="ticker-item"><span class="ticker-tag">Budget</span><a href="budget.html">Finance Bill 2026-27 tabled in National Assembly on June 20 — full summary available</a></div>
+      <div class="ticker-item"><span class="ticker-tag">ATL</span><a href="#">Active Taxpayer List updated — check your status on FBR portal before July 1</a></div>
+      <div class="ticker-item"><span class="ticker-tag">Sales Tax</span><a href="#">POS integration mandatory for all Tier-1 retailers in all cities from July 2026</a></div>
+      <!-- Duplicate set for seamless loop -->
+      <div class="ticker-item"><span class="ticker-tag">SRO</span><a href="#">FBR SRO 847(I)/2026 — Revised WHT rates for non-filers effective July 1, 2026</a></div>
+      <div class="ticker-item"><span class="ticker-tag">Deadline</span><a href="#">Income Tax Return TY 2025-26 — Filing deadline September 30, 2026</a></div>
+      <div class="ticker-item"><span class="ticker-tag">Budget</span><a href="budget.html">Finance Bill 2026-27 tabled in National Assembly on June 20 — full summary available</a></div>
+      <div class="ticker-item"><span class="ticker-tag">ATL</span><a href="#">Active Taxpayer List updated — check your status on FBR portal before July 1</a></div>
+      <div class="ticker-item"><span class="ticker-tag">Sales Tax</span><a href="#">POS integration mandatory for all Tier-1 retailers in all cities from July 2026</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     ARTICLE PAGE — STEP 3 STYLES
+════════════════════════════════════════════ -->
+<style>
+
+/* ── Breadcrumb ── */
+.breadcrumb {
+  background: var(--white);
+  border-bottom: 1px solid var(--rule);
+  padding: 10px 0;
+}
+.breadcrumb-inner {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  color: var(--mist);
+  flex-wrap: wrap;
+}
+.breadcrumb-inner a {
+  color: var(--cobalt);
+  font-weight: 500;
+  transition: color .2s;
+}
+.breadcrumb-inner a:hover { color: var(--cobalt-hover); text-decoration: underline; }
+.breadcrumb-inner i { font-size: 10px; color: var(--rule); }
+.breadcrumb-inner span { color: var(--slate); }
+
+/* ── Article header ── */
+.article-header {
+  background: var(--midnight);
+  padding: 48px 0 40px;
+  position: relative;
+  overflow: hidden;
+}
+.article-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--cobalt), var(--emerald));
+}
+.article-header-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+.article-header h1 {
+  font-family: var(--serif);
+  font-size: clamp(22px, 4vw, 38px);
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.2;
+  max-width: 800px;
+  margin-bottom: 18px;
+  letter-spacing: -.02em;
+}
+.article-header-meta {
+  display: flex;
+  gap: 22px;
+  font-size: 13px;
+  color: rgba(255,255,255,.5);
+  flex-wrap: wrap;
+  align-items: center;
+}
+.article-header-meta span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.article-header-meta i { color: rgba(255,255,255,.25); }
+.article-header-meta .author-link {
+  color: rgba(255,255,255,.75);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color .2s;
+}
+.article-header-meta .author-link:hover { color: #fff; }
+
+/* ── Article share bar ── */
+.article-share-bar {
+  background: var(--white);
+  border-bottom: 1px solid var(--rule);
+  padding: 10px 0;
+  position: sticky;
+  top: 48px;
+  z-index: 99;
+  box-shadow: var(--sh-sm);
+}
+.article-share-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.article-share-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 420px;
+}
+.article-share-btns {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-shrink: 0;
+}
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: var(--r);
+  font-size: 12px;
+  font-weight: 700;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition: all .2s;
+  font-family: var(--sans);
+  white-space: nowrap;
+}
+.share-btn-linkedin { background: #0A66C2; color: #fff; border-color: #0A66C2; }
+.share-btn-linkedin:hover { background: #084f9a; border-color: #084f9a; }
+.share-btn-whatsapp { background: #25D366; color: #fff; border-color: #25D366; }
+.share-btn-whatsapp:hover { background: #1aaa52; border-color: #1aaa52; }
+.share-btn-copy { background: var(--canvas); color: var(--slate); border-color: var(--rule); }
+.share-btn-copy:hover { background: var(--cobalt-light); color: var(--cobalt); border-color: var(--cobalt-mid); }
+.share-btn-print { background: var(--canvas); color: var(--slate); border-color: var(--rule); }
+.share-btn-print:hover { background: var(--canvas); color: var(--ink); }
+
+/* read progress inside share bar */
+.article-read-progress {
+  position: absolute;
+  bottom: 0; left: 0;
+  height: 2px;
+  background: var(--cobalt);
+  width: 0%;
+  transition: width .15s linear;
+}
+
+/* ── Main layout ── */
+.article-layout {
+  padding: 44px 0 60px;
+}
+.article-cols {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 56px;
+  align-items: start;
+}
+
+/* ── Article body ── */
+.article-body {}
+
+/* Table of contents */
+.toc-box {
+  background: var(--cobalt-light);
+  border: 1px solid var(--cobalt-mid);
+  border-left: 3px solid var(--cobalt);
+  border-radius: var(--r2);
+  padding: 20px 22px;
+  margin-bottom: 32px;
+}
+.toc-box h4 {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--cobalt);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.toc-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  counter-reset: toc;
+}
+.toc-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  counter-increment: toc;
+}
+.toc-list li::before {
+  content: counter(toc);
+  font-family: var(--mono);
+  font-size: 10.5px;
+  font-weight: 700;
+  color: var(--cobalt);
+  background: rgba(20,81,204,.12);
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.toc-list a {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--midnight);
+  transition: color .2s;
+  line-height: 1.4;
+}
+.toc-list a:hover { color: var(--cobalt); text-decoration: underline; }
+
+/* Article prose */
+.prose h2 {
+  font-family: var(--serif);
+  font-size: 24px;
+  font-weight: 900;
+  color: var(--ink);
+  margin: 40px 0 14px;
+  line-height: 1.2;
+  letter-spacing: -.01em;
+  padding-top: 8px;
+  border-top: 1px solid var(--rule);
+}
+.prose h2:first-child { margin-top: 0; border-top: none; }
+.prose h3 {
+  font-family: var(--serif);
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 28px 0 10px;
+  line-height: 1.3;
+}
+.prose p {
+  font-size: 15.5px;
+  line-height: 1.82;
+  color: var(--slate);
+  margin-bottom: 18px;
+}
+.prose strong { color: var(--ink); font-weight: 700; }
+.prose a { color: var(--cobalt); font-weight: 500; text-decoration: underline; }
+.prose a:hover { color: var(--cobalt-hover); }
+.prose ul, .prose ol {
+  margin: 0 0 18px 22px;
+}
+.prose li {
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--slate);
+  margin-bottom: 7px;
+}
+
+/* Callout / info boxes */
+.callout {
+  border-radius: var(--r2);
+  padding: 18px 22px;
+  margin: 28px 0;
+  border-left: 4px solid;
+}
+.callout-head {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.callout p { font-size: 14px; line-height: 1.7; margin: 0; }
+.callout ul { margin: 8px 0 0 18px; }
+.callout li { font-size: 14px; line-height: 1.7; margin-bottom: 4px; }
+
+.callout-blue  { background: var(--cobalt-light); border-left-color: var(--cobalt); }
+.callout-blue  .callout-head { color: var(--cobalt); }
+.callout-amber { background: var(--amber-light); border-left-color: var(--amber); }
+.callout-amber .callout-head { color: var(--amber); }
+.callout-green { background: var(--emerald-light); border-left-color: var(--emerald); }
+.callout-green .callout-head { color: var(--emerald); }
+.callout-red   { background: var(--red-light); border-left-color: var(--red); }
+.callout-red   .callout-head { color: var(--red); }
+
+/* Tax slab / data tables */
+.data-table-wrap {
+  margin: 24px 0;
+  border-radius: var(--r2);
+  overflow: hidden;
+  border: 1px solid var(--rule);
+  box-shadow: var(--sh-sm);
+}
+.data-table-caption {
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--mist);
+  padding: 10px 18px 8px;
+  background: var(--canvas);
+  border-bottom: 1px solid var(--rule);
+}
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--white);
+}
+.data-table thead { background: var(--midnight); }
+.data-table th {
+  padding: 12px 18px;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: rgba(255,255,255,.75);
+  text-align: left;
+  letter-spacing: .04em;
+  white-space: nowrap;
+}
+.data-table tbody tr {
+  border-bottom: 1px solid var(--rule);
+  transition: background .15s;
+}
+.data-table tbody tr:last-child { border-bottom: none; }
+.data-table tbody tr:hover { background: var(--cobalt-light); }
+.data-table td {
+  padding: 12px 18px;
+  font-size: 13.5px;
+  color: var(--slate);
+  vertical-align: middle;
+}
+.data-table td:first-child { color: var(--ink); font-weight: 500; }
+.data-table td.rate { font-weight: 700; color: var(--cobalt); font-family: var(--mono); }
+.data-table td.change-up { color: var(--emerald); font-weight: 700; }
+.data-table td.change-down { color: var(--red); font-weight: 700; }
+.data-table td.nil { color: var(--emerald); font-weight: 700; }
+.data-table tbody tr:nth-child(even) { background: var(--canvas); }
+.data-table tbody tr:nth-child(even):hover { background: var(--cobalt-light); }
+
+/* SRO detail box */
+.sro-detail-box {
+  background: var(--midnight);
+  border-radius: var(--r2);
+  padding: 22px 24px;
+  margin: 28px 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.sro-detail-field { }
+.sro-detail-field label {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.35);
+  display: block;
+  margin-bottom: 5px;
+}
+.sro-detail-field span {
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  font-family: var(--mono);
+}
+.sro-detail-field span.normal { font-family: var(--sans); font-size: 13.5px; font-weight: 500; }
+.sro-detail-field a {
+  color: var(--cobalt-mid);
+  font-size: 13px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: color .2s;
+}
+.sro-detail-field a:hover { color: #fff; }
+
+/* Article footer: tags + share */
+.article-footer {
+  margin-top: 48px;
+  padding-top: 28px;
+  border-top: 2px solid var(--rule);
+}
+.article-footer-tags {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 22px;
+}
+.article-footer-tags span {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--mist);
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+.article-share-full {
+  background: var(--canvas);
+  border: 1px solid var(--rule);
+  border-radius: var(--r2);
+  padding: 20px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.article-share-full p {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+}
+.article-share-full p small {
+  display: block;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--mist);
+  margin-top: 2px;
+}
+
+/* Author bio box */
+.author-box {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  border-radius: var(--r2);
+  padding: 22px;
+  margin-top: 32px;
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+}
+.author-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--r);
+  background: linear-gradient(135deg, var(--emerald), #084D36);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  flex-shrink: 0;
+}
+.author-info h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 3px;
+}
+.author-info .author-role {
+  font-size: 12px;
+  color: var(--mist);
+  margin-bottom: 8px;
+}
+.author-info p {
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--slate);
+  margin-bottom: 10px;
+}
+.author-info a {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--cobalt);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.author-info a:hover { text-decoration: underline; }
+
+/* Related articles */
+.related-section {
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 2px solid var(--ink);
+}
+.related-section h3 {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 900;
+  color: var(--ink);
+  margin-bottom: 20px;
+}
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.related-card {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  border-radius: var(--r2);
+  overflow: hidden;
+  transition: box-shadow .2s, transform .2s;
+}
+.related-card:hover { box-shadow: var(--sh); transform: translateY(-2px); }
+.related-card-top {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+}
+.related-card-top.navy { background: linear-gradient(135deg, var(--midnight), #1A3A8F); }
+.related-card-top.jade { background: linear-gradient(135deg, #063E2F, var(--emerald)); }
+.related-card-top.amber { background: linear-gradient(135deg, #78350F, var(--amber)); }
+.related-card-body { padding: 14px 16px; }
+.related-card-body .tags { margin-bottom: 7px; }
+.related-card-body h4 {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.35;
+  margin-bottom: 5px;
+}
+.related-card-body h4 a:hover { color: var(--cobalt); }
+.related-card-body p { font-size: 12px; color: var(--mist); }
+
+/* ── SIDEBAR ── */
+.article-sidebar { display: flex; flex-direction: column; gap: 22px; }
+
+/* Sticky TOC in sidebar */
+.sidebar-toc {
+  position: sticky;
+  top: 96px;
+}
+.sidebar-toc-box {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  border-radius: var(--r2);
+  overflow: hidden;
+}
+.sidebar-toc-head {
+  background: var(--midnight);
+  color: #fff;
+  padding: 11px 16px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.sidebar-toc-list {
+  list-style: none;
+  padding: 12px 0;
+}
+.sidebar-toc-list li a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 16px;
+  font-size: 13px;
+  color: var(--slate);
+  transition: all .2s;
+  border-left: 2px solid transparent;
+  line-height: 1.4;
+}
+.sidebar-toc-list li a:hover,
+.sidebar-toc-list li a.active {
+  color: var(--cobalt);
+  background: var(--cobalt-light);
+  border-left-color: var(--cobalt);
+}
+.sidebar-toc-list li a i { font-size: 10px; color: var(--rule); flex-shrink: 0; }
+
+/* Sidebar widget (reuse from home) */
+.widget {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  border-radius: var(--r2);
+  overflow: hidden;
+}
+.widget-head {
+  background: var(--midnight);
+  color: #fff;
+  padding: 11px 18px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.widget-head i { color: rgba(255,255,255,.45); font-size: 12px; }
+.widget-body { padding: 16px 18px; }
+
+/* Consult CTA in sidebar */
+.sidebar-consult {
+  background: linear-gradient(145deg, var(--emerald), #063E2F);
+  border-radius: var(--r2);
+  padding: 22px;
+  color: #fff;
+  text-align: center;
+}
+.sidebar-consult .icon { font-size: 28px; margin-bottom: 10px; }
+.sidebar-consult h3 {
+  font-family: var(--serif);
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 6px;
+}
+.sidebar-consult p {
+  font-size: 12.5px;
+  color: rgba(255,255,255,.7);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+.sidebar-consult a.cta-btn {
+  display: block;
+  background: #fff;
+  color: var(--emerald);
+  border-radius: var(--r);
+  padding: 10px 16px;
+  font-size: 13px;
+  font-weight: 700;
+  transition: all .2s;
+  text-align: center;
+}
+.sidebar-consult a.cta-btn:hover { background: var(--emerald-light); }
+.sidebar-consult .credit {
+  font-size: 11px;
+  color: rgba(255,255,255,.45);
+  margin-top: 10px;
+}
+.sidebar-consult .credit a { color: rgba(255,255,255,.65); text-decoration: underline; }
+
+/* Popular in sidebar */
+.pop-item {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.pop-item:last-child { border-bottom: none; }
+.pop-num {
+  font-family: var(--mono);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--rule);
+  line-height: 1;
+  min-width: 22px;
+  flex-shrink: 0;
+}
+.pop-item:first-child .pop-num { color: var(--cobalt); }
+.pop-item h4 { font-size: 12.5px; font-weight: 700; color: var(--ink); line-height: 1.35; }
+.pop-item h4 a:hover { color: var(--cobalt); }
+.pop-item p { font-size: 11px; color: var(--mist); margin-top: 2px; }
+
+/* Newsletter mini widget */
+.nw-mini {
+  background: var(--midnight);
+  border-radius: var(--r2);
+  padding: 18px;
+  color: #fff;
+}
+.nw-mini h4 { font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 5px; }
+.nw-mini p { font-size: 12px; color: rgba(255,255,255,.55); margin-bottom: 12px; line-height: 1.55; }
+.nw-mini input {
+  width: 100%;
+  background: rgba(255,255,255,.1);
+  border: 1.5px solid rgba(255,255,255,.15);
+  border-radius: var(--r);
+  padding: 8px 12px;
+  font-size: 13px;
+  color: #fff;
+  font-family: var(--sans);
+  outline: none;
+  margin-bottom: 8px;
+}
+.nw-mini input::placeholder { color: rgba(255,255,255,.3); }
+.nw-mini button {
+  width: 100%;
+  background: var(--cobalt);
+  color: #fff;
+  border: none;
+  border-radius: var(--r);
+  padding: 9px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: var(--sans);
+  transition: background .2s;
+}
+.nw-mini button:hover { background: #fff; color: var(--cobalt); }
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .article-cols { grid-template-columns: 1fr 260px; gap: 36px; }
+  .related-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .article-cols { grid-template-columns: 1fr; }
+  .article-sidebar { display: none; } /* sidebar becomes bottom content on mobile */
+  .article-share-bar { display: none; }
+  .sro-detail-box { grid-template-columns: 1fr 1fr; }
+  .related-grid { grid-template-columns: 1fr; }
+  .author-box { flex-direction: column; }
+  .article-header { padding: 32px 0 28px; }
+}
+@media (max-width: 480px) {
+  .sro-detail-box { grid-template-columns: 1fr; }
+  .article-share-full { flex-direction: column; }
+}
+</style>
+
+<!-- ════════════════════════════════════════════
+     ARTICLE PAGE — HTML CONTENT
+     (Showing an Income Tax Slabs article as example —
+      same template used for blogs, SROs, news, budget updates)
+════════════════════════════════════════════ -->
+
+<!-- Breadcrumb -->
+<div class="breadcrumb">
+  <div class="container">
+    <div class="breadcrumb-inner">
+      <a href="index.html"><i class="fas fa-home"></i> Home</a>
+      <i class="fas fa-chevron-right"></i>
+      <a href="blog.html">Tax Blog</a>
+      <i class="fas fa-chevron-right"></i>
+      <span>Income Tax</span>
+      <i class="fas fa-chevron-right"></i>
+      <span>Income Tax Slabs 2025-26</span>
+    </div>
+  </div>
+</div>
+
+<!-- Article Header -->
+<div class="article-header">
+  <div class="container">
+    <div class="article-header-tags">
+      <span class="tag tag-blue">Income Tax</span>
+      <span class="tag tag-mono">Tax Year 2025-26</span>
+      <span class="tag tag-green">Finance Act 2025</span>
+    </div>
+    <h1>Income Tax Slabs 2025-26: The Complete Guide for Salaried Employees &amp; Business Owners</h1>
+    <div class="article-header-meta">
+      <span>
+        <i class="fas fa-user-circle"></i>
+        <a href="https://www.ifatassociates.com" target="_blank" class="author-link">Ifat Associates</a>
+      </span>
+      <span><i class="far fa-calendar-alt"></i> June 15, 2026</span>
+      <span><i class="far fa-clock"></i> 7 min read</span>
+      <span><i class="far fa-eye"></i> 4,218 views</span>
+      <span><i class="far fa-comment"></i> 14 comments</span>
+    </div>
+  </div>
+</div>
+
+<!-- Sticky share bar with read progress -->
+<div class="article-share-bar" id="articleShareBar">
+  <div class="container">
+    <div class="article-share-inner">
+      <span class="article-share-title">Income Tax Slabs 2025-26: The Complete Guide</span>
+      <div class="article-share-btns">
+        <button class="share-btn share-btn-linkedin" onclick="shareLinkedIn()">
+          <i class="fab fa-linkedin"></i> Share
+        </button>
+        <button class="share-btn share-btn-whatsapp" onclick="shareWhatsApp()">
+          <i class="fab fa-whatsapp"></i> Share
+        </button>
+        <button class="share-btn share-btn-copy" onclick="copyLink(this)">
+          <i class="fas fa-link"></i> Copy Link
+        </button>
+        <button class="share-btn share-btn-print" onclick="window.print()">
+          <i class="fas fa-print"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="article-read-progress" id="articleReadProgress"></div>
+</div>
+
+<!-- Article body + sidebar -->
+<div class="article-layout">
+  <div class="container">
+    <div class="article-cols">
+
+      <!-- ── LEFT: Article content ── -->
+      <div class="article-body">
+
+        <!-- Table of contents -->
+        <div class="toc-box">
+          <h4><i class="fas fa-list"></i> In This Article</h4>
+          <ol class="toc-list">
+            <li><a href="#what-changed">What Changed in Finance Act 2025</a></li>
+            <li><a href="#salaried-slabs">Salaried Persons — Tax Slabs 2025-26</a></li>
+            <li><a href="#business-slabs">Business Income — Tax Slabs 2025-26</a></li>
+            <li><a href="#surcharge">High-Income Surcharge (Rs. 10M+)</a></li>
+            <li><a href="#examples">Worked Examples</a></li>
+            <li><a href="#atl">ATL Status &amp; Why It Matters</a></li>
+            <li><a href="#filing">How to File Before September 30</a></li>
+          </ol>
+        </div>
+
+        <div class="prose">
+
+          <!-- Urgent callout -->
+          <div class="callout callout-red">
+            <div class="callout-head"><i class="fas fa-exclamation-circle"></i> Filing Deadline</div>
+            <p>Income tax returns for Tax Year 2025-26 must be filed by <strong>September 30, 2026</strong>. Missing this deadline removes you from the Active Taxpayer List (ATL), resulting in significantly higher withholding tax rates on all your transactions — banking, property, vehicles, and more.</p>
+          </div>
+
+          <!-- Section 1 -->
+          <h2 id="what-changed">What Changed in Finance Act 2025</h2>
+          <p>The Finance Act 2025, enacted in July 2025, introduced meaningful relief for salaried taxpayers in Tax Year 2025-26. While the nil-tax threshold remained at Rs. 600,000, rates in the lower and middle brackets were cut significantly — the Rs. 600k–1.2M bracket dropped from 5% to just 1%, and the Rs. 1.2M–2.2M bracket fell from 15% to 11%. A new high-income surcharge structure was also adjusted for salaried persons.</p>
+          <div class="callout callout-green">
+            <div class="callout-head"><i class="fas fa-check-circle"></i> Verified Rates</div>
+            <p>All tax rates on this page are verified against the <strong>FBR Salient Features Budget 2025-26</strong>, FileKero's registered tax practitioner guide (last reviewed April 2026), and PwC Pakistan Tax Summaries. Always cross-check at <a href="https://www.fbr.gov.pk" target="_blank">fbr.gov.pk</a> for the most current version or consult a qualified tax professional.</p>
+          </div>
+          <p>The most significant change for salaried employees is the widening of the 15% bracket, which now covers a larger income range before taxpayers move into the 25% band. For business owners and the self-employed, the non-salaried slabs saw a restructuring of the upper brackets.</p>
+
+          <div class="callout callout-blue">
+            <div class="callout-head"><i class="fas fa-info-circle"></i> Salaried vs Non-Salaried</div>
+            <p>Pakistan's tax law maintains two separate slab structures: one for <strong>salaried persons</strong> (whose salary income is more than 75% of total income) and one for <strong>non-salaried individuals</strong> (business owners, freelancers, AOPs). Make sure you use the right table for your situation.</p>
+          </div>
+
+          <!-- Section 2: Salaried slabs -->
+          <h2 id="salaried-slabs">Salaried Persons — Tax Slabs 2025-26</h2>
+          <p>The following rates apply to salaried individuals for Tax Year 2025-26 (July 1, 2025 – June 30, 2026):</p>
+
+          <div class="data-table-wrap">
+            <div class="data-table-caption">Table 1 — Income Tax Slabs: Salaried Persons (Tax Year 2025-26)</div>
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Annual Taxable Income (PKR)</th>
+                  <th>Fixed Tax</th>
+                  <th>Rate on Excess</th>
+                  <th>Effective Rate*</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Up to Rs. 600,000</td><td>—</td><td class="nil">0%</td><td class="nil">0%</td></tr>
+                <tr><td>Rs. 600,001 – 1,200,000</td><td>—</td><td class="rate">1%</td><td>0 – 0.5%</td></tr>
+                <tr><td>Rs. 1,200,001 – 2,200,000</td><td>Rs. 6,000</td><td class="rate">11%</td><td>0.5 – 6.1%</td></tr>
+                <tr><td>Rs. 2,200,001 – 3,200,000</td><td>Rs. 116,000</td><td class="rate">23%</td><td>6.1 – 11.1%</td></tr>
+                <tr><td>Rs. 3,200,001 – 4,100,000</td><td>Rs. 346,000</td><td class="rate">30%</td><td>11.1 – 15.5%</td></tr>
+                <tr><td>Over Rs. 4,100,000</td><td>Rs. 616,000</td><td class="rate">35%</td><td>15.5%+</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p style="font-size:12.5px;color:var(--mist);margin-top:-12px;">*Effective rate = total tax ÷ total income. Rises gradually as income increases.</p>
+
+          <!-- Section 3: Non-salaried -->
+          <h2 id="business-slabs">Business Income — Tax Slabs 2025-26</h2>
+          <p>These rates apply to business individuals, sole proprietors, AOPs (Association of Persons), and freelancers whose salary income is less than 75% of total income:</p>
+
+          <div class="data-table-wrap">
+            <div class="data-table-caption">Table 2 — Income Tax Slabs: Business Individuals &amp; AOPs (Tax Year 2025-26)</div>
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Annual Taxable Income (PKR)</th>
+                  <th>Fixed Tax</th>
+                  <th>Rate on Excess</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Up to Rs. 600,000</td><td>—</td><td class="nil">0%</td></tr>
+                <tr><td>Rs. 600,001 – 1,200,000</td><td>—</td><td class="rate">15%</td></tr>
+                <tr><td>Rs. 1,200,001 – 1,600,000</td><td>Rs. 90,000</td><td class="rate">20%</td></tr>
+                <tr><td>Rs. 1,600,001 – 3,200,000</td><td>Rs. 170,000</td><td class="rate">30%</td></tr>
+                <tr><td>Rs. 3,200,001 – 5,600,000</td><td>Rs. 650,000</td><td class="rate">40%</td></tr>
+                <tr><td>Over Rs. 5,600,000</td><td>Rs. 1,610,000</td><td class="rate">45%</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p style="font-size:13px;color:var(--mist);margin-top:-10px;margin-bottom:24px;">Source: Finance Act 2025, verified via FBR official documentation. Non-salaried rates are significantly higher — a business individual earning Rs. 1.2M pays 15× more tax than a salaried person at the same income.</p>
+
+          <div class="callout callout-amber">
+            <div class="callout-head"><i class="fas fa-exclamation-triangle"></i> AOP Surcharge Remains at 10%</div>
+            <p>Unlike salaried persons (whose surcharge was reduced to 9%), non-salaried individuals and AOPs with income exceeding Rs. 10 million continue to pay a <strong>10% surcharge</strong> on their computed income tax. Source: <em>PwC Pakistan Tax Summaries 2025-26</em>.</p>
+          </div>
+          <h2 id="surcharge">High-Income Surcharge (Rs. 10M+)</h2>
+          <p>Introduced in Finance Act 2025 under Section 4B, a surcharge applies to high-income taxpayers:</p>
+
+          <div class="callout callout-amber">
+            <div class="callout-head"><i class="fas fa-exclamation-triangle"></i> Section 4B Surcharge</div>
+            <ul>
+              <li>Applies when <strong>taxable income exceeds Rs. 10,000,000</strong></li>
+              <li>For <strong>salaried persons</strong>: surcharge = <strong>9% of the income tax</strong> computed under normal slabs (reduced from 10% in TY 2024-25)</li>
+              <li>For <strong>non-salaried individuals &amp; AOPs</strong>: surcharge remains <strong>10% of the income tax</strong></li>
+              <li>Computed after all tax credits and rebates</li>
+              <li><em>Source: Finance Act 2025, FBR Salient Features Budget 2025-26</em></li>
+            </ul>
+          </div>
+
+          <!-- Section 5: Worked examples -->
+          <h2 id="examples">Worked Examples</h2>
+          <h3>Example 1 — Salaried Employee: Rs. 2,400,000 Annual Income</h3>
+
+          <div class="data-table-wrap">
+            <div class="data-table-caption">Calculation — Salaried, Rs. 2,400,000 annual taxable income</div>
+            <table class="data-table">
+              <thead><tr><th>Income Range</th><th>Amount in Slab</th><th>Rate</th><th>Tax</th></tr></thead>
+              <tbody>
+                <tr><td>Rs. 0 – 600,000</td><td>Rs. 600,000</td><td class="nil">0%</td><td class="nil">Rs. 0</td></tr>
+                <tr><td>Rs. 600,001 – 1,200,000</td><td>Rs. 600,000</td><td class="rate">1%</td><td>Rs. 6,000</td></tr>
+                <tr><td>Rs. 1,200,001 – 2,200,000</td><td>Rs. 1,000,000</td><td class="rate">11%</td><td>Rs. 110,000</td></tr>
+                <tr><td>Rs. 2,200,001 – 2,400,000</td><td>Rs. 200,000</td><td class="rate">23%</td><td>Rs. 46,000</td></tr>
+                <tr style="background:var(--cobalt-light);">
+                  <td><strong>Total Tax Payable</strong></td>
+                  <td><strong>Rs. 2,400,000</strong></td>
+                  <td>—</td>
+                  <td><strong style="color:var(--cobalt);">Rs. 162,000</strong></td>
+                </tr>
+                <tr>
+                  <td colspan="3"><strong>Effective Tax Rate</strong></td>
+                  <td class="rate">6.75%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="callout callout-green">
+            <div class="callout-head"><i class="fas fa-calculator"></i> Use Our Calculator</div>
+            <p>Skip the manual calculation. Our <strong>free Income Tax Calculator</strong> computes your exact liability in seconds — including slab breakdown, effective rate, and monthly deduction amount. <a href="tools.html">Open Calculator →</a></p>
+          </div>
+
+          <!-- Section 6: ATL -->
+          <h2 id="atl">ATL Status &amp; Why It Matters</h2>
+          <p>The Active Taxpayer List (ATL) is FBR's database of persons who have filed their income tax returns on time. Being on the ATL means you pay <strong>lower withholding tax rates</strong> across all transactions.</p>
+          <p>If you miss the September 30 filing deadline, FBR removes you from the ATL. The consequences are immediate and financial:</p>
+
+          <div class="data-table-wrap">
+            <div class="data-table-caption">Table 3 — WHT Rate Comparison: Filer vs Non-Filer (2025-26)</div>
+            <table class="data-table">
+              <thead><tr><th>Transaction Type</th><th>Filer Rate</th><th>Non-Filer Rate</th><th>Difference</th></tr></thead>
+              <tbody>
+                <tr><td>Bank cash withdrawal (>Rs. 50,000/day)</td><td class="rate">0%</td><td class="rate">0.6%</td><td class="change-down">+0.6%</td></tr>
+                <tr><td>Property purchase</td><td class="rate">3%</td><td class="rate">6%</td><td class="change-down">+3%</td></tr>
+                <tr><td>Vehicle registration (above 1600cc)</td><td class="rate">3%</td><td class="rate">6%</td><td class="change-down">+3%</td></tr>
+                <tr><td>Dividend income</td><td class="rate">15%</td><td class="rate">30%</td><td class="change-down">+15%</td></tr>
+                <tr><td>Foreign remittance (business)</td><td class="rate">1%</td><td class="rate">2%</td><td class="change-down">+1%</td></tr>
+                <tr><td>Prize bond winnings</td><td class="rate">15%</td><td class="rate">25%</td><td class="change-down">+10%</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Section 7: Filing -->
+          <h2 id="filing">How to File Before September 30</h2>
+          <p>Filing your income tax return in Pakistan is done through FBR's online portal, IRIS 2.0. Here is the process at a high level:</p>
+          <ul>
+            <li>Log in to <strong>iris.fbr.gov.pk</strong> using your NTN and IRIS password</li>
+            <li>Navigate to <em>Declaration → Income Tax Return → Tax Year 2025-26</em></li>
+            <li>Complete all relevant sections: salary certificate / business accounts, property income, foreign income, bank profit, dividends</li>
+            <li>Reconcile your wealth statement — assets and liabilities must match your declared income</li>
+            <li>Submit and keep the acknowledgement slip (CPR) for your records</li>
+          </ul>
+
+          <div class="callout callout-blue">
+            <div class="callout-head"><i class="fas fa-headset"></i> Need Professional Help?</div>
+            <p>If you have multiple income sources, property, or foreign income, filing can be complex. <a href="https://www.ifatassociates.com" target="_blank">Ifat Associates</a> offers professional return filing services for individuals and businesses across Pakistan — contact us before September 15 to avoid the deadline rush.</p>
+          </div>
+
+        </div><!-- end .prose -->
+
+        <!-- Article footer: tags + share -->
+        <div class="article-footer">
+          <div class="article-footer-tags">
+            <span>Topics:</span>
+            <a href="#" class="tag tag-blue">Income Tax</a>
+            <a href="#" class="tag tag-mono">TY 2025-26</a>
+            <a href="#" class="tag tag-green">Finance Act 2025</a>
+            <a href="#" class="tag tag-amber">Salaried</a>
+            <a href="#" class="tag tag-blue">Tax Slabs</a>
+            <a href="#" class="tag tag-mono">ATL</a>
+          </div>
+          <div class="article-share-full">
+            <div>
+              <p>Found this useful? Share with someone who needs it.</p>
+              <small>It costs nothing and helps fellow taxpayers stay informed.</small>
+            </div>
+            <div class="article-share-btns">
+              <button class="share-btn share-btn-linkedin" onclick="shareLinkedIn()"><i class="fab fa-linkedin"></i> LinkedIn</button>
+              <button class="share-btn share-btn-whatsapp" onclick="shareWhatsApp()"><i class="fab fa-whatsapp"></i> WhatsApp</button>
+              <button class="share-btn share-btn-copy" onclick="copyLink(this)"><i class="fas fa-link"></i> Copy Link</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Author bio -->
+        <div class="author-box">
+          <div class="author-avatar">🏢</div>
+          <div class="author-info">
+            <div style="font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--mist);margin-bottom:5px;">Your Tax Consultant</div>
+            <h4>Ifat Associates</h4>
+            <div class="author-role">Tax &amp; Business Consultants · Faisalabad, Pakistan</div>
+            <p>A professional tax and business consulting practice offering FBR compliance, NTN/STRN registration, SECP incorporation, and financial advisory for SMEs and startups across Pakistan.</p>
+            <a href="https://www.ifatassociates.com" target="_blank"><i class="fas fa-external-link-alt"></i> Visit ifatassociates.com</a>
+          </div>
+        </div>
+
+        <!-- Related articles -->
+        <div class="related-section">
+          <h3>Related Articles</h3>
+          <div class="related-grid">
+            <div class="related-card">
+              <div class="related-card-top jade">📋</div>
+              <div class="related-card-body">
+                <div class="tags"><span class="tag tag-blue">How-To</span></div>
+                <h4><a href="#">How to File Your Tax Return on IRIS 2.0 — Step by Step</a></h4>
+                <p>Jun 9, 2026 · 10 min</p>
+              </div>
+            </div>
+            <div class="related-card">
+              <div class="related-card-top amber">⚠️</div>
+              <div class="related-card-body">
+                <div class="tags"><span class="tag tag-amber">ATL</span></div>
+                <h4><a href="#">Non-Filer Penalties Are Getting Worse — How to Get on the ATL</a></h4>
+                <p>Jun 2, 2026 · 4 min</p>
+              </div>
+            </div>
+            <div class="related-card">
+              <div class="related-card-top navy">🏢</div>
+              <div class="related-card-body">
+                <div class="tags"><span class="tag tag-green">Business</span></div>
+                <h4><a href="tools.html">Super Tax 2025-26: Which Companies Pay What &amp; How to Calculate</a></h4>
+                <p>Jun 6, 2026 · 6 min</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- end article-body -->
+
+      <!-- ── RIGHT: Sidebar ── -->
+      <aside class="article-sidebar">
+
+        <div class="sidebar-toc">
+
+          <!-- Sticky TOC -->
+          <div class="sidebar-toc-box">
+            <div class="sidebar-toc-head" style="background:var(--cobalt);"><i class="fas fa-bolt" style="margin-right:6px;opacity:.7"></i> Quick Facts</div>
+            <div style="padding:14px 16px;display:flex;flex-direction:column;gap:0;">
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--rule);font-size:12.5px;">
+                <span style="color:var(--mist);">Tax Year</span>
+                <span style="font-weight:700;color:var(--ink);font-family:var(--mono);">2025-26</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--rule);font-size:12.5px;">
+                <span style="color:var(--mist);">Period</span>
+                <span style="font-weight:700;color:var(--ink);font-family:var(--mono);font-size:11px;">Jul 2025 – Jun 2026</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--rule);font-size:12.5px;">
+                <span style="color:var(--mist);">Nil-tax threshold</span>
+                <span style="font-weight:700;color:var(--emerald);">Rs. 600,000</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--rule);font-size:12.5px;">
+                <span style="color:var(--mist);">Top salaried rate</span>
+                <span style="font-weight:700;color:var(--cobalt);">35%</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--rule);font-size:12.5px;">
+                <span style="color:var(--mist);">Surcharge (salaried)</span>
+                <span style="font-weight:700;color:var(--cobalt);">9% on Rs.10M+</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--rule);font-size:12.5px;">
+                <span style="color:var(--mist);">Surcharge (non-sal)</span>
+                <span style="font-weight:700;color:var(--cobalt);">10% on Rs.10M+</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--rule);font-size:12.5px;">
+                <span style="color:var(--mist);">Filing deadline</span>
+                <span style="font-weight:700;color:var(--red);">30 Sep 2026</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 0;font-size:12.5px;">
+                <span style="color:var(--mist);">Governed by</span>
+                <span style="font-weight:600;color:var(--ink);font-size:11.5px;">Finance Act 2025</span>
+              </div>
+              <div style="margin-top:10px;padding:8px 10px;background:var(--canvas);border-radius:var(--r);border:1px solid var(--rule);font-size:11px;color:var(--mist);line-height:1.5;">
+                <i class="fas fa-check-circle" style="color:var(--emerald);margin-right:4px;"></i>
+                Verified against FBR Salient Features Budget 2025-26 &amp; multiple official sources. Last checked June 2026.
+              </div>
+            </div>
+          </div>
+
+          <!-- Consult CTA -->
+          <div class="sidebar-consult" style="margin-top:18px;">
+            <div class="icon">📞</div>
+            <h3>Need Help Filing?</h3>
+            <p>Professional return filing, FBR compliance &amp; tax advisory for individuals and businesses.</p>
+            <a href="https://www.ifatassociates.com" target="_blank" class="cta-btn">
+              Visit Ifat Associates →
+            </a>
+            <div class="credit"><a href="https://www.ifatassociates.com" target="_blank">ifatassociates.com</a></div>
+          </div>
+
+          <!-- Newsletter mini -->
+          <div class="nw-mini" style="margin-top:18px;">
+            <h4>📬 Pakistan Tax Digest</h4>
+            <p>Weekly updates — SROs, deadlines, budget news. Free, every Friday.</p>
+            <input type="email" placeholder="your@email.com">
+            <button>Subscribe →</button>
+          </div>
+
+          <!-- Most read -->
+          <div class="widget" style="margin-top:18px;">
+            <div class="widget-head"><i class="fas fa-fire"></i> Most Read</div>
+            <div class="widget-body">
+              <div class="pop-item">
+                <span class="pop-num">01</span>
+                <div><h4><a href="#">Income Tax Slabs 2025-26</a></h4><p>4,218 views</p></div>
+              </div>
+              <div class="pop-item">
+                <span class="pop-num">02</span>
+                <div><h4><a href="#">How to File on IRIS 2.0</a></h4><p>3,891 views</p></div>
+              </div>
+              <div class="pop-item">
+                <span class="pop-num">03</span>
+                <div><h4><a href="#">Non-Filer WHT Rates 2026</a></h4><p>3,140 views</p></div>
+              </div>
+              <div class="pop-item">
+                <span class="pop-num">04</span>
+                <div><h4><a href="#">114(4) Notice: What to Do</a></h4><p>2,344 views</p></div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- end sidebar-toc sticky wrapper -->
+
+      </aside>
+
+    </div><!-- end article-cols -->
+  </div><!-- end container -->
+</div><!-- end article-layout -->
+
+     FOOTER
+════════════════════════════════════════════ -->
+<footer class="site-footer">
+
+  <!-- Newsletter band -->
+  <div class="footer-newsletter" id="newsletter">
+    <div class="container">
+      <div class="footer-newsletter-inner">
+        <div class="footer-newsletter-text">
+          <h3>📬 Pakistan Tax Digest</h3>
+          <p>Weekly SRO roundup, budget alerts, deadline reminders &amp; plain-language tax updates — every Friday, free.</p>
+          <div class="footer-newsletter-privacy">No spam. Unsubscribe anytime. Your email is never shared.</div>
+        </div>
+        <div>
+          <div class="footer-newsletter-form">
+            <input type="email" placeholder="your@email.com" id="newsletterEmail">
+            <button onclick="subscribeNewsletter()">Subscribe Free →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main footer -->
+  <div class="footer-main">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Brand + credit -->
+        <div class="footer-brand-col">
+          <div class="footer-brand-name">
+            <span class="pak">Pak</span><span class="tax">Tax</span>
+            <span class="gaz">Gazette</span>
+          </div>
+          <p class="footer-brand-desc">
+            Pakistan's dedicated tax news hub — SRO summaries, Finance Bill analysis, tax calculators, and plain-language guides for individuals and businesses.
+          </p>
+
+          <!-- Ifat Associates credit: always present, never intrusive -->
+          <div class="footer-credit">
+            <div class="footer-credit-icon">🏢</div>
+            <div class="footer-credit-text">
+              <p>Tax advisory &amp; professional services by</p>
+              <a href="https://www.ifatassociates.com" target="_blank" rel="noopener">
+                Ifat Associates — Tax &amp; Business Consultants
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer-social">
+            <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" title="Email"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+
+        <!-- Site sections -->
+        <div class="footer-col">
+          <h4>Content</h4>
+          <ul>
+<li><a href="index.html"><i class="fas fa-chevron-right"></i> Latest Tax News</a></li>
+<li><a href="sro.html"><i class="fas fa-chevron-right"></i> SRO Tracker 2026</a></li>
+<li><a href="budget.html"><i class="fas fa-chevron-right"></i> Finance Bill 2026-27</a></li>
+<li><a href="blog.html"><i class="fas fa-chevron-right"></i> Tax Blog &amp; Guides</a></li>
+<li><a href="article.html"><i class="fas fa-chevron-right"></i> FBR Notice Library</a></li>
+<li><a href="blog.html"><i class="fas fa-chevron-right"></i> Budget Archive</a></li>
+</ul>
+        </div>
+
+        <!-- Tools -->
+        <div class="footer-col">
+          <h4>Free Tools</h4>
+          <ul>
+<li><a href="tools.html"><i class="fas fa-chevron-right"></i> Income Tax Calculator</a></li>
+<li><a href="tools.html"><i class="fas fa-chevron-right"></i> WHT Rate Finder</a></li>
+<li><a href="tools.html"><i class="fas fa-chevron-right"></i> Property CGT Calculator</a></li>
+<li><a href="tools.html"><i class="fas fa-chevron-right"></i> Sales Tax Calculator</a></li>
+<li><a href="tools.html"><i class="fas fa-chevron-right"></i> Deadline Tracker</a></li>
+<li><a href="tools.html"><i class="fas fa-chevron-right"></i> Super Tax Estimator</a></li>
+</ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-col">
+          <h4>Professional Help</h4>
+          <div class="footer-contact-item">
+            <i class="fas fa-globe"></i>
+            <span><a href="https://www.ifatassociates.com" target="_blank">www.ifatassociates.com</a></span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Faisalabad, Pakistan</span>
+          </div>
+          <div style="margin-top:18px;">
+            <a href="https://www.ifatassociates.com" target="_blank" class="btn btn-outline btn-sm" style="font-size:12px;">
+              <i class="fas fa-briefcase"></i> Book Consultation
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="footer-bottom">
+    <div class="container">
+      <div class="footer-bottom-inner">
+        <div class="footer-bottom-left">
+          <div>© 2026 PakTax Gazette. Content by <a href="https://www.ifatassociates.com" target="_blank">Ifat Associates</a>, Faisalabad.</div>
+          <div class="footer-disclaimer">For informational purposes only. Not legal or tax advice. Always consult a qualified tax professional for your specific situation.</div>
+        </div>
+        <div class="footer-bottom-right">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Disclaimer</a>
+          <a href="#">Sitemap</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+<!-- Back to top -->
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<!-- ════════════════════════════════════════════
+     JAVASCRIPT
+════════════════════════════════════════════ -->
+<script>
+/* ── Live date in top bar ── */
+(function() {
+  const days   = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  const now = new Date();
+  const el  = document.getElementById('currentDate');
+  if (el) el.textContent = `${days[now.getDay()]}, ${now.getDate()} ${months[now.getMonth()]} ${now.getFullYear()}`;
+})();
+
+/* ── Scroll progress bar ── */
+window.addEventListener('scroll', function() {
+  const scrollTop = window.scrollY;
+  const docH = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = docH > 0 ? (scrollTop / docH) * 100 : 0;
+  document.getElementById('scrollProgress').style.width = progress + '%';
+
+  // Back to top
+  const btn = document.getElementById('backToTop');
+  if (scrollTop > 400) btn.classList.add('visible');
+  else btn.classList.remove('visible');
+});
+
+/* ── Search overlay ── */
+function openSearch() {
+  document.getElementById('searchOverlay').classList.add('open');
+  setTimeout(() => document.getElementById('searchInput').focus(), 100);
+}
+function closeSearch() {
+  document.getElementById('searchOverlay').classList.remove('open');
+}
+document.getElementById('searchOverlay').addEventListener('click', function(e) {
+  if (e.target === this) closeSearch();
+});
+document.addEventListener('keydown', function(e) {
+  if ((e.ctrlKey || e.metaKey) && e.key === 'k') { e.preventDefault(); openSearch(); }
+  if (e.key === 'Escape') closeSearch();
+});
+
+/* ── Mobile nav ── */
+function openMobileNav()  { document.getElementById('mobileNav').classList.add('open'); document.body.style.overflow = 'hidden'; }
+function closeMobileNav() { document.getElementById('mobileNav').classList.remove('open'); document.body.style.overflow = ''; }
+
+/* ── Newsletter ── */
+function subscribeNewsletter() {
+  const email = document.getElementById('newsletterEmail').value;
+  if (!email || !email.includes('@')) {
+    alert('Please enter a valid email address.');
+    return;
+  }
+  alert('Thank you! You\'re subscribed to Pakistan Tax Digest. Watch your inbox every Friday.');
+}
+
+/* ── Ticker auto-width (ensures seamless loop) ── */
+(function() {
+  const inner = document.getElementById('tickerInner');
+  if (!inner) return;
+  // The CSS animation is set to -50% which works because we duplicated the items
+})();
+</script>
+
+<script>
+/* ── Article read progress bar ── */
+function updateArticleProgress() {
+  const article = document.querySelector('.article-body');
+  const bar = document.getElementById('articleReadProgress');
+  if (!article || !bar) return;
+  const articleTop    = article.getBoundingClientRect().top + window.scrollY;
+  const articleBottom = articleTop + article.offsetHeight;
+  const scrolled      = window.scrollY + window.innerHeight;
+  const progress      = Math.min(100, Math.max(0,
+    ((scrolled - articleTop) / (articleBottom - articleTop)) * 100
+  ));
+  bar.style.width = progress + '%';
+}
+window.addEventListener('scroll', updateArticleProgress);
+
+/* ── Sidebar TOC: highlight active section ── */
+function updateActiveTOC() {
+  const sections = document.querySelectorAll('.prose h2[id]');
+  const tocLinks = document.querySelectorAll('.sidebar-toc-list a');
+  let current = '';
+  sections.forEach(sec => {
+    if (window.scrollY >= sec.offsetTop - 120) current = sec.getAttribute('id');
+  });
+  tocLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === '#' + current) link.classList.add('active');
+  });
+}
+window.addEventListener('scroll', updateActiveTOC);
+
+/* ── Share functions ── */
+function shareLinkedIn() {
+  const url = encodeURIComponent(window.location.href);
+  window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + url, '_blank');
+}
+function shareWhatsApp() {
+  const text = encodeURIComponent(document.title + ' — ' + window.location.href);
+  window.open('https://wa.me/?text=' + text, '_blank');
+}
+function copyLink(btn) {
+  navigator.clipboard.writeText(window.location.href).then(() => {
+    const orig = btn.innerHTML;
+    btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+    btn.style.background = 'var(--emerald-light)';
+    btn.style.color = 'var(--emerald)';
+    setTimeout(() => {
+      btn.innerHTML = orig;
+      btn.style.background = '';
+      btn.style.color = '';
+    }, 2200);
+  });
+}
+</script>
+</body>
+</html>
