@@ -1,0 +1,54 @@
+backend:
+  name: github
+  repo: YOUR_GITHUB_USERNAME/paktax-gazette
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+site_url: https://tax.ifatassociates.com
+display_url: https://tax.ifatassociates.com
+
+collections:
+  - name: "blog"
+    label: "Tax Blog"
+    folder: "blog-posts"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Category", name: "category", widget: "select",
+          options: ["income-tax", "sales-tax", "how-to", "fbr-notices", "business", "finance-bill"] }
+      - { label: "Read Time", name: "readTime", widget: "string", default: "5 min" }
+      - { label: "Excerpt", name: "excerpt", widget: "text" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "sro"
+    label: "SRO Tracker"
+    folder: "sro-posts"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "SRO Number", name: "sroNum", widget: "string", hint: "e.g. SRO 847(I)/2026" }
+      - { label: "Date Issued", name: "date", widget: "datetime" }
+      - { label: "Category", name: "category", widget: "select",
+          options: ["income-tax", "sales-tax", "customs", "wht", "deadline", "fed"] }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Plain-Language Summary", name: "summary", widget: "text" }
+      - { label: "Key Points", name: "points", widget: "list" }
+      - { label: "Who Is Affected", name: "affected", widget: "text" }
+      - { label: "Official PDF Link", name: "pdfUrl", widget: "string", default: "https://www.fbr.gov.pk" }
+
+  - name: "news"
+    label: "Tax News / Updates"
+    folder: "news-posts"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Headline", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Category", name: "category", widget: "select",
+          options: ["income-tax", "sales-tax", "fbr", "budget", "deadline", "secp"] }
+      - { label: "Summary", name: "body", widget: "markdown" }
+      - { label: "Urgent?", name: "urgent", widget: "boolean", default: false }
