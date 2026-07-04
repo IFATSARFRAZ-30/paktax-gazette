@@ -6,8 +6,8 @@ backend:
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
-site_url: https://tax.ifatassociates.com
-display_url: https://tax.ifatassociates.com
+site_url: https://paktax.ifatassociates.com
+display_url: https://paktax.ifatassociates.com
 
 collections:
   - name: "blog"
