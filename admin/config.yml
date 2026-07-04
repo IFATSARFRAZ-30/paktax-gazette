@@ -2,6 +2,8 @@ backend:
   name: github
   repo: YOUR_GITHUB_USERNAME/paktax-gazette
   branch: main
+  base_url: https://paktax-gazette.pages.dev
+  auth_endpoint: api/auth
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
