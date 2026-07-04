@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: IFATSARFRAZ-30/paktax-gazette
+  repo: ifatsarfraz-30/paktax-gazette
   branch: main
   base_url: https://paktax-gazette.pages.dev
   auth_endpoint: api/auth
