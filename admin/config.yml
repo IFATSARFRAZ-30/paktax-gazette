@@ -2,6 +2,7 @@ backend:
   name: github
   repo: IFATSARFRAZ-30/paktax-gazette
   branch: main
+  auth_type: pkce
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
